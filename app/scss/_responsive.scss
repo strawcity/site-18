@@ -1,0 +1,14 @@
+//**
+// Responsive Styles
+//**
+
+
+
+@media screen and (min-width: $big-break) {
+}
+
+@media (min-width: $small-break) and (max-width: $big-break) {
+}
+
+@media screen and (max-width: $small-break) {
+}
