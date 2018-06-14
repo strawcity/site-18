@@ -1,5 +1,5 @@
 /* Uncomment and set these variables to customize the grid. */
-@import url("https://fonts.googleapis.com/css?family=Special+Elite");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,500,700");
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -637,3 +637,62 @@
     -ms-flex-order: 1;
     -webkit-box-ordinal-group: 2;
     order: 1; } }
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 30px; }
+  body h1, body h2, body h3, body h4, body h5, body p {
+    margin: 0; }
+
+.box {
+  height: 20px;
+  background: blue; }
+
+.screen .screen-frame {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+  background: white; }
+  .screen .screen-frame #loading-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0%;
+    height: auto;
+    overflow: hidden;
+    cursor: pointer; }
+    .screen .screen-frame #loading-circle img {
+      width: 100%; }
+  .screen .screen-frame #spotlight {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20%;
+    height: auto;
+    transform: scaleY(1);
+    cursor: pointer; }
+  .screen .screen-frame #circle-shadow {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 79.6%;
+    width: 20.2%;
+    height: auto;
+    transform: scaleY(1);
+    cursor: pointer; }
+  .screen .screen-frame #pop-up-mask {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 90.4%;
+    width: 20.2%;
+    height: auto;
+    transform: scaleY(1);
+    cursor: pointer; }
+
+.credits {
+  opacity: 0;
+  margin-top: 25px; }
+  .credits #name-title {
+    text-align: center; }

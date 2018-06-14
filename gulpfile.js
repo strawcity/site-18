@@ -1,11 +1,11 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var cssnano = require('gulp-cssnano');
-var useref = require('gulp-useref');
-var del = require('del');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create(),
+    uglify = require('gulp-uglify'),
+    gulpIf = require('gulp-if'),
+    cssnano = require('gulp-cssnano'),
+    useref = require('gulp-useref'),
+    del = require('del');
 
 gulp.task('default', ['browserSync', 'sass'], function(){
     gulp.watch('app/scss/**/*.scss', ['sass']);

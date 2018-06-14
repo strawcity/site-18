@@ -15,20 +15,50 @@
 
 <body>
     <div class="body-container">
-      <div class="row">
+      <div class="screen row">
           <div class="col-xs-12
-                      col-sm-8
-                      col-md-6
+                      col-sm-12
+                      col-md-12
+                      col-lg-12">
+              <div class="screen-frame">
+                <img id="spotlight" src="img/white-circle.svg" style="transform: translateY(-50%) translateX(-50%);"/>
+                <div id="loading-circle" style="transform: translateY(-50%) translateX(-50%);">
+                  <img src="img/black-circle.svg"/>
+                </div>
+                <img id="circle-shadow" src="img/circle-shadow.svg" style="transform: translateY(-50%) translateX(-50%);"/>
+                <img id="pop-up-mask" src="img/pop-up-mask.svg" style="transform: translateY(-50%) translateX(-50%);"/>
+              </div>
+          </div>
+      </div>
+      <div class="credits row">
+          <div class="col-xs-12
+                      col-sm-4
+                      col-md-4
                       col-lg-4">
-              <div class="box">Responsive</div>
+                      <p>Design infused Front-end Developer with a focus on aesthetics and usability</p>
+          </div>
+          <div class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+                      <h1 id="name-title">Erik Nilsson</h1>
+          </div>
+          <div class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+                      <p>Find me on github, linked or just drop me a line at newemial@comingsoon.com</p>
           </div>
       </div>
 
     </div>
-    <!-- jQuery -->
+    <!-- JS Libs -->
     <script src="js/jquery.js"></script>
+    <script src="js/anime.js"></script>
 
     <!-- Additional Javascript -->
     <script src="js/main.js"></script>
+    <!-- <script src="js/twofactor.js"></script> -->
+    <script src="js/spotlight.js"></script>
 </body>
 </html>
