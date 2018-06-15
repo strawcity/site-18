@@ -17,6 +17,7 @@ body {
 }
 
 .screen {
+  overflow: hidden;
   .screen-frame {
     width: 100%;
     padding-bottom: 56.25%;
@@ -72,6 +73,21 @@ body {
       cursor: pointer;
     }
 
+    #basketball {
+      width: 20%;
+      height: 35.75%;
+      border-radius: 120px;
+      background: orange;
+      position: absolute;
+      overflow: hidden;
+      left: 40%;
+      bottom: 1%;
+      // display: none;
+      #basketball-lines {
+        bottom: 5px;
+        position: relative;
+      }
+    }
   }
 }
 

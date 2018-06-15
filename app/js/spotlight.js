@@ -3,6 +3,9 @@ var spotlight = document.querySelector("#spotlight");
 var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
 var durationTime = 400;
+var clickCount;
+
+console.log(clickCount);
 
 function loadingCircle() {
   anime({
@@ -36,6 +39,8 @@ function lowerLoadingCircle() {
 }
 
 function invertCircle() {
+  clickCount = 1;
+  console.log(clickCount);
   startButton.remove();
   spotlight.style.display = "block";
   anime({
@@ -55,7 +60,26 @@ function invertCircle() {
   });
 }
 
+function easterEggs() {
+  console.log('egg function');
+  console.log(clickCount);
+  switch (true) {
+    case clickCount === 1:
+      console.log(clickCount);
+      makeSpotlight();
+      break;
+    case clickCount === 2:
+      console.log(clickCount);
+      pumpOut();
+      break;
+    default:
+
+  }
+}
+
 function makeSpotlight() {
+  clickCount = 2;
+  console.log(clickCount);
   circleShadow.style.display = "block";
   popUpMask.style.display = "block";
   anime({
@@ -86,6 +110,21 @@ function makeSpotlight() {
 }
 
 function pumpOut() {
+  clickCount = 3;
+  anime({
+    targets: "#basketball",
+    translateY: '-140%',
+    easing: "easeOutCubic",
+    direction: 'alternate',
+    duration: 1000
+  });
+  anime({
+    targets: "#basketball-lines",
+    bottom: 52,
+    easing: "easeInSine",
+    direction: 'alternate',
+    duration: 2000
+  });
   anime({
     targets: "#spotlight",
     scaleY: 0.19,
@@ -93,6 +132,7 @@ function pumpOut() {
     translateY: '218%',
     easing: "easeInOutCubic",
     direction: 'alternate',
+    delay: 250,
     duration: 100
   });
   anime({
@@ -101,14 +141,7 @@ function pumpOut() {
     translateY: '-32%',
     easing: "easeInOutCubic",
     direction: 'alternate',
-    duration: 100
-  });
-  anime({
-    targets: "#pop-up-mask",
-    scaleY: 0.9,
-    translateX: '-50%',
-    translateY: '-50%',
-    direction: 'alternate',
+    delay: 250,
     duration: 100
   });
 }
@@ -117,6 +150,6 @@ window.onload = loadingCircle;
 startButton.addEventListener("mouseenter", raiseLoadingCircle, false);
 startButton.addEventListener("mouseleave", lowerLoadingCircle, false);
 startButton.addEventListener("click", invertCircle);
-spotlight.addEventListener("click", makeSpotlight);
-circleShadow.addEventListener("click", pumpOut);
-// popUpMask.addEventListener("click", pumpOut);
+spotlight.addEventListener("click", easterEggs);
+circleShadow.addEventListener("click", easterEggs);
+popUpMask.addEventListener("click", easterEggs);

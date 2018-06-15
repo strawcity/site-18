@@ -650,51 +650,65 @@ body {
   height: 20px;
   background: blue; }
 
-.screen .screen-frame {
-  width: 100%;
-  padding-bottom: 56.25%;
-  position: relative;
-  background: white; }
-  .screen .screen-frame #loading-circle {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 0%;
-    height: auto;
-    overflow: hidden;
-    cursor: pointer; }
-    .screen .screen-frame #loading-circle img {
-      width: 100%; }
-  .screen .screen-frame #spotlight {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 20%;
-    height: auto;
-    transform: scaleY(1);
-    cursor: pointer; }
-  .screen .screen-frame #circle-shadow {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: 79.6%;
-    width: 20.2%;
-    height: auto;
-    transform: scaleY(1);
-    cursor: pointer; }
-  .screen .screen-frame #pop-up-mask {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: 90.4%;
-    width: 20.2%;
-    height: auto;
-    transform: scaleY(1);
-    cursor: pointer; }
+.screen {
+  overflow: hidden; }
+  .screen .screen-frame {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    background: white; }
+    .screen .screen-frame #loading-circle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0%;
+      height: auto;
+      overflow: hidden;
+      cursor: pointer; }
+      .screen .screen-frame #loading-circle img {
+        width: 100%; }
+    .screen .screen-frame #spotlight {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20%;
+      height: auto;
+      transform: scaleY(1);
+      cursor: pointer; }
+    .screen .screen-frame #circle-shadow {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 79.6%;
+      width: 20.2%;
+      height: auto;
+      transform: scaleY(1);
+      cursor: pointer; }
+    .screen .screen-frame #pop-up-mask {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 90.4%;
+      width: 20.2%;
+      height: auto;
+      transform: scaleY(1);
+      cursor: pointer; }
+    .screen .screen-frame #basketball {
+      width: 20%;
+      height: 35.75%;
+      border-radius: 120px;
+      background: orange;
+      position: absolute;
+      overflow: hidden;
+      left: 40%;
+      bottom: 1%; }
+      .screen .screen-frame #basketball #basketball-lines {
+        bottom: 5px;
+        position: relative; }
 
 .credits {
   margin-top: 25px; }
