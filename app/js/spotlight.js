@@ -2,10 +2,23 @@ var startButton = document.querySelector("#loading-circle");
 var spotlight = document.querySelector("#spotlight");
 var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
-var durationTime = 400;
 var clickCount;
 
-console.log(clickCount);
+function easterEggs() {
+  switch (true) {
+    case clickCount === 1:
+      makeSpotlight();
+      break;
+    case clickCount === 2:
+      basketballToss();
+      break;
+    case clickCount === 3:
+      beginUFO();
+      break;
+    default:
+
+  }
+}
 
 function loadingCircle() {
   anime({
@@ -40,7 +53,6 @@ function lowerLoadingCircle() {
 
 function invertCircle() {
   clickCount = 1;
-  console.log(clickCount);
   startButton.remove();
   spotlight.style.display = "block";
   anime({
@@ -60,30 +72,7 @@ function invertCircle() {
   });
 }
 
-function easterEggs() {
-  console.log('egg function');
-  console.log(clickCount);
-  switch (true) {
-    case clickCount === 1:
-      console.log(clickCount);
-      makeSpotlight();
-      break;
-    case clickCount === 2:
-      console.log(clickCount);
-      basketballToss();
-      break;
-    case clickCount === 3:
-      console.log(clickCount);
-      animationThree();
-      break;
-    default:
-
-  }
-}
-
 function makeSpotlight() {
-  clickCount = 2;
-  console.log(clickCount);
   circleShadow.style.display = "block";
   popUpMask.style.display = "block";
   anime({
@@ -92,19 +81,24 @@ function makeSpotlight() {
     translateX: '-50%',
     translateY: '190%',
     easing: "easeInOutCubic",
-    duration: durationTime
+    duration: 800
   });
   anime({
     targets: "#circle-shadow",
+    scaleY: 5,
     opacity: 1,
     delay: 350,
-    duration: 400
+    duration: 800
   });
   anime({
     targets: "#pop-up-mask",
     opacity: 1,
-    delay: 400,
-    duration: 400
+    delay: 800,
+    duration: 400,
+    complete: function(anim) {
+      console.log(anim.completed);
+      return clickCount = 2;
+    }
   });
   anime({
     targets: '#about-credit',
@@ -114,7 +108,6 @@ function makeSpotlight() {
 }
 
 function basketballToss() {
-  clickCount = 3;
   anime({
     targets: "#basketball",
     translateY: '-140%',
@@ -126,61 +119,73 @@ function basketballToss() {
     targets: "#basketball-lines",
     bottom: 52,
     easing: "easeInSine",
-    direction: 'alternate',
-    duration: 2000
-  });
-  anime({
-    targets: "#spotlight",
-    scaleY: 0.19,
-    translateX: '-50%',
-    translateY: '218%',
-    easing: "easeInOutCubic",
-    direction: 'alternate',
-    delay: 250,
-    duration: 100
-  });
-  anime({
-    targets: "#circle-shadow",
-    translateX: '-50%',
-    translateY: '-32%',
-    easing: "easeInOutCubic",
-    direction: 'alternate',
-    delay: 250,
-    duration: 100
+    duration: 1500,
+    complete: function(anim) {
+      return clickCount = 3;
+    }
   });
 }
 
-function animationThree() {
-  clickCount = 4;
+function beginUFO() {
+  console.log('begin');
+  popUpMask.style.display = "none";
   anime({
     targets: "#circle-shadow",
-    scaleY: -0.5,
-    translateX: '-50%',
-    easing: "easeInOutCubic",
-    duration: 100
+    scaleY: -2,
+    translateY: '-170%',
+    easing: "easeInOutExpo",
+    duration: 500,
+    complete: function(anim) {
+      transitionUFO();
+    }
   });
+}
+
+function transitionUFO() {
+    anime({
+      targets: "#circle-shadow",
+      scaleY: 2,
+      translateY: '59%',
+      easing: "easeInOutExpo",
+      delay: 500,
+      duration: 2200
+    });
+    anime({
+      targets: "#spotlight",
+      scaleY: 0.2,
+      translateX: '-50%',
+      translateY: '-700%',
+      easing: "easeInOutExpo",
+      delay: 500,
+      duration: 2500,
+      complete: function(anim) {
+        flickerTractorBeam();
+      }
+    });
+    anime({
+      targets: "#tractor-beam",
+      opacity: 1,
+      delay: 2500,
+      duration: 2500
+    });
+}
+
+function flickerTractorBeam() {
   anime({
-    targets: "#spotlight",
-    scaleY: 0.2,
-    translateX: '-50%',
-    translateY: '-700%',
-    easing: "easeInOutCubic",
-    delay: 350,
-    duration: 400
+    targets: "#tractor-beam path",
+    opacity: 0.9,
+    d: "M0.0317009116,217.571777 C-0.359900651,227.125163 2.87659023,231.901855 9.74117357,231.901855 C16.6057569,231.901855 22.724572,227.125163 28.0976189,217.571777 C29.5253533,227.125163 33.7948845,231.901855 40.9062126,231.901855 C48.0175408,231.901855 53.1773715,227.125163 56.3857048,217.571777 C57.9911736,227.125163 62.4402296,231.901855 69.7328728,231.901855 C77.025516,231.901855 81.8743116,226.752279 84.2792595,216.453125 C85.6005486,226.752279 90.5434197,231.901855 99.1078728,231.901855 C107.672326,231.901855 112.044396,226.752279 112.224084,216.453125 L56.1278923,0 L0.0317009116,217.571777 Z",
+    duration: 1000,
+    easing: "easeInOutExpo",
+    direction: 'alternate',
+    loop: true
   });
-  // anime({
-  //   targets: "#circle-shadow",
-  //   translateY: '2758%'
-  //   translateX: '-50%',
-  //   delay: 350,
-  //   duration: 400
-  // });
 }
 
 window.onload = loadingCircle;
 startButton.addEventListener("mouseenter", raiseLoadingCircle, false);
 startButton.addEventListener("mouseleave", lowerLoadingCircle, false);
 startButton.addEventListener("click", invertCircle, false);
-spotlight.addEventListener("click", easterEggs, false);
-circleShadow.addEventListener("click", easterEggs, false);
-popUpMask.addEventListener("click", easterEggs, false);
+spotlight.addEventListener("click", easterEggs);
+circleShadow.addEventListener("click", easterEggs);
+popUpMask.addEventListener("click", easterEggs);

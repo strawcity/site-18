@@ -44,21 +44,24 @@ body {
       left: 50%;
       top: 50%;
       width: 20%;
-      height: auto;
+      height: 35.75%;
       transform: scaleY(1);
       cursor: pointer;
-    }
-
-    #circle-shadow {
-      display: none;
-      opacity: 0;
-      position: absolute;
-      left: 50%;
-      top: 79.6%;
-      width: 20.2%;
-      height: auto;
-      transform: scaleY(1);
-      cursor: pointer;
+      #spotlight-svg {
+        width: 100%;
+        height: auto;
+        transform: scaleY(1);
+      }
+      #circle-shadow {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 22%;
+        width: 101.3%;
+        left: -1px;
+        height: auto;
+        cursor: pointer;
+      }
     }
 
     #pop-up-mask {
@@ -66,7 +69,7 @@ body {
       opacity: 0;
       position: absolute;
       left: 50%;
-      top: 90.4%;
+      top: 91.3%;
       width: 20.2%;
       height: auto;
       transform: scaleY(1);
@@ -82,11 +85,17 @@ body {
       overflow: hidden;
       left: 40%;
       bottom: 1%;
-      // display: none;
       #basketball-lines {
         bottom: 5px;
         position: relative;
       }
+    }
+
+    #tractor-beam {
+      position: absolute;
+      left: 40%;
+      top: 15%;
+      opacity: 0;
     }
   }
 }
