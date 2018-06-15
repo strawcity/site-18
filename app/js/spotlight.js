@@ -1,5 +1,7 @@
 var startButton = document.querySelector("#loading-circle");
 var spotlight = document.querySelector("#spotlight");
+var circleShadow = document.querySelector("#circle-shadow");
+var popUpMask = document.querySelector("#pop-up-mask");
 var durationTime = 400;
 
 function loadingCircle() {
@@ -35,19 +37,27 @@ function lowerLoadingCircle() {
 
 function invertCircle() {
   startButton.remove();
+  spotlight.style.display = "block";
   anime({
     targets: ".screen-frame",
     background: '#000',
-    duration: 1500
+    duration: 1000
   });
   anime({
     targets: "#spotlight",
     opacity: 1,
-    duration: 1500
+    duration: 1000
+  });
+  anime({
+    targets: '#title-credit',
+    opacity: 1,
+    duration: 1000
   });
 }
 
 function makeSpotlight() {
+  circleShadow.style.display = "block";
+  popUpMask.style.display = "block";
   anime({
     targets: "#spotlight",
     scaleY: 0.2,
@@ -59,7 +69,7 @@ function makeSpotlight() {
   anime({
     targets: "#circle-shadow",
     opacity: 1,
-    delay: 400,
+    delay: 350,
     duration: 400
   });
   anime({
@@ -69,9 +79,37 @@ function makeSpotlight() {
     duration: 400
   });
   anime({
-    targets: '.credits',
+    targets: '#about-credit',
     opacity: 1,
     duration: 1500
+  });
+}
+
+function pumpOut() {
+  anime({
+    targets: "#spotlight",
+    scaleY: 0.19,
+    translateX: '-50%',
+    translateY: '218%',
+    easing: "easeInOutCubic",
+    direction: 'alternate',
+    duration: 100
+  });
+  anime({
+    targets: "#circle-shadow",
+    translateX: '-50%',
+    translateY: '-32%',
+    easing: "easeInOutCubic",
+    direction: 'alternate',
+    duration: 100
+  });
+  anime({
+    targets: "#pop-up-mask",
+    scaleY: 0.9,
+    translateX: '-50%',
+    translateY: '-50%',
+    direction: 'alternate',
+    duration: 100
   });
 }
 
@@ -80,3 +118,5 @@ startButton.addEventListener("mouseenter", raiseLoadingCircle, false);
 startButton.addEventListener("mouseleave", lowerLoadingCircle, false);
 startButton.addEventListener("click", invertCircle);
 spotlight.addEventListener("click", makeSpotlight);
+circleShadow.addEventListener("click", pumpOut);
+// popUpMask.addEventListener("click", pumpOut);

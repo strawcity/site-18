@@ -3,7 +3,9 @@
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  margin: 30px;
+  padding: 30px;
+  max-width: 970px;
+  margin: 0 auto;
   h1, h2, h3, h4, h5, p {
     margin: 0;
   }
@@ -35,6 +37,7 @@ body {
     }
 
     #spotlight {
+      display: none;
       opacity: 0;
       position: absolute;
       left: 50%;
@@ -46,6 +49,7 @@ body {
     }
 
     #circle-shadow {
+      display: none;
       opacity: 0;
       position: absolute;
       left: 50%;
@@ -57,6 +61,7 @@ body {
     }
 
     #pop-up-mask {
+      display: none;
       opacity: 0;
       position: absolute;
       left: 50%;
@@ -71,9 +76,14 @@ body {
 }
 
 .credits {
-  opacity: 0;
   margin-top: 25px;
-  #name-title {
-    text-align: center;
+  #about-credit {
+    opacity: 0;
+  }
+  #title-credit {
+    opacity: 0;
+  }
+  #contact-credit {
+    opacity: 0;
   }
 }

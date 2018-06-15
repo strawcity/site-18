@@ -640,7 +640,9 @@
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  margin: 30px; }
+  padding: 30px;
+  max-width: 970px;
+  margin: 0 auto; }
   body h1, body h2, body h3, body h4, body h5, body p {
     margin: 0; }
 
@@ -664,6 +666,7 @@ body {
     .screen .screen-frame #loading-circle img {
       width: 100%; }
   .screen .screen-frame #spotlight {
+    display: none;
     opacity: 0;
     position: absolute;
     left: 50%;
@@ -673,6 +676,7 @@ body {
     transform: scaleY(1);
     cursor: pointer; }
   .screen .screen-frame #circle-shadow {
+    display: none;
     opacity: 0;
     position: absolute;
     left: 50%;
@@ -682,6 +686,7 @@ body {
     transform: scaleY(1);
     cursor: pointer; }
   .screen .screen-frame #pop-up-mask {
+    display: none;
     opacity: 0;
     position: absolute;
     left: 50%;
@@ -692,7 +697,10 @@ body {
     cursor: pointer; }
 
 .credits {
-  opacity: 0;
   margin-top: 25px; }
-  .credits #name-title {
-    text-align: center; }
+  .credits #about-credit {
+    opacity: 0; }
+  .credits #title-credit {
+    opacity: 0; }
+  .credits #contact-credit {
+    opacity: 0; }
