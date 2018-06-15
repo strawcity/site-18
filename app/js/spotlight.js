@@ -70,7 +70,11 @@ function easterEggs() {
       break;
     case clickCount === 2:
       console.log(clickCount);
-      pumpOut();
+      basketballToss();
+      break;
+    case clickCount === 3:
+      console.log(clickCount);
+      animationThree();
       break;
     default:
 
@@ -109,7 +113,7 @@ function makeSpotlight() {
   });
 }
 
-function pumpOut() {
+function basketballToss() {
   clickCount = 3;
   anime({
     targets: "#basketball",
@@ -146,10 +150,37 @@ function pumpOut() {
   });
 }
 
+function animationThree() {
+  clickCount = 4;
+  anime({
+    targets: "#circle-shadow",
+    scaleY: -0.5,
+    translateX: '-50%',
+    easing: "easeInOutCubic",
+    duration: 100
+  });
+  anime({
+    targets: "#spotlight",
+    scaleY: 0.2,
+    translateX: '-50%',
+    translateY: '-700%',
+    easing: "easeInOutCubic",
+    delay: 350,
+    duration: 400
+  });
+  // anime({
+  //   targets: "#circle-shadow",
+  //   translateY: '2758%'
+  //   translateX: '-50%',
+  //   delay: 350,
+  //   duration: 400
+  // });
+}
+
 window.onload = loadingCircle;
 startButton.addEventListener("mouseenter", raiseLoadingCircle, false);
 startButton.addEventListener("mouseleave", lowerLoadingCircle, false);
-startButton.addEventListener("click", invertCircle);
-spotlight.addEventListener("click", easterEggs);
-circleShadow.addEventListener("click", easterEggs);
-popUpMask.addEventListener("click", easterEggs);
+startButton.addEventListener("click", invertCircle, false);
+spotlight.addEventListener("click", easterEggs, false);
+circleShadow.addEventListener("click", easterEggs, false);
+popUpMask.addEventListener("click", easterEggs, false);
