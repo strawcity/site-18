@@ -701,17 +701,18 @@ body {
       transform: scaleY(1);
       cursor: pointer; }
     .screen .screen-frame #basketball {
-      width: 20%;
-      height: 35.75%;
+      width: 15%;
+      height: 26%;
       border-radius: 120px;
       background: orange;
       position: absolute;
       overflow: hidden;
-      left: 40%;
+      left: 42.6%;
       bottom: 1%; }
       .screen .screen-frame #basketball #basketball-lines {
         bottom: 5px;
-        position: relative; }
+        position: relative;
+        width: 161%; }
     .screen .screen-frame #tractor-beam {
       position: absolute;
       left: 40%;

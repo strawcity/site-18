@@ -96,7 +96,6 @@ function makeSpotlight() {
     delay: 800,
     duration: 400,
     complete: function(anim) {
-      console.log(anim.completed);
       return clickCount = 2;
     }
   });
@@ -110,16 +109,17 @@ function makeSpotlight() {
 function basketballToss() {
   anime({
     targets: "#basketball",
-    translateY: '-140%',
+    translateY: '-170%',
     easing: "easeOutCubic",
     direction: 'alternate',
     duration: 1000
   });
   anime({
     targets: "#basketball-lines",
-    bottom: 52,
+    bottom: 33,
     easing: "easeInSine",
-    duration: 1500,
+    delay: 100,
+    duration: 1700,
     complete: function(anim) {
       return clickCount = 3;
     }
@@ -127,14 +127,13 @@ function basketballToss() {
 }
 
 function beginUFO() {
-  console.log('begin');
   popUpMask.style.display = "none";
   anime({
     targets: "#circle-shadow",
     scaleY: -2,
-    translateY: '-170%',
-    easing: "easeInOutExpo",
-    duration: 500,
+    translateY: '-146%',
+    easing: "easeOutSine",
+    duration: 350,
     complete: function(anim) {
       transitionUFO();
     }
@@ -148,7 +147,8 @@ function transitionUFO() {
       translateY: '59%',
       easing: "easeInOutExpo",
       delay: 500,
-      duration: 2200
+      elasticity: 0,
+      duration: 950
     });
     anime({
       targets: "#spotlight",
@@ -156,8 +156,8 @@ function transitionUFO() {
       translateX: '-50%',
       translateY: '-700%',
       easing: "easeInOutExpo",
-      delay: 500,
-      duration: 2500,
+      delay: 100,
+      duration: 1750,
       complete: function(anim) {
         flickerTractorBeam();
       }
@@ -165,7 +165,7 @@ function transitionUFO() {
     anime({
       targets: "#tractor-beam",
       opacity: 1,
-      delay: 2500,
+      delay: 1500,
       duration: 2500
     });
 }
@@ -173,12 +173,40 @@ function transitionUFO() {
 function flickerTractorBeam() {
   anime({
     targets: "#tractor-beam path",
-    opacity: 0.9,
-    d: "M0.0317009116,217.571777 C-0.359900651,227.125163 2.87659023,231.901855 9.74117357,231.901855 C16.6057569,231.901855 22.724572,227.125163 28.0976189,217.571777 C29.5253533,227.125163 33.7948845,231.901855 40.9062126,231.901855 C48.0175408,231.901855 53.1773715,227.125163 56.3857048,217.571777 C57.9911736,227.125163 62.4402296,231.901855 69.7328728,231.901855 C77.025516,231.901855 81.8743116,226.752279 84.2792595,216.453125 C85.6005486,226.752279 90.5434197,231.901855 99.1078728,231.901855 C107.672326,231.901855 112.044396,226.752279 112.224084,216.453125 L56.1278923,0 L0.0317009116,217.571777 Z",
-    duration: 1000,
+    fill: "#B7FDFF",
+    duration: 500,
     easing: "easeInOutExpo",
     direction: 'alternate',
     loop: true
+  });
+  anime({
+    targets: "#tractor-beam ellipse",
+    fill: "#74F9FD",
+    duration: 500,
+    easing: "easeInOutExpo",
+    direction: 'alternate',
+    loop: true
+  });
+  anime({
+    targets: "#tractor-beam",
+    duration: 1500,
+    skewX: 17,
+    translateX: '20%',
+    complete: function(anim) {
+      shiftTractorBeamLeft();
+      return clickCount = 4;
+    }
+  });
+}
+function shiftTractorBeamLeft() {
+  anime({
+    targets: "#tractor-beam",
+    duration: 1500,
+    skewX: -17,
+    translateX: '-20%',
+    complete: function(anim) {
+      flickerTractorBeam();
+    }
   });
 }
 
