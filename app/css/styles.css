@@ -651,7 +651,8 @@ body {
   background: blue; }
 
 .screen {
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 0; }
   .screen .screen-frame {
     width: 100%;
     padding-bottom: 56.25%;
@@ -714,10 +715,28 @@ body {
         position: relative;
         width: 161%; }
     .screen .screen-frame #tractor-beam {
+      display: none;
       position: absolute;
       left: 40%;
       top: 15%;
       opacity: 0; }
+    .screen .screen-frame #record #record-lines,
+    .screen .screen-frame #record #record-pin,
+    .screen .screen-frame #record #record-needle {
+      position: absolute; }
+    .screen .screen-frame #record #record-lines {
+      width: 70%;
+      left: 15%;
+      bottom: 21.8%; }
+    .screen .screen-frame #record #record-pin {
+      width: 2.3%;
+      z-index: 2;
+      bottom: 34%;
+      left: 48.7%; }
+    .screen .screen-frame #record #record-needle {
+      width: 68%;
+      top: 12%;
+      left: 79%; }
 
 .credits {
   margin-top: 25px; }

@@ -2,18 +2,24 @@ var startButton = document.querySelector("#loading-circle");
 var spotlight = document.querySelector("#spotlight");
 var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
+var tractorBeam = document.querySelector("#tractor-beam");
+var recordNeedle = document.querySelector("#record-needle");
 var clickCount;
 
 function easterEggs() {
   switch (true) {
     case clickCount === 1:
-      makeSpotlight();
+      makeHole();
       break;
     case clickCount === 2:
+      // putYourRecordsOn();
       basketballToss();
       break;
     case clickCount === 3:
       beginUFO();
+      break;
+    case clickCount === 4:
+      putYourRecordsOn();
       break;
     default:
 
@@ -72,7 +78,10 @@ function invertCircle() {
   });
 }
 
-function makeSpotlight() {
+
+
+//    Make the Hole    ///
+function makeHole() {
   circleShadow.style.display = "block";
   popUpMask.style.display = "block";
   anime({
@@ -106,6 +115,8 @@ function makeSpotlight() {
   });
 }
 
+
+//    Basketball    ///
 function basketballToss() {
   anime({
     targets: "#basketball",
@@ -118,14 +129,16 @@ function basketballToss() {
     targets: "#basketball-lines",
     bottom: 33,
     easing: "easeInSine",
-    delay: 100,
-    duration: 1700,
+    delay: 150,
+    duration: 1600,
     complete: function(anim) {
       return clickCount = 3;
     }
   });
 }
 
+
+//    UFO    ///
 function beginUFO() {
   popUpMask.style.display = "none";
   anime({
@@ -139,8 +152,8 @@ function beginUFO() {
     }
   });
 }
-
 function transitionUFO() {
+    tractorBeam.style.display = "block";
     anime({
       targets: "#circle-shadow",
       scaleY: 2,
@@ -158,18 +171,17 @@ function transitionUFO() {
       easing: "easeInOutExpo",
       delay: 100,
       duration: 1750,
-      complete: function(anim) {
-        flickerTractorBeam();
-      }
     });
     anime({
       targets: "#tractor-beam",
       opacity: 1,
       delay: 1500,
-      duration: 2500
+      duration: 2500,
+      complete: function(anim) {
+        return clickCount = 4;
+      }
     });
 }
-
 function flickerTractorBeam() {
   anime({
     targets: "#tractor-beam path",
@@ -189,24 +201,99 @@ function flickerTractorBeam() {
   });
   anime({
     targets: "#tractor-beam",
-    duration: 1500,
+    duration: 750,
     skewX: 17,
     translateX: '20%',
-    complete: function(anim) {
-      shiftTractorBeamLeft();
-      return clickCount = 4;
-    }
   });
 }
 function shiftTractorBeamLeft() {
   anime({
     targets: "#tractor-beam",
-    duration: 1500,
+    duration: 750,
     skewX: -17,
     translateX: '-20%',
+  });
+  anime({
+    targets: "#tractor-beam path",
+    fill: "#74F9FD",
+    duration: 500,
+    easing: "easeInOutExpo",
+    direction: 'alternate',
+    loop: true
+  });
+  anime({
+    targets: "#tractor-beam ellipse",
+    fill: "#B7FDFF",
+    duration: 500,
+    easing: "easeInOutExpo",
+    direction: 'alternate',
+    loop: true
+  });
+}
+
+function putYourRecordsOn() {
+  tractorBeam.style.display = "none";
+  anime({
+    targets: "#circle-shadow",
+    scaleY: 6,
+    translateY: '-30%',
+    easing: "easeInOutExpo",
+    opacity: 0,
+    duration: 550
+  });
+  anime({
+    targets: "#tractor-beam",
+    opacity: 0,
+    duration: 150
+  });
+  anime({
+    targets: "#spotlight",
+    scaleY: 0.3,
+    translateX: '-50%',
+    translateY: '-80%',
+    easing: "easeInOutExpo",
+    duration: 1500,
+  });
+  anime({
+    targets: "#record-lines",
+    scale: 1,
+    easing: "easeOutExpo",
+    duration: 1500,
+    opacity: 1,
+    delay: 1300
+  });
+  anime({
+    targets: "#record-pin",
+    translateY: '-90%',
+    opacity: 1,
+    easing: "easeOutExpo",
+    duration: 1500,
+    opacity: 1,
+    delay: 1300
+  });
+  anime({
+    targets: "#record-needle",
+    rotate: 0,
+    skewX: 0,
+    translateX: '-14%',
+    easing: "easeOutExpo",
+    duration: 2200,
+    delay: 2800,
     complete: function(anim) {
-      flickerTractorBeam();
+      recordSkip();
+      return clickCount = 5;
     }
+  });
+}
+
+function recordSkip() {
+  anime({
+    targets: "#record-needle",
+    rotate: 0.3,
+    translateX: '-14%',
+    duration: 500,
+    direction: 'alternate',
+    loop: true
   });
 }
 
@@ -217,3 +304,5 @@ startButton.addEventListener("click", invertCircle, false);
 spotlight.addEventListener("click", easterEggs);
 circleShadow.addEventListener("click", easterEggs);
 popUpMask.addEventListener("click", easterEggs);
+tractorBeam.addEventListener("mouseenter", flickerTractorBeam, false);
+tractorBeam.addEventListener("mouseleave", shiftTractorBeamLeft, false);

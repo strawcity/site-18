@@ -18,6 +18,7 @@ body {
 
 .screen {
   overflow: hidden;
+  padding: 0;
   .screen-frame {
     width: 100%;
     padding-bottom: 56.25%;
@@ -93,10 +94,36 @@ body {
     }
 
     #tractor-beam {
+      display: none;
       position: absolute;
       left: 40%;
       top: 15%;
       opacity: 0;
+    }
+
+    #record {
+      #record-lines,
+      #record-pin,
+      #record-needle,{
+        position: absolute;
+      }
+      #record-lines {
+        width: 70%;
+        left: 15%;
+        bottom: 21.8%;
+      }
+      #record-pin {
+        width: 2.3%;
+        z-index: 2;
+        // top: 53.5%;
+        bottom: 34%;
+        left: 48.7%;
+      }
+      #record-needle {
+        width: 68%;
+        top: 12%;
+        left: 79%;
+      }
     }
   }
 }
