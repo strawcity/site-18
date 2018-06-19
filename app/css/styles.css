@@ -720,14 +720,21 @@ body {
       left: 40%;
       top: 15%;
       opacity: 0; }
+    .screen .screen-frame #record #record-shine,
     .screen .screen-frame #record #record-lines,
     .screen .screen-frame #record #record-pin,
-    .screen .screen-frame #record #record-needle {
+    .screen .screen-frame #record #record-needle,
+    .screen .screen-frame #record #speaker-on,
+    .screen .screen-frame #record #speaker-off {
       position: absolute; }
+    .screen .screen-frame #record #record-shine {
+      width: 22%;
+      left: 38.8%;
+      top: -15%; }
     .screen .screen-frame #record #record-lines {
       width: 70%;
       left: 15%;
-      bottom: 21.8%; }
+      bottom: 21%; }
     .screen .screen-frame #record #record-pin {
       width: 2.3%;
       z-index: 2;
@@ -736,7 +743,20 @@ body {
     .screen .screen-frame #record #record-needle {
       width: 68%;
       top: 12%;
-      left: 79%; }
+      left: 79%;
+      cursor: pointer; }
+    .screen .screen-frame #record #speaker-on {
+      cursor: pointer;
+      opacity: 0;
+      left: 90.2%;
+      height: 33px;
+      bottom: 8%; }
+    .screen .screen-frame #record #speaker-off {
+      cursor: pointer;
+      opacity: 0;
+      left: 90%;
+      height: 33px;
+      bottom: 8%; }
 
 .credits {
   margin-top: 25px; }

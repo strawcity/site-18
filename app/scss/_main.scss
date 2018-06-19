@@ -102,20 +102,27 @@ body {
     }
 
     #record {
+      #record-shine,
       #record-lines,
       #record-pin,
-      #record-needle,{
+      #record-needle,
+      #speaker-on,
+      #speaker-off {
         position: absolute;
+      }
+      #record-shine {
+        width: 22%;
+        left: 38.8%;
+        top: -15%;
       }
       #record-lines {
         width: 70%;
         left: 15%;
-        bottom: 21.8%;
+        bottom: 21%;
       }
       #record-pin {
         width: 2.3%;
         z-index: 2;
-        // top: 53.5%;
         bottom: 34%;
         left: 48.7%;
       }
@@ -123,6 +130,21 @@ body {
         width: 68%;
         top: 12%;
         left: 79%;
+        cursor: pointer;
+      }
+      #speaker-on {
+        cursor: pointer;
+        opacity: 0;
+        left: 90.2%;
+        height: 33px;
+        bottom: 8%;
+      }
+      #speaker-off {
+        cursor: pointer;
+        opacity: 0;
+        left: 90%;
+        height: 33px;
+        bottom: 8%;
       }
     }
   }
