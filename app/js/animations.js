@@ -374,3 +374,4 @@ function playGibbo() {
 }
 
 document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
+document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
