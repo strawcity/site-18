@@ -310,7 +310,7 @@ function putYourRecordsOn() {
         value: '+=11000',
         duration: 1000000
       },
-      opacity: 1,
+      opacity: 0.7,
       easing: "easeOutExpo",
       delay: 800
     });

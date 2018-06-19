@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="3012px" height="855px" viewBox="0 0 3012 855" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="3014px" height="857px" viewBox="0 0 3014 857" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>record-lines</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="record" transform="translate(-146.000000, -397.000000)">
+        <g id="record" transform="translate(-145.000000, -396.000000)">
             <g id="record-lines" transform="translate(9.000000, 371.000000)">
                 <ellipse id="record-rim" cx="1643" cy="467.5" rx="1643" ry="467.5"></ellipse>
-                <ellipse id="record-track-1" stroke="#979797" cx="1643" cy="453.5" rx="1505" ry="426.5"></ellipse>
-                <ellipse id="record-track-2" stroke="#979797" cx="1643" cy="441.5" rx="1316" ry="373.5"></ellipse>
-                <ellipse id="record-track-3" stroke="#979797" cx="1643.5" cy="423" rx="1101.5" ry="319"></ellipse>
-                <ellipse id="record-track-4" stroke="#979797" cx="1643.5" cy="424" rx="938.5" ry="269"></ellipse>
-                <ellipse id="record-inner-circle" stroke="#979797" cx="1643.5" cy="418" rx="741.5" ry="217"></ellipse>
+                <ellipse id="record-track-1" stroke="#4E4E4E" stroke-width="4" cx="1643" cy="453.5" rx="1505" ry="426.5"></ellipse>
+                <ellipse id="record-track-2" stroke="#4E4E4E" stroke-width="4" cx="1643" cy="441.5" rx="1316" ry="373.5"></ellipse>
+                <ellipse id="record-track-3" stroke="#4E4E4E" stroke-width="4" cx="1643.5" cy="423" rx="1101.5" ry="319"></ellipse>
+                <ellipse id="record-track-4" stroke="#4E4E4E" stroke-width="4" cx="1643.5" cy="424" rx="938.5" ry="269"></ellipse>
+                <ellipse id="record-inner-circle" stroke="#4E4E4E" stroke-width="4" cx="1643.5" cy="418" rx="741.5" ry="217"></ellipse>
             </g>
         </g>
     </g>
