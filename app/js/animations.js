@@ -24,14 +24,17 @@ function easterEggs() {
       makeHole();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
-      // putYourRecordsOn();
-      basketballToss();
+      putYourRecordsOn();
+      // basketballToss();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
       beginUFO();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
       putYourRecordsOn();
+      break;
+    case animationState[1] === 5 && animationState[0] !== true:
+      fiedEgg();
       break;
     default:
 
@@ -166,7 +169,6 @@ function basketballToss() {
 ///    UFO    ///
 function beginUFO() {
   if (animationState[0] !== true) {
-    console.log('animation can start');
     popUpMask.style.display = "none";
     anime({
       targets: "#circle-shadow",
@@ -306,10 +308,10 @@ function putYourRecordsOn() {
     });
     anime({
       targets: "#record-shine",
-      rotateZ: {
-        value: '+=11000',
-        duration: 1000000
-      },
+      // rotateZ: {
+      //   value: '+=11000',
+      //   duration: 1000000
+      // },
       opacity: 0.7,
       easing: "easeOutExpo",
       delay: 800
@@ -320,28 +322,20 @@ function putYourRecordsOn() {
       skewX: 0,
       translateX: '-14%',
       easing: "easeOutExpo",
-      duration: 2200,
-      delay: 2800,
+      duration: 1500,
+      delay: 1500,
       complete: function(anim) {
-        recordSkip();
+        showSpeaker();
         return animationState = [false, 5];
       }
     });
   }
 }
-function recordSkip() {
+function showSpeaker() {
   anime({
     targets: "#speaker-off",
     opacity: 0.5,
     duration: 800,
-  });
-  anime({
-    targets: "#record-needle",
-    rotate: 0.3,
-    translateX: '-14%',
-    duration: 378,
-    direction: 'alternate',
-    loop: true
   });
 }
 
@@ -375,3 +369,80 @@ function playGibbo() {
 
 document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
 document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
+
+
+///   EGG   ///
+function fiedEgg() {
+  if (animationState[0] !== true) {
+    animationState[0] = true;
+    anime({
+      targets: "#yolk",
+      scaleX: 1,
+      opacity: 0,
+      easing: "easeOutQuad",
+      duration: 1050
+    });
+    anime({
+      targets: "#record-lines",
+      scale: 0,
+      easing: "easeOutExpo",
+      duration: 300,
+      opacity: 0
+    });
+    anime({
+      targets: "#record-pin",
+      translateX: '-257%',
+      translateY: '-57%',
+      scaleX: 4,
+      easing: "easeOutExpo",
+      duration: 2000,
+      complete: function(anim) {
+        eggRun();
+      }
+    });
+    anime({
+      targets: "#record-shine",
+      opacity: 0,
+      easing: "easeOutExpo",
+    });
+    anime({
+      targets: "#record-needle",
+      rotate: 18,
+      skewX: 65,
+      translateX: '14%',
+      easing: "easeOutExpo",
+      duration: 400,
+      complete: function(anim) {
+        return animationState = [false, 6];
+      }
+    });
+    anime({
+      targets: "#speaker-off",
+      opacity: 0,
+      duration: 1200,
+    });
+    anime({
+      targets: "#speaker-on",
+      opacity: 0,
+      duration: 1200,
+    });
+  }
+}
+
+function eggRun() {
+  anime({
+    targets: "#egg-white",
+    scaleX: 0.8,
+    scaleY: 0.8,
+    opacity: 1,
+    easing: "easeOutQuad",
+    duration: 1050,
+  });
+  anime({
+    targets: "#egg-white",
+    scaleX: 1,
+    scaleY: 1,
+    easing: "easeOutQuart",
+    duration: 2500,
+  });
+}

@@ -147,6 +147,21 @@ body {
         bottom: 8%;
       }
     }
+    #fried-egg {
+      #yolk {
+        position: absolute;
+        width: 10%;
+        top: 52%;
+        left: 40%;
+        z-index: 2;
+      }
+      #egg-white {
+        position: absolute;
+        width: 41%;
+        top: 52%;
+        left: 31%;
+      }
+    }
   }
 }
 
