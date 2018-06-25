@@ -21,11 +21,13 @@ function easterEggs() {
   console.log(animationState);
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
-      makeHole();
+      // makeHole();
+      dartBoard();
+      // putYourRecordsOn();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
-      putYourRecordsOn();
-      // basketballToss();
+
+      basketballToss();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
       beginUFO();
@@ -34,7 +36,7 @@ function easterEggs() {
       putYourRecordsOn();
       break;
     case animationState[1] === 5 && animationState[0] !== true:
-      fiedEgg();
+      dartBoard();
       break;
     default:
 
@@ -110,23 +112,24 @@ function makeHole() {
     anime({
       targets: "#spotlight",
       scaleY: 0.2,
+      scaleX: 1,
       translateX: '-50%',
       translateY: '190%',
       easing: "easeInOutCubic",
-      duration: 800
+      duration: 450
     });
     anime({
       targets: "#circle-shadow",
       scaleY: 5,
       opacity: 1,
-      delay: 350,
-      duration: 800
+      delay: 250,
+      duration: 450
     });
     anime({
       targets: "#pop-up-mask",
       opacity: 1,
-      delay: 800,
-      duration: 400,
+      delay: 400,
+      duration: 450,
       complete: function(anim) {
         return animationState = [false, 2];
       }
@@ -175,7 +178,7 @@ function beginUFO() {
       scaleY: -2,
       translateY: '-146%',
       easing: "easeOutSine",
-      duration: 350,
+      duration: 200,
       complete: function(anim) {
         transitionUFO();
       }
@@ -197,6 +200,7 @@ function transitionUFO() {
     anime({
       targets: "#spotlight",
       scaleY: 0.2,
+      scaleX: 1,
       translateX: '-50%',
       translateY: '-700%',
       easing: "easeInOutExpo",
@@ -273,9 +277,9 @@ function putYourRecordsOn() {
       targets: "#circle-shadow",
       scaleY: 6,
       translateY: '-30%',
-      easing: "easeInOutExpo",
+      easing: "easeInOutQuad",
       opacity: 0,
-      duration: 550
+      duration: 350
     });
     anime({
       targets: "#tractor-beam",
@@ -285,36 +289,34 @@ function putYourRecordsOn() {
     anime({
       targets: "#spotlight",
       scaleY: 0.3,
+      scaleX: 1,
       translateX: '-50%',
       translateY: '-80%',
-      easing: "easeInOutExpo",
-      duration: 1500,
+      easing: "easeInOutQuad",
+      duration: 1000,
     });
     anime({
       targets: "#record-lines",
       scale: 1,
-      easing: "easeOutExpo",
-      duration: 1500,
+      easing: "easeInOutQuad",
+      duration: 1000,
       opacity: 1,
-      delay: 600
+      delay: 200
     });
     anime({
       targets: "#record-pin",
       translateY: '-90%',
-      easing: "easeOutExpo",
-      duration: 1500,
+      easing: "easeInOutQuad",
+      duration: 1000,
       opacity: 1,
-      delay: 500
+      delay: 200
     });
     anime({
       targets: "#record-shine",
-      // rotateZ: {
-      //   value: '+=11000',
-      //   duration: 1000000
-      // },
       opacity: 0.7,
       easing: "easeOutExpo",
-      delay: 800
+      duration: 1000,
+      delay: 200
     });
     anime({
       targets: "#record-needle",
@@ -323,7 +325,7 @@ function putYourRecordsOn() {
       translateX: '-14%',
       easing: "easeOutExpo",
       duration: 1500,
-      delay: 1500,
+      delay: 1000,
       complete: function(anim) {
         showSpeaker();
         return animationState = [false, 5];
@@ -370,18 +372,13 @@ function playGibbo() {
 document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
 document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
 
-
-///   EGG   ///
-function fiedEgg() {
+function dartBoard() {
   if (animationState[0] !== true) {
+    tractorBeam.style.display = "none";
+    document.querySelector("#speaker-off").style.display = "none";
+    document.querySelector("#speaker-on").style.display = "none";
+    gibbo.pause();
     animationState[0] = true;
-    anime({
-      targets: "#yolk",
-      scaleX: 1,
-      opacity: 0,
-      easing: "easeOutQuad",
-      duration: 1050
-    });
     anime({
       targets: "#record-lines",
       scale: 0,
@@ -391,14 +388,9 @@ function fiedEgg() {
     });
     anime({
       targets: "#record-pin",
-      translateX: '-257%',
-      translateY: '-57%',
-      scaleX: 4,
+      opacity: 0,
       easing: "easeOutExpo",
-      duration: 2000,
-      complete: function(anim) {
-        eggRun();
-      }
+      duration: 700
     });
     anime({
       targets: "#record-shine",
@@ -411,10 +403,7 @@ function fiedEgg() {
       skewX: 65,
       translateX: '14%',
       easing: "easeOutExpo",
-      duration: 400,
-      complete: function(anim) {
-        return animationState = [false, 6];
-      }
+      duration: 700,
     });
     anime({
       targets: "#speaker-off",
@@ -426,23 +415,30 @@ function fiedEgg() {
       opacity: 0,
       duration: 1200,
     });
+    anime({
+      targets: "#spotlight",
+      scaleY: 1,
+      scaleX: 0.5,
+      translateX: '270%',
+      translateY: '-80%',
+      easing: "easeInOutQuad",
+      duration: 500,
+    });
+    anime({
+      targets: "#dart-board",
+      opacity: 1,
+      easing: "easeInOutQuad",
+      delay: 400,
+      duration: 100
+    });
+    anime({
+      targets: "#dart-1",
+      translateX: '1070%',
+      translateY: '-185%',
+      easing: "easeOutSine",
+      rotate: 6,
+      delay: 1500,
+      duration: 200
+    });
   }
-}
-
-function eggRun() {
-  anime({
-    targets: "#egg-white",
-    scaleX: 0.8,
-    scaleY: 0.8,
-    opacity: 1,
-    easing: "easeOutQuad",
-    duration: 1050,
-  });
-  anime({
-    targets: "#egg-white",
-    scaleX: 1,
-    scaleY: 1,
-    easing: "easeOutQuart",
-    duration: 2500,
-  });
 }

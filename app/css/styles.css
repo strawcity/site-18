@@ -682,6 +682,9 @@ body {
         width: 100%;
         height: auto;
         transform: scaleY(1); }
+      .screen .screen-frame #spotlight #dart-board {
+        transform: translateX(-1%) translateY(-99.5%);
+        width: 102%; }
       .screen .screen-frame #spotlight #circle-shadow {
         display: none;
         opacity: 0;
@@ -757,17 +760,12 @@ body {
       left: 90%;
       height: 33px;
       bottom: 8%; }
-    .screen .screen-frame #fried-egg #yolk {
+    .screen .screen-frame #darts .dart {
       position: absolute;
-      width: 10%;
-      top: 52%;
-      left: 40%;
+      width: 8%;
+      top: 40%;
+      left: -10%;
       z-index: 2; }
-    .screen .screen-frame #fried-egg #egg-white {
-      position: absolute;
-      width: 41%;
-      top: 52%;
-      left: 31%; }
 
 .credits {
   margin-top: 25px; }

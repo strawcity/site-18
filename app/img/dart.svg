@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="182px" height="45px" viewBox="0 0 182 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>dart</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dart" transform="translate(91.500000, 18.000000) scale(-1, 1) rotate(4.000000) translate(-91.500000, -18.000000) translate(1.000000, -4.000000)">
+            <polygon id="dart-body" fill="#BF2C47" transform="translate(121.000000, 22.000000) rotate(90.000000) translate(-121.000000, -22.000000) " points="121 -38 126 82 116 82"></polygon>
+            <polygon id="dart-needle" fill="#FFFFFF" transform="translate(19.500000, 22.500000) scale(-1, 1) rotate(90.000000) translate(-19.500000, -22.500000) " points="19.5 3 22 42 17 42"></polygon>
+            <g id="Group" transform="translate(120.000000, 0.000000)">
+                <path d="M0,43.8877245 C14.3557209,28.9952954 27.0014235,21.6646699 37.937108,21.8958479 C46.3911104,22.0745637 54.0488491,26.4746207 60.9103243,35.0960189 L54.2551033,43.8877245 L0,43.8877245 Z" id="Path-9" fill="#A21F37" transform="translate(30.455162, 32.889136) scale(1, -1) translate(-30.455162, -32.889136) "></path>
+                <path d="M0,21.9971772 C14.3557209,7.10474814 27.0014235,-0.225877374 37.937108,0.00530064796 C46.3911104,0.184016444 54.0488491,4.58407345 60.9103243,13.2054717 L54.2551033,21.9971772 L0,21.9971772 Z" id="Path-9" fill="#BF2C47"></path>
+            </g>
+            <rect id="Rectangle-5" fill="#EEE69C" x="37" y="16" width="25" height="12" rx="2"></rect>
+        </g>
+    </g>
+</svg>
