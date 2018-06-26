@@ -38,6 +38,15 @@ function easterEggs() {
     case animationState[1] === 5 && animationState[0] !== true:
       dartBoard();
       break;
+    case animationState[1] === 6 && animationState[0] !== true:
+      dartTwo();
+      break;
+    case animationState[1] === 7 && animationState[0] !== true:
+      dartThree();
+      break;
+    case animationState[1] === 8 && animationState[0] !== true:
+      findTheGubee();
+      break;
     default:
 
   }
@@ -313,6 +322,10 @@ function putYourRecordsOn() {
     });
     anime({
       targets: "#record-shine",
+      rotateZ: {
+        value: '+=11000',
+        duration: 1000000
+      },
       opacity: 0.7,
       easing: "easeOutExpo",
       duration: 1000,
@@ -429,16 +442,108 @@ function dartBoard() {
       opacity: 1,
       easing: "easeInOutQuad",
       delay: 400,
-      duration: 100
+      duration: 300
     });
     anime({
       targets: "#dart-1",
-      translateX: '1070%',
-      translateY: '-185%',
-      easing: "easeOutSine",
-      rotate: 6,
-      delay: 1500,
-      duration: 200
+      translateX: '1381%',
+      translateY: '-243%',
+      easing: "linear",
+      rotate: 9,
+      delay: 800,
+      duration: 500,
+      complete: function(anim) {
+        return animationState = [false, 6];
+      }
     });
+    anime({
+      targets: "#dart-fins #fin-2",
+      duration: 100,
+      opacity: 1,
+      loop: 13,
+      direction: 'alternate',
+      easing: 'linear'
+    });
+    anime({
+      targets: "#dart-fins #fin-1",
+      duration: 100,
+      opacity: 0.6,
+      loop: 13,
+      direction: 'alternate',
+      easing: 'linear'
+    });
+  }
+}
+
+function dartTwo() {
+  if (animationState[0] !== true) {
+    anime({
+      targets: "#dart-2",
+      translateX: '1071%',
+      translateY: '-113%',
+      easing: "linear",
+      rotate: 4,
+      duration: 300,
+      complete: function(anim) {
+        return animationState = [false, 7];
+      }
+    });
+    anime({
+      targets: "#dart-fins #fin-2",
+      duration: 100,
+      opacity: 1,
+      loop: 13,
+      direction: 'alternate',
+      easing: 'linear'
+    });
+    anime({
+      targets: "#dart-fins #fin-1",
+      duration: 100,
+      opacity: 0.6,
+      loop: 13,
+      direction: 'alternate',
+      easing: 'linear'
+    });
+  }
+}
+
+function dartThree() {
+  if (animationState[0] !== true) {
+    anime({
+      targets: "#dart-3",
+      translateX: '1111%',
+      translateY: '-57%',
+      easing: "linear",
+      rotate: 7,
+      duration: 300,
+      complete: function(anim) {
+        return animationState = [false, 8];
+      }
+    });
+    anime({
+      targets: "#dart-fins #fin-2",
+      duration: 100,
+      opacity: 1,
+      loop: 13,
+      direction: 'alternate',
+      easing: 'linear'
+    });
+    anime({
+      targets: "#dart-fins #fin-1",
+      duration: 100,
+      opacity: 0.6,
+      loop: 13,
+      direction: 'alternate',
+      easing: 'linear'
+    });
+  }
+}
+
+function findTheGubee() {
+  if (animationState[0] !== true) {
+    document.querySelector("#dart-1").style.display = "none";
+    document.querySelector("#dart-2").style.display = "none";
+    document.querySelector("#dart-3").style.display = "none";
+    document.querySelector("#dart-board").style.display = "none";
   }
 }
