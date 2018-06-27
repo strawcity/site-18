@@ -21,9 +21,10 @@ function easterEggs() {
   console.log(animationState);
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
-      // makeHole();
-      dartBoard();
+      makeHole();
+      // dartBoard();
       // putYourRecordsOn();
+      // findTheGubee();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
 
@@ -229,22 +230,6 @@ function transitionUFO() {
 }
 function flickerTractorBeam() {
   anime({
-    targets: "#tractor-beam path",
-    fill: "#B7FDFF",
-    duration: 500,
-    easing: "easeInOutExpo",
-    direction: 'alternate',
-    loop: true
-  });
-  anime({
-    targets: "#tractor-beam ellipse",
-    fill: "#74F9FD",
-    duration: 500,
-    easing: "easeInOutExpo",
-    direction: 'alternate',
-    loop: true
-  });
-  anime({
     targets: "#tractor-beam",
     duration: 750,
     skewX: 17,
@@ -257,22 +242,6 @@ function shiftTractorBeamLeft() {
     duration: 750,
     skewX: -17,
     translateX: '-20%',
-  });
-  anime({
-    targets: "#tractor-beam path",
-    fill: "#74F9FD",
-    duration: 500,
-    easing: "easeInOutExpo",
-    direction: 'alternate',
-    loop: true
-  });
-  anime({
-    targets: "#tractor-beam ellipse",
-    fill: "#B7FDFF",
-    duration: 500,
-    easing: "easeInOutExpo",
-    direction: 'alternate',
-    loop: true
   });
 }
 
@@ -441,8 +410,8 @@ function dartBoard() {
       targets: "#dart-board",
       opacity: 1,
       easing: "easeInOutQuad",
-      delay: 400,
-      duration: 300
+      delay: 500,
+      duration: 400
     });
     anime({
       targets: "#dart-1",
@@ -450,7 +419,7 @@ function dartBoard() {
       translateY: '-243%',
       easing: "linear",
       rotate: 9,
-      delay: 800,
+      delay: 1200,
       duration: 500,
       complete: function(anim) {
         return animationState = [false, 6];
@@ -511,8 +480,8 @@ function dartThree() {
   if (animationState[0] !== true) {
     anime({
       targets: "#dart-3",
-      translateX: '1111%',
-      translateY: '-57%',
+      translateX: '1113%',
+      translateY: '-68%',
       easing: "linear",
       rotate: 7,
       duration: 300,
@@ -545,5 +514,43 @@ function findTheGubee() {
     document.querySelector("#dart-2").style.display = "none";
     document.querySelector("#dart-3").style.display = "none";
     document.querySelector("#dart-board").style.display = "none";
+    document.querySelector("#spotlight").style.display = "none";
+    document.querySelector("#flashlight-holder").style.display = "block";
+    document.querySelector("#flashlight-beam").style.display = "block";
+    document.querySelector("#flashlight-mask").style.display = "block";
+    anime({
+      targets: "#flashlight",
+      translateX: '57%',
+      elasticity: 10,
+      delay: 2500,
+      duration: 500
+    });
+    anime({
+      targets: "#flashlight-beam",
+      opacity: 1,
+      delay: 2900,
+      duration: 100,
+      complete: function(anim) {
+        rotateFlashlight();
+      }
+    });
+    anime({
+      targets: "#flashlight-mask",
+      opacity: 1,
+      delay: 2900,
+      duration: 100,
+    });
   }
+}
+
+function rotateFlashlight() {
+  anime({
+    targets: "#flashlight-holder",
+    rotate: 25,
+    translateX: '5%',
+    translateY: '117%',
+    delay: 1000,
+    easing: "easeInOutQuad",
+    duration: 3000
+  });
 }

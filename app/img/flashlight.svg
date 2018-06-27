@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="354px" height="124px" viewBox="0 0 354 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>flashlight</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50%" gradientTransform="translate(0.500000,0.500000),scale(1.000000,0.580645),rotate(180.000000),scale(1.000000,1.702669),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#2B2F18" offset="0%"></stop>
+            <stop stop-color="#383838" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flashlight">
+            <rect id="Rectangle-8-Copy" fill="#262626" x="0" y="19" width="230" height="86"></rect>
+            <path d="M254,124 C273.882251,124 290,96.2416545 290,62 C290,27.7583455 273.882251,0 254,0 C234.117749,0 198.751953,27.7583455 198.751953,62 C198.751953,96.2416545 234.117749,124 254,124 Z" id="Oval-6" fill="#262626"></path>
+            <rect id="Rectangle-8" fill="#262626" x="255" y="0" width="64" height="124"></rect>
+            <ellipse id="Oval-6" fill="url(#radialGradient-1)" cx="318" cy="62" rx="36" ry="62"></ellipse>
+            <ellipse id="Oval-6" fill="#818181" cx="318" cy="62" rx="29" ry="51"></ellipse>
+            <polygon id="Rectangle-9" fill="#686868" points="148.45963 28.9642857 203.210318 28.9642857 193.67123 45.75 138.920541 45.75"></polygon>
+            <polygon id="Rectangle-9" fill="#BDBDBD" points="194.09743 22.3864659 197.725045 29.7687378 189.091631 44.0714286 163.829869 44.3160836 160.355521 38.868103"></polygon>
+            <polygon id="Rectangle-9" fill="#FFFFFF" points="169.63889 22.25 194.434291 22.25 184.895203 39.0357143 160.099801 39.0357143"></polygon>
+        </g>
+    </g>
+</svg>
