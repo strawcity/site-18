@@ -5,7 +5,7 @@ var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
 var tractorBeam = document.querySelector("#tractor-beam");
 var recordNeedle = document.querySelector("#record-needle");
-var gibbo = new Audio('/audio/Gibbo-St.DenisBeatTape-05Tribe.m4a');
+var gibbo = new Audio('audio/Gibbo-St.DenisBeatTape-05Tribe.m4a');
 
 window.onload = loadingCircle;
 startButton.addEventListener("mouseenter", raiseLoadingCircle, false);
@@ -143,6 +143,11 @@ function makeHole() {
     });
     anime({
       targets: '#about-credit',
+      opacity: 1,
+      duration: 1500
+    });
+    anime({
+      targets: '#contact-credit',
       opacity: 1,
       duration: 1500
     });
@@ -573,12 +578,14 @@ function rotateFlashlight() {
       duration: 800,
       complete: function(anim) {
         mouseRun();
+        return animationState = [false, 9];
       }
     });
   }
 }
 
 function mouseRun() {
+  if (animationState[0] !== true) {
     anime({
       targets: "#flashlight-holder",
       rotate: 90,
@@ -603,6 +610,7 @@ function mouseRun() {
       delay: 1600,
       duration: 100
     });
+  }
 }
 
 document.querySelector("#flashlight-button").addEventListener("click", rotateFlashlight, false);
