@@ -22,12 +22,9 @@ function easterEggs() {
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
       makeHole();
-      // dartBoard();
-      // putYourRecordsOn();
-      // findTheGubee();
+      // eekAMouse();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
-
       basketballToss();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
@@ -46,7 +43,7 @@ function easterEggs() {
       dartThree();
       break;
     case animationState[1] === 8 && animationState[0] !== true:
-      findTheGubee();
+      eekAMouse();
       break;
     default:
 
@@ -508,7 +505,7 @@ function dartThree() {
   }
 }
 
-function findTheGubee() {
+function eekAMouse() {
   if (animationState[0] !== true) {
     document.querySelector("#dart-1").style.display = "none";
     document.querySelector("#dart-2").style.display = "none";
@@ -520,37 +517,92 @@ function findTheGubee() {
     document.querySelector("#flashlight-mask").style.display = "block";
     anime({
       targets: "#flashlight",
-      translateX: '57%',
+      translateX: '65%',
       elasticity: 10,
-      delay: 2500,
+      delay: 1000,
       duration: 500
     });
     anime({
-      targets: "#flashlight-beam",
+      targets: "#flashlight-button",
       opacity: 1,
-      delay: 2900,
-      duration: 100,
+      translateX: '199%',
+      delay: 1000,
+      duration: 600,
       complete: function(anim) {
-        rotateFlashlight();
+        return animationState = [false, 9];
       }
     });
     anime({
       targets: "#flashlight-mask",
       opacity: 1,
-      delay: 2900,
-      duration: 100,
+      delay: 1400,
+      duration: 100
     });
   }
 }
 
 function rotateFlashlight() {
-  anime({
-    targets: "#flashlight-holder",
-    rotate: 25,
-    translateX: '5%',
-    translateY: '117%',
-    delay: 1000,
-    easing: "easeInOutQuad",
-    duration: 3000
-  });
+  if (animationState[0] !== true) {
+    document.querySelector("#mouse").style.display = "block";
+    anime({
+      targets: "#flashlight-button",
+      opacity: 1,
+      translateX: '272%',
+      duration: 200
+    });
+    anime({
+      targets: "#flashlight-beam",
+      opacity: 1,
+      duration: 100
+    });
+    anime({
+      targets: "#flashlight-holder",
+      rotate: 25,
+      translateX: '5%',
+      translateY: '117%',
+      delay: 1000,
+      easing: "easeInOutQuad",
+      duration: 2250
+    });
+    anime({
+      targets: "#mouse",
+      rotate: 5,
+      skewY: 5,
+      delay: 2800,
+      easing: "easeInOutQuad",
+      duration: 800,
+      complete: function(anim) {
+        mouseRun();
+      }
+    });
+  }
 }
+
+function mouseRun() {
+    anime({
+      targets: "#flashlight-holder",
+      rotate: 90,
+      translateX: '13%',
+      translateY: '117%',
+      easing: "easeInBack",
+      delay: 1250,
+      duration: 400
+    });
+    anime({
+      targets: "#mouse",
+      rotate: -1,
+      skewY: -5,
+      translateX: '-500%',
+      easing: "easeInBack",
+      delay: 1000,
+      duration: 600
+    });
+    anime({
+      targets: "#flashlight-beam",
+      opacity: 0,
+      delay: 1600,
+      duration: 100
+    });
+}
+
+document.querySelector("#flashlight-button").addEventListener("click", rotateFlashlight, false);
