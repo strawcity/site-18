@@ -718,10 +718,10 @@ body {
         position: relative;
         width: 161%; }
     .screen .screen-frame #tractor-beam {
-      display: none;
       position: absolute;
-      left: 40%;
-      top: 15%;
+      left: 39.8%;
+      top: -18.3%;
+      width: 20.3%;
       opacity: 0; }
     .screen .screen-frame #record #record-shine,
     .screen .screen-frame #record #record-lines,

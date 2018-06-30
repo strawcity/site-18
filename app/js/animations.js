@@ -14,8 +14,6 @@ startButton.addEventListener("click", invertCircle, false);
 spotlight.addEventListener("click", easterEggs);
 circleShadow.addEventListener("click", easterEggs);
 popUpMask.addEventListener("click", easterEggs);
-spotlight.addEventListener("mouseenter", flickerTractorBeam, false);
-spotlight.addEventListener("mouseleave", shiftTractorBeamLeft, false);
 
 function easterEggs() {
   console.log(animationState);
@@ -25,10 +23,11 @@ function easterEggs() {
       // eekAMouse();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
-      basketballToss();
+      // basketballToss();
+      showUFO();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
-      beginUFO();
+      showUFO();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
       putYourRecordsOn();
@@ -182,69 +181,27 @@ function basketballToss() {
 
 
 ///    UFO    ///
-function beginUFO() {
+function showUFO() {
   if (animationState[0] !== true) {
+    console.log('ufo');
     popUpMask.style.display = "none";
     anime({
       targets: "#circle-shadow",
-      scaleY: -2,
-      translateY: '-146%',
-      easing: "easeOutSine",
-      duration: 200,
-      complete: function(anim) {
-        transitionUFO();
-      }
-    });
-  }
-}
-
-function transitionUFO() {
-    tractorBeam.style.display = "block";
-    anime({
-      targets: "#circle-shadow",
-      scaleY: 2,
-      translateY: '59%',
-      easing: "easeInOutExpo",
-      delay: 500,
-      elasticity: 0,
-      duration: 950
+      opacity: 0,
+      easing: 'linear',
+      duration: 1500
     });
     anime({
-      targets: "#spotlight",
-      scaleY: 0.2,
-      scaleX: 1,
-      translateX: '-50%',
-      translateY: '-700%',
-      easing: "easeInOutExpo",
-      delay: 100,
-      duration: 1750,
+      targets: "#tractor-beam",
+      opacity: 0.8,
+      easing: 'linear',
+      duration: 1500,
       complete: function(anim) {
         console.log('animation stop');
         return animationState = [false, 4];
       }
     });
-    anime({
-      targets: "#tractor-beam",
-      opacity: 1,
-      delay: 1500,
-      duration: 2500
-    });
-}
-function flickerTractorBeam() {
-  anime({
-    targets: "#tractor-beam",
-    duration: 750,
-    skewX: 17,
-    translateX: '20%',
-  });
-}
-function shiftTractorBeamLeft() {
-  anime({
-    targets: "#tractor-beam",
-    duration: 750,
-    skewX: -17,
-    translateX: '-20%',
-  });
+  }
 }
 
 
