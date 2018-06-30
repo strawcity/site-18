@@ -217,7 +217,7 @@ function floatAbductee() {
     targets: "#abductee",
     translateY: "19%",
     easing: "easeInOutQuad",
-    loop: 30,
+    loop: 3,
     duration: 1800,
     direction: 'alternate'
   });
@@ -228,7 +228,7 @@ function floatAbductee() {
 function putYourRecordsOn() {
   if (animationState[0] !== true) {
     animationState[0] = true;
-    tractorBeam.style.display = "none";
+    // tractorBeam.style.display = "none";
     document.querySelector("#abductee").style.display = "none";
     anime({
       targets: "#circle-shadow",
@@ -240,8 +240,8 @@ function putYourRecordsOn() {
     });
     anime({
       targets: "#tractor-beam",
-      opacity: 0,
-      duration: 150
+      scaleX: 0,
+      duration: 400
     });
     anime({
       targets: "#spotlight",
