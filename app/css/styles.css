@@ -722,6 +722,12 @@ body {
       left: 39.8%;
       top: -18.3%;
       width: 20.3%;
+      opacity: 0.8; }
+    .screen .screen-frame #abductee {
+      position: absolute;
+      left: 45.8%;
+      top: 47.7%;
+      width: 8.3%;
       opacity: 0; }
     .screen .screen-frame #record #record-shine,
     .screen .screen-frame #record #record-lines,

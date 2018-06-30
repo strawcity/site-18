@@ -23,8 +23,8 @@ function easterEggs() {
       // eekAMouse();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
-      // basketballToss();
-      showUFO();
+      basketballToss();
+      // showUFO();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
       showUFO();
@@ -183,7 +183,6 @@ function basketballToss() {
 ///    UFO    ///
 function showUFO() {
   if (animationState[0] !== true) {
-    console.log('ufo');
     popUpMask.style.display = "none";
     anime({
       targets: "#circle-shadow",
@@ -193,15 +192,35 @@ function showUFO() {
     });
     anime({
       targets: "#tractor-beam",
-      opacity: 0.8,
-      easing: 'linear',
-      duration: 1500,
+      scaleX: 1,
+      easing: "easeInOutQuad",
+      duration: 400,
       complete: function(anim) {
-        console.log('animation stop');
         return animationState = [false, 4];
       }
     });
+    anime({
+      targets: "#abductee",
+      opacity: 1,
+      easing: "easeInOutQuad",
+      translateY: "-19%",
+      duration: 1000,
+      complete: function(anim) {
+        floatAbductee();
+      }
+    });
   }
+}
+
+function floatAbductee() {
+  anime({
+    targets: "#abductee",
+    translateY: "19%",
+    easing: "easeInOutQuad",
+    loop: 30,
+    duration: 1800,
+    direction: 'alternate'
+  });
 }
 
 
@@ -210,6 +229,7 @@ function putYourRecordsOn() {
   if (animationState[0] !== true) {
     animationState[0] = true;
     tractorBeam.style.display = "none";
+    document.querySelector("#abductee").style.display = "none";
     anime({
       targets: "#circle-shadow",
       scaleY: 6,
