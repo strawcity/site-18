@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="38px" height="23px" viewBox="0 0 38 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="38px" height="73px" viewBox="0 0 38 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>flashlight-button</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flashlight-button">
-            <polygon id="Rectangle-9" fill="#BDBDBD" points="34.0974295 0.38646589 37.7250453 7.76873779 29.0916312 22.0714286 3.82986886 22.3160836 0.355521066 16.868103"></polygon>
-            <polygon id="Rectangle-9" fill="#FFFFFF" points="9.63888986 0.25 34.4342913 0.25 24.8952026 17.0357143 0.0998011998 17.0357143"></polygon>
+        <g id="flashlight-button" transform="translate(19.000000, 36.500000) rotate(270.000000) translate(-19.000000, -36.500000) translate(-17.500000, 17.500000)">
+            <path d="M0,11.875 C0,5.3166186 16.3416066,0 36.5,0 C56.6583934,0 73,5.3166186 73,11.875 L73,26.125 C73,32.6833814 56.6583934,38 36.5,38 C16.3416066,38 0,32.6833814 0,26.125 L0,11.875 Z" id="Combined-Shape" fill="#FAE7A1"></path>
+            <ellipse id="Oval-10" fill="#E9C12E" cx="36.5" cy="12" rx="36.5" ry="12"></ellipse>
         </g>
     </g>
 </svg>

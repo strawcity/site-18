@@ -677,6 +677,7 @@ body {
       width: 20%;
       height: 35.75%;
       transform: scaleY(1);
+      z-index: 5;
       cursor: pointer; }
       .screen .screen-frame #spotlight #spotlight-svg {
         position: absolute;
@@ -751,7 +752,6 @@ body {
       width: 22%;
       left: 38.8%;
       top: -15%;
-      opacity: 0;
       display: none; }
     .screen .screen-frame #record #record-lines {
       width: 70%;
@@ -759,7 +759,7 @@ body {
       bottom: 21%; }
     .screen .screen-frame #record #record-pin {
       width: 2.3%;
-      z-index: 2;
+      z-index: 7;
       bottom: 34%;
       left: 48.7%;
       display: none; }
@@ -790,24 +790,25 @@ body {
       display: none;
       position: absolute;
       height: 20%;
-      width: 90%;
-      top: 7%;
+      width: 33.2%;
+      top: 101%;
+      left: 46.6%;
       z-index: 1; }
       .screen .screen-frame #flashlight-holder #flashlight {
         position: absolute;
         width: 68%;
-        left: -68%; }
+        left: 20.5%; }
       .screen .screen-frame #flashlight-holder #flashlight-button {
         position: absolute;
-        left: -11%;
-        top: 37%;
-        width: 7%;
+        left: 22%;
+        top: 145%;
+        width: 13%;
         cursor: pointer; }
       .screen .screen-frame #flashlight-holder #flashlight-beam {
         position: absolute;
-        width: 111%;
-        left: 31.6%;
-        top: -36%;
+        width: 115%;
+        left: -2.9%;
+        top: -600%;
         opacity: 0;
         display: none; }
       .screen .screen-frame #flashlight-holder #flashlight-mask {

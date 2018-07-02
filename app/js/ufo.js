@@ -54,12 +54,5 @@ function showUFO() {
         return animationState = [false, 3];
       }
     });
-    anime({
-      targets: "#record-shine",
-      opacity: 0.7,
-      easing: "linear",
-      delay: 2300,
-      duration: 150
-    });
   }
 }

@@ -3,9 +3,9 @@ function eekAMouse() {
     animationState[0] = true;
     document.querySelector("#flashlight-holder").style.display = "block";
     document.querySelector("#flashlight-beam").style.display = "block";
-    document.querySelector("#flashlight-mask").style.display = "block";
     circleShadow.style.display = "block";
     popUpMask.style.display = "block";
+    recordShine.remove();
     document.querySelector("#speaker-off").style.display = "none";
     document.querySelector("#speaker-on").style.display = "none";
     gibbo.pause();
@@ -46,65 +46,38 @@ function eekAMouse() {
       duration: 1200,
     });
     anime({
-      targets: "#flashlight",
-      translateX: '65%',
-      elasticity: 10,
-      delay: 1000,
-      duration: 500
+      targets: "#flashlight-holder",
+      translateY: '-240%',
+      translateX: '-44.4%',
+      easing: 'easeOutQuad',
+      duration: 250
     });
     anime({
       targets: "#flashlight-button",
       opacity: 1,
-      translateX: '199%',
-      delay: 1000,
-      duration: 600,
+      delay: 750,
+      duration: 750,
       complete: function(anim) {
         return animationState = [false, 9];
       }
     });
-    anime({
-      targets: "#flashlight-mask",
-      opacity: 1,
-      delay: 1400,
-      duration: 100
-    });
   }
 }
 
-function rotateFlashlight() {
+function turnOnFlashlight() {
   if (animationState[0] !== true) {
-    document.querySelector("#mouse").style.display = "block";
     anime({
       targets: "#flashlight-button",
       opacity: 1,
-      translateX: '272%',
-      duration: 200
+      scaleX: 0.8,
+      translateX: '10%',
+      direction: 'alternate',
+      duration: 100
     });
     anime({
       targets: "#flashlight-beam",
       opacity: 1,
       duration: 100
-    });
-    anime({
-      targets: "#flashlight-holder",
-      rotate: 25,
-      translateX: '5%',
-      translateY: '117%',
-      delay: 1000,
-      easing: "easeInOutQuad",
-      duration: 2250
-    });
-    anime({
-      targets: "#mouse",
-      rotate: 5,
-      skewY: 5,
-      delay: 2800,
-      easing: "easeInOutQuad",
-      duration: 800,
-      complete: function(anim) {
-        mouseRun();
-        return animationState = [false, 9];
-      }
     });
   }
 }
@@ -138,4 +111,4 @@ function mouseRun() {
   }
 }
 
-document.querySelector("#flashlight-button").addEventListener("click", rotateFlashlight, false);
+document.querySelector("#flashlight-button").addEventListener("click", turnOnFlashlight, false);

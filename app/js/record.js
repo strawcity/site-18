@@ -10,6 +10,7 @@ function putYourRecordsOn() {
     anime({
       targets: "#abductee",
       translateY: "-390%",
+      opacity: 0,
       easing: "easeInQuad",
       duration: 500
     });
