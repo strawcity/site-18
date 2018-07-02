@@ -679,6 +679,7 @@ body {
       transform: scaleY(1);
       cursor: pointer; }
       .screen .screen-frame #spotlight #spotlight-svg {
+        position: absolute;
         width: 100%;
         height: auto;
         transform: scaleY(1); }
@@ -694,6 +695,12 @@ body {
         left: -1px;
         height: auto;
         cursor: pointer; }
+      .screen .screen-frame #spotlight #minute-hand,
+      .screen .screen-frame #spotlight #hour-hand {
+        height: 100%;
+        position: absolute;
+        left: 47.4%;
+        display: none; }
     .screen .screen-frame #pop-up-mask {
       display: none;
       opacity: 0;
@@ -717,6 +724,10 @@ body {
         bottom: 5px;
         position: relative;
         width: 161%; }
+    .screen .screen-frame #egg #egg-white {
+      position: absolute; }
+    .screen .screen-frame #egg #egg-yolk {
+      position: absolute; }
     .screen .screen-frame #tractor-beam {
       position: absolute;
       left: 39.8%;
@@ -739,7 +750,9 @@ body {
     .screen .screen-frame #record #record-shine {
       width: 22%;
       left: 38.8%;
-      top: -15%; }
+      top: -15%;
+      opacity: 0.7;
+      display: none; }
     .screen .screen-frame #record #record-lines {
       width: 70%;
       left: 15%;
@@ -748,7 +761,8 @@ body {
       width: 2.3%;
       z-index: 2;
       bottom: 34%;
-      left: 48.7%; }
+      left: 48.7%;
+      display: none; }
     .screen .screen-frame #record #record-needle {
       width: 68%;
       top: 12%;

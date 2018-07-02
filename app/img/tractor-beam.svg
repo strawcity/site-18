@@ -3,15 +3,9 @@
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>tractor-beam</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <radialGradient cx="50%" cy="100%" fx="50%" fy="100%" r="61.7909863%" gradientTransform="translate(0.500000,1.000000),scale(1.000000,0.356969),rotate(180.000000),scale(1.000000,4.283891),translate(-0.500000,-1.000000)" id="radialGradient-1">
-            <stop stop-color="#E6FEFF" offset="0%"></stop>
-            <stop stop-color="#A0D4FD" offset="70.8000786%"></stop>
-            <stop stop-color="#438AFE" offset="100%"></stop>
-        </radialGradient>
-    </defs>
+    <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="tractor-beam" fill="url(#radialGradient-1)">
+        <g id="tractor-beam" fill="#FFDE66">
             <path d="M111.401929,310.799953 C107.428532,303.558654 84.1377463,300.029785 56,300.029785 C27.8622537,300.029785 4.57146838,303.558654 0.598070895,310.799953 L37.5326903,0.849609375 L74.4673097,0.3984375 L111.401929,310.799953 Z" id="Combined-Shape"></path>
         </g>
     </g>

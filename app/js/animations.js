@@ -6,6 +6,9 @@ var popUpMask = document.querySelector("#pop-up-mask");
 var tractorBeam = document.querySelector("#tractor-beam");
 var recordNeedle = document.querySelector("#record-needle");
 var gibbo = new Audio('audio/Gibbo-St.DenisBeatTape-05Tribe.m4a');
+var d = new Date();
+var hour = d.getHours();
+var minutes = d.getMinutes();
 
 window.onload = loadingCircle;
 startButton.addEventListener("mouseenter", raiseLoadingCircle, false);
@@ -16,15 +19,12 @@ circleShadow.addEventListener("click", easterEggs);
 popUpMask.addEventListener("click", easterEggs);
 
 function easterEggs() {
-  console.log(animationState);
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
-      makeHole();
-      // eekAMouse();
+      tellTime();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
-      basketballToss();
-      // showUFO();
+      putYourRecordsOn();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
       showUFO();
@@ -89,24 +89,172 @@ function invertCircle() {
     anime({
       targets: ".screen-frame",
       background: '#000',
-      duration: 1000
+      duration: 100
     });
     anime({
       targets: "#spotlight",
       opacity: 1,
-      duration: 1000
+      duration: 100,
+      complete: function(anim) {
+        return animationState = [false, 1];
+      }
     });
     anime({
       targets: '#title-credit',
       opacity: 1,
-      duration: 1000,
+      duration: 1000
+    });
+  }
+}
+
+function tellTime() {
+  if (animationState[0] !== true) {
+    document.querySelector("#hour-hand").style.display = "block";
+    document.querySelector("#minute-hand").style.display = "block";
+    var hourRotate = -1 * (360 - (hour/12) * 360);
+    var minuteRotate = -1 * (360 - (minutes/60) * 180);
+    console.log(hourRotate);
+    console.log(minuteRotate);
+    anime({
+      targets: "#hour-hand",
+      rotate: hourRotate,
+      easing: "easeInOutCubic",
+      duration: 750
+    });
+    anime({
+      targets: "#minute-hand",
+      rotate: minuteRotate,
+      easing: "easeInOutCubic",
+      duration: 750,
       complete: function(anim) {
-        return animationState = [false, 1];
+        return animationState = [false, 2];
       }
     });
   }
 }
 
+
+///    Records    ///
+function putYourRecordsOn() {
+  if (animationState[0] !== true) {
+    animationState[0] = true;
+    document.querySelector("#record-pin").style.display = "block";
+    document.querySelector("#record-shine").style.display = "block";
+    anime({
+      targets: "#hour-hand",
+      rotate: 180,
+      opacity: 0,
+      scaleY: 1.3,
+      translateY: '-4%',
+      easing: "easeInOutCubic",
+      duration: 750
+    });
+    anime({
+      targets: "#minute-hand",
+      rotate: 90,
+      opacity: 0,
+      translateY: '-4%',
+      easing: "easeInOutCubic",
+      duration: 750
+    });
+    anime({
+      targets: "#circle-shadow",
+      scaleY: 6,
+      translateY: '-30%',
+      easing: "easeInOutQuad",
+      opacity: 0,
+      duration: 350
+    });
+    anime({
+      targets: "#tractor-beam",
+      scaleX: 0,
+      duration: 400
+    });
+    anime({
+      targets: "#spotlight",
+      scaleY: 0.3,
+      scaleX: 1,
+      translateX: '-50%',
+      translateY: '-80%',
+      easing: "easeInOutQuad",
+      duration: 750,
+    });
+    anime({
+      targets: "#record-lines",
+      scale: 1,
+      easing: "easeInOutQuad",
+      duration: 750,
+      opacity: 1,
+      delay: 200
+    });
+    anime({
+      targets: "#record-pin",
+      translateY: '-90%',
+      easing: "easeInOutQuad",
+      duration: 750,
+      opacity: 1,
+      delay: 200
+    });
+    anime({
+      targets: "#record-shine",
+      loop: 20,
+      rotateZ: 360,
+      easing: "linear",
+      duration: 3250,
+    });
+    anime({
+      targets: "#record-needle",
+      rotate: 0,
+      skewX: 0,
+      translateX: '-14%',
+      easing: "easeOutExpo",
+      duration: 1500,
+      delay: 1000,
+      complete: function(anim) {
+        showSpeaker();
+        return animationState = [false, 3];
+      }
+    });
+  }
+}
+function showSpeaker() {
+  anime({
+    targets: "#speaker-off",
+    opacity: 0.5,
+    duration: 800,
+  });
+}
+
+function playGibbo() {
+  if (gibbo.paused) {
+    gibbo.play();
+    anime({
+      targets: "#speaker-on",
+      opacity: 0.5,
+      duration: 100,
+    });
+    anime({
+      targets: "#speaker-off",
+      opacity: 0,
+      duration: 100,
+    });
+  } else {
+    gibbo.pause();
+    anime({
+      targets: "#speaker-off",
+      opacity: 0.5,
+      duration: 100,
+    });
+    anime({
+      targets: "#speaker-on",
+      opacity: 0,
+      duration: 100,
+    });
+  }
+}
+
+document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
+document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
 
 
 ///    Make the Hole    ///
@@ -158,7 +306,6 @@ function makeHole() {
 function basketballToss() {
   if (animationState[0] !== true) {
     animationState[0] = true;
-    console.log('animation can start');
     anime({
       targets: "#basketball",
       translateY: '-170%',
@@ -183,18 +330,60 @@ function basketballToss() {
 ///    UFO    ///
 function showUFO() {
   if (animationState[0] !== true) {
+    document.querySelector("#hour-hand").style.display = "none";
     popUpMask.style.display = "none";
     anime({
-      targets: "#circle-shadow",
+      targets: "#record-lines",
+      scale: 0,
+      easing: "easeOutExpo",
+      duration: 300,
+      opacity: 0
+    });
+    anime({
+      targets: "#record-pin",
       opacity: 0,
-      easing: 'linear',
-      duration: 1500
+      easing: "easeOutExpo",
+      duration: 700
+    });
+    anime({
+      targets: "#record-shine",
+      opacity: 0,
+      easing: "easeOutExpo"
+    });
+    anime({
+      targets: "#record-needle",
+      rotate: 18,
+      skewX: 65,
+      translateX: '14%',
+      easing: "easeOutExpo",
+      duration: 700,
+    });
+    anime({
+      targets: "#speaker-off",
+      opacity: 0,
+      duration: 1200,
+    });
+    anime({
+      targets: "#speaker-on",
+      opacity: 0,
+      duration: 1200,
+    });
+    anime({
+      targets: "#spotlight",
+      scaleY: 0.2,
+      scaleX: 1,
+      translateX: '-50%',
+      translateY: '190%',
+      easing: "easeInOutCubic",
+      delay: 100,
+      duration: 750
     });
     anime({
       targets: "#tractor-beam",
       scaleX: 1,
       easing: "easeInOutQuad",
-      duration: 400,
+      delay: 700,
+      duration: 250,
       complete: function(anim) {
         return animationState = [false, 4];
       }
@@ -204,7 +393,8 @@ function showUFO() {
       opacity: 1,
       easing: "easeInOutQuad",
       translateY: "-19%",
-      duration: 1000,
+      delay: 700,
+      duration: 750,
       complete: function(anim) {
         floatAbductee();
       }
@@ -217,121 +407,12 @@ function floatAbductee() {
     targets: "#abductee",
     translateY: "19%",
     easing: "easeInOutQuad",
-    loop: 3,
+    loop: 30,
     duration: 1800,
     direction: 'alternate'
   });
 }
 
-
-///    Records    ///
-function putYourRecordsOn() {
-  if (animationState[0] !== true) {
-    animationState[0] = true;
-    // tractorBeam.style.display = "none";
-    document.querySelector("#abductee").style.display = "none";
-    anime({
-      targets: "#circle-shadow",
-      scaleY: 6,
-      translateY: '-30%',
-      easing: "easeInOutQuad",
-      opacity: 0,
-      duration: 350
-    });
-    anime({
-      targets: "#tractor-beam",
-      scaleX: 0,
-      duration: 400
-    });
-    anime({
-      targets: "#spotlight",
-      scaleY: 0.3,
-      scaleX: 1,
-      translateX: '-50%',
-      translateY: '-80%',
-      easing: "easeInOutQuad",
-      duration: 1000,
-    });
-    anime({
-      targets: "#record-lines",
-      scale: 1,
-      easing: "easeInOutQuad",
-      duration: 1000,
-      opacity: 1,
-      delay: 200
-    });
-    anime({
-      targets: "#record-pin",
-      translateY: '-90%',
-      easing: "easeInOutQuad",
-      duration: 1000,
-      opacity: 1,
-      delay: 200
-    });
-    anime({
-      targets: "#record-shine",
-      rotateZ: {
-        value: '+=11000',
-        duration: 1000000
-      },
-      opacity: 0.7,
-      easing: "easeOutExpo",
-      duration: 1000,
-      delay: 200
-    });
-    anime({
-      targets: "#record-needle",
-      rotate: 0,
-      skewX: 0,
-      translateX: '-14%',
-      easing: "easeOutExpo",
-      duration: 1500,
-      delay: 1000,
-      complete: function(anim) {
-        showSpeaker();
-        return animationState = [false, 5];
-      }
-    });
-  }
-}
-function showSpeaker() {
-  anime({
-    targets: "#speaker-off",
-    opacity: 0.5,
-    duration: 800,
-  });
-}
-
-function playGibbo() {
-  if (gibbo.paused) {
-    gibbo.play();
-    anime({
-      targets: "#speaker-on",
-      opacity: 0.5,
-      duration: 100,
-    });
-    anime({
-      targets: "#speaker-off",
-      opacity: 0,
-      duration: 100,
-    });
-  } else {
-    gibbo.pause();
-    anime({
-      targets: "#speaker-off",
-      opacity: 0.5,
-      duration: 100,
-    });
-    anime({
-      targets: "#speaker-on",
-      opacity: 0,
-      duration: 100,
-    });
-  }
-}
-
-document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
-document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
 
 function dartBoard() {
   if (animationState[0] !== true) {
