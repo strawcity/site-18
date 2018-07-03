@@ -29,7 +29,7 @@ function easterEggs() {
       loadContactCredit();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
-      putYourRecordsOn();
+      finishAbduction();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
       eekAMouse();

@@ -37,6 +37,13 @@ function showUFO() {
       duration: 500
     });
     anime({
+      targets: "#ufo",
+      translateY: '31%',
+      easing: "easeInOutQuad",
+      delay: 500,
+      duration: 200
+    });
+    anime({
       targets: "#tractor-beam",
       scaleX: 1,
       easing: "easeInOutQuad",

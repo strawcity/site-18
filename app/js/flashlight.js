@@ -13,7 +13,7 @@ function eekAMouse() {
       targets: "#record-lines",
       scale: 0,
       easing: "easeOutExpo",
-      duration: 300,
+      duration: 500,
       opacity: 0
     });
     anime({
@@ -26,6 +26,7 @@ function eekAMouse() {
       targets: "#record-shine",
       opacity: 0,
       easing: "easeOutExpo",
+      duration: 500
     });
     anime({
       targets: "#record-needle",
@@ -46,11 +47,22 @@ function eekAMouse() {
       duration: 1200,
     });
     anime({
+      targets: "#spotlight",
+      scaleY: 0.3,
+      scaleX: 1,
+      translateX: '-50%',
+      translateY: '230%',
+      easing: "easeInQuad",
+      direction: 'alternate',
+      duration: 500
+    });
+    anime({
       targets: "#flashlight-holder",
       translateY: '-240%',
       translateX: '-44.4%',
       easing: 'easeOutQuad',
-      duration: 250
+      duration: 500,
+      delay: 500
     });
     anime({
       targets: "#flashlight-button",
@@ -61,25 +73,30 @@ function eekAMouse() {
         return animationState = [false, 9];
       }
     });
-  }
-}
-
-function turnOnFlashlight() {
-  if (animationState[0] !== true) {
-    anime({
-      targets: "#flashlight-button",
-      opacity: 1,
-      scaleX: 0.8,
-      translateX: '10%',
-      direction: 'alternate',
-      duration: 100
-    });
     anime({
       targets: "#flashlight-beam",
       opacity: 1,
+      delay: 1000,
       duration: 100
     });
   }
+}
+
+function toggleFlashlight() {
+  var beamState = document.querySelector("#flashlight-beam").style.opacity;
+    if (beamState == 1) {
+      anime({
+        targets: "#flashlight-beam",
+        opacity: 0,
+        duration: 100
+      });
+    } else {
+      anime({
+        targets: "#flashlight-beam",
+        opacity: 1,
+        duration: 100
+      });
+    }
 }
 
 function mouseRun() {
@@ -111,4 +128,4 @@ function mouseRun() {
   }
 }
 
-document.querySelector("#flashlight-button").addEventListener("click", turnOnFlashlight, false);
+document.querySelector("#flashlight-button").addEventListener("click", toggleFlashlight, false);

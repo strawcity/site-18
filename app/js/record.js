@@ -2,9 +2,7 @@ var recordPin = document.querySelector("#record-pin");
 var recordShine = document.querySelector("#record-shine");
 
 ///    Records    ///
-function putYourRecordsOn() {
-  recordPin.style.display = "block";
-  recordShine.style.display = "block";
+function finishAbduction() {
   if (animationState[0] !== true) {
     animationState[0] = true;
     anime({
@@ -35,59 +33,74 @@ function putYourRecordsOn() {
       duration: 500
     });
     anime({
+      targets: "#ufo",
+      translateY: '-31%',
+      easing: "easeInOutQuad",
+      delay: 500,
+      duration: 200
+    });
+    anime({
       targets: "#tractor-beam",
       scaleX: 0,
       easing: "easeInOutQuad",
       delay: 250,
       duration: 250,
-    });
-    anime({
-      targets: "#spotlight",
-      scaleY: 0.3,
-      scaleX: 1,
-      translateX: '-50%',
-      translateY: '-80%',
-      easing: "easeInOutQuad",
-      delay: 250,
-      duration: 750
-    });
-    anime({
-      targets: "#record-lines",
-      scale: 1,
-      easing: "easeInOutQuad",
-      duration: 750,
-      opacity: 1,
-      delay: 750
-    });
-    anime({
-      targets: "#record-pin",
-      translateY: '-90%',
-      duration: 750,
-      opacity: 1,
-      delay: 750
-    });
-    anime({
-      targets: "#record-shine",
-      loop: 20,
-      rotateZ: 360,
-      easing: "linear",
-      duration: 3250,
-    });
-    anime({
-      targets: "#record-needle",
-      rotate: 0,
-      skewX: 0,
-      translateX: '-14%',
-      easing: "easeOutExpo",
-      duration: 1500,
-      delay: 1000,
       complete: function(anim) {
-        showSpeaker();
-        return animationState = [false, 4];
+        putYourRecordsOn();
       }
     });
   }
 }
+
+function putYourRecordsOn() {
+  recordPin.style.display = "block";
+  recordShine.style.display = "block";
+  anime({
+    targets: "#spotlight",
+    scaleY: 0.3,
+    scaleX: 1,
+    translateX: '-50%',
+    translateY: '-80%',
+    easing: "easeInOutQuad",
+    duration: 500
+  });
+  anime({
+    targets: "#record-lines",
+    scale: 1,
+    opacity: 1,
+    easing: "easeInOutQuad",
+    delay: 250,
+    duration: 1000
+  });
+  anime({
+    targets: "#record-pin",
+    translateY: '-90%',
+    delay: 250,
+    duration: 1000,
+    opacity: 1
+  });
+  anime({
+    targets: "#record-shine",
+    loop: 20,
+    rotateZ: 360,
+    easing: "linear",
+    duration: 3250
+  });
+  anime({
+    targets: "#record-needle",
+    rotate: 0,
+    skewX: 0,
+    translateX: '-14%',
+    easing: "easeOutExpo",
+    delay: 250,
+    duration: 1500,
+    complete: function(anim) {
+      showSpeaker();
+      return animationState = [false, 4];
+    }
+  });
+}
+
 function showSpeaker() {
   anime({
     targets: "#speaker-off",

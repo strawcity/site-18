@@ -729,6 +729,12 @@ body {
       position: absolute; }
     .screen .screen-frame #egg #egg-yolk {
       position: absolute; }
+    .screen .screen-frame #ufo {
+      position: absolute;
+      width: 59%;
+      top: -31%;
+      left: 20.4%;
+      z-index: 3; }
     .screen .screen-frame #tractor-beam {
       position: absolute;
       left: 39.8%;
