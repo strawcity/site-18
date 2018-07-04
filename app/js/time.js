@@ -3,8 +3,8 @@ function tellTime() {
     animationState[0] = true;
     document.querySelector("#hour-hand").style.display = "block";
     document.querySelector("#minute-hand").style.display = "block";
-    var hourRotate = -1 * (360 - (hour/12) * 360);
-    var minuteRotate = -1 * (360 - (minutes/60) * 180);
+    var hourRotate = -360 + 360 * (hour/12);
+    var minuteRotate = -360 + 360 * (minutes/60);
     anime({
       targets: "#hour-hand",
       rotate: hourRotate,

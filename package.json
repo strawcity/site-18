@@ -9,9 +9,12 @@
   "author": "Erik NIlsson",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.18.7",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "gulp-connect": "^5.0.0",
     "gulp-obfuscate": "^0.2.9",
     "gulp-sass": "^3.1.0",

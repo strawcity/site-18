@@ -768,7 +768,8 @@ body {
       z-index: 7;
       bottom: 34%;
       left: 48.7%;
-      display: none; }
+      display: none;
+      cursor: pointer; }
     .screen .screen-frame #record #record-needle {
       width: 68%;
       top: 12%;

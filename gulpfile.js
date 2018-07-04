@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync').create(),
+    babel = require('gulp-babel'),
     uglify = require('gulp-uglify'),
     gulpIf = require('gulp-if'),
     cssnano = require('gulp-cssnano'),
@@ -41,6 +42,9 @@ gulp.task('uglify-css', function(){
 gulp.task('uglify-js', function(){
   return gulp.src('app/js/**/*.js')
     .pipe(useref())
+    .pipe(babel({
+        presets: ['env']
+    }))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.reload({
@@ -74,7 +78,10 @@ gulp.task('images', function(){
 })
 
 gulp.task('copy-audio', function(){
-  return gulp.src('app/audio/*.m4a')
+  return gulp.src([
+    'app/audio/*.mp3',
+    'app/audio/*.ogg'
+  ])
     .pipe(useref())
     .pipe(gulp.dest('dist/audio'))
 })

@@ -89,7 +89,7 @@ function putYourRecordsOn() {
   anime({
     targets: "#record-needle",
     rotate: 0,
-    skewX: 0,
+    skewX: 13,
     translateX: '-14%',
     easing: "easeOutExpo",
     delay: 250,
@@ -106,42 +106,64 @@ function putYourRecordsOn() {
   });
 }
 
+const gibbo = document.querySelector('#gibbo');
 
 function playGibbo() {
-    // This will allow us to play video later...
-    gibbo.load();
-    fetcGibboAndPlay();
-  }
+  const playPromise = Promise.resolve(gibbo.play());
+  playPromise
+  .then(() => {
+  })
+  .catch(e => {
+    console.log(e.message);
+  });
+}
+function pauseGibbo() {
+  gibbo.pause();
+}
 
-  function fetcGibboAndPlay() {
-    fetch('http://nada.strawcitydesign.com/audio/Gibbo-St.DenisBeatTape-05Tribe.m4a')
-    .then(response => response.blob())
-    .then(blob => {
-      gibbo.srcObject = blob;
-      return gibbo.play();
-    })
-    .then(_ => {
-      // Video playback started ;)
-    })
-    .catch(e => {
-      // Video playback failed ;(
-    })
+function toggleSpeaker() {
+  if (gibbo.paused) {
+    playGibbo();
+    anime({
+      targets: "#record-needle",
+      skewX: 0,
+      translateX: '-14%',
+      easing: "easeOutExpo",
+      duration: 500,
+    });
+    anime({
+      targets: "#speaker-off",
+      opacity: 0,
+      duration: 100,
+    });
+    anime({
+      targets: "#speaker-on",
+      opacity: 0.8,
+      duration: 100,
+    });
+  } else {
+    pauseGibbo();
+    anime({
+      targets: "#record-needle",
+      skewX: 13,
+      translateX: '-14%',
+      easing: "easeOutExpo",
+      duration: 500,
+    });
+    anime({
+      targets: "#speaker-off",
+      opacity: 0.8,
+      duration: 100,
+    });
+    anime({
+      targets: "#speaker-on",
+      opacity: 0,
+      duration: 100,
+    });
   }
-  // if (gibbo.paused) {
-  //
-  // } else {
-  //   gibbo.pause();
-  //   anime({
-  //     targets: "#speaker-off",
-  //     opacity: 0.5,
-  //     duration: 100,
-  //   });
-  //   anime({
-  //     targets: "#speaker-on",
-  //     opacity: 0,
-  //     duration: 100,
-  //   });
-  // }
+}
 
-document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
-document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
+
+document.querySelector("#speaker-on").addEventListener("click", toggleSpeaker, false);
+document.querySelector("#record-needle").addEventListener("click", toggleSpeaker, false);
+recordPin.addEventListener("click", easterEggs, false);

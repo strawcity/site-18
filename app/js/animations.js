@@ -5,10 +5,8 @@ var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
 var tractorBeam = document.querySelector("#tractor-beam");
 var recordNeedle = document.querySelector("#record-needle");
-// var gibbo = new Audio('audio/Gibbo-St.DenisBeatTape-05Tribe.m4a');
-var gibbo = document.getElementById("gibbo");
 var d = new Date();
-var hour = d.getHours();
+var hour = (d.getHours() + 24) % 12 || 12;
 var minutes = d.getMinutes();
 
 window.onload = loadingCircle;
@@ -88,7 +86,6 @@ function lowerLoadingCircle() {
 function invertCircle() {
   if (animationState[0] !== true) {
     animationState[0] = true;
-    clickCount = 1;
     startButton.remove();
     spotlight.style.display = "block";
     anime({
