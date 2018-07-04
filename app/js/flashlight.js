@@ -84,6 +84,14 @@ function eekAMouse() {
 
 function toggleFlashlight() {
   var beamState = document.querySelector("#flashlight-beam").style.opacity;
+    anime({
+      targets: "#flashlight-button",
+      opacity: 1,
+      scaleX: 0.8,
+      translateX: '10%',
+      direction: 'alternate',
+      duration: 50
+    });
     if (beamState == 1) {
       anime({
         targets: "#flashlight-beam",

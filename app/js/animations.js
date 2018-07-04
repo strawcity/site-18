@@ -5,7 +5,8 @@ var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
 var tractorBeam = document.querySelector("#tractor-beam");
 var recordNeedle = document.querySelector("#record-needle");
-var gibbo = new Audio('audio/Gibbo-St.DenisBeatTape-05Tribe.m4a');
+// var gibbo = new Audio('audio/Gibbo-St.DenisBeatTape-05Tribe.m4a');
+var gibbo = document.getElementById("gibbo");
 var d = new Date();
 var hour = d.getHours();
 var minutes = d.getMinutes();
@@ -29,6 +30,7 @@ function easterEggs() {
       loadContactCredit();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
+      loadRecordCredit()
       finishAbduction();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
@@ -121,6 +123,14 @@ function loadAboutCredit() {
 function loadContactCredit() {
   anime({
     targets: '#contact-credit',
+    opacity: 1,
+    duration: 1500
+  });
+}
+
+function loadRecordCredit() {
+  anime({
+    targets: '#record-credit',
     opacity: 1,
     duration: 1500
   });

@@ -774,18 +774,13 @@ body {
       top: 12%;
       left: 79%;
       cursor: pointer; }
-    .screen .screen-frame #record #speaker-on {
-      cursor: pointer;
-      opacity: 0;
-      left: 90.2%;
-      height: 33px;
-      bottom: 8%; }
+    .screen .screen-frame #record #speaker-on,
     .screen .screen-frame #record #speaker-off {
       cursor: pointer;
       opacity: 0;
-      left: 90%;
-      height: 33px;
-      bottom: 8%; }
+      left: 4%;
+      height: 35px;
+      top: 5%; }
     .screen .screen-frame #darts .dart {
       position: absolute;
       width: 8%;
@@ -833,9 +828,10 @@ body {
 
 .credits {
   margin-top: 25px; }
-  .credits #about-credit {
-    opacity: 0; }
-  .credits #title-credit {
-    opacity: 0; }
-  .credits #contact-credit {
+  .credits p {
+    margin: 10px 0; }
+  .credits #about-credit,
+  .credits #title-credit,
+  .credits #contact-credit,
+  .credits #record-credit {
     opacity: 0; }

@@ -172,19 +172,13 @@ body {
         left: 79%;
         cursor: pointer;
       }
-      #speaker-on {
-        cursor: pointer;
-        opacity: 0;
-        left: 90.2%;
-        height: 33px;
-        bottom: 8%;
-      }
+      #speaker-on,
       #speaker-off {
         cursor: pointer;
         opacity: 0;
-        left: 90%;
-        height: 33px;
-        bottom: 8%;
+        left: 4%;
+        height: 35px;
+        top: 5%;
       }
     }
 
@@ -246,13 +240,13 @@ body {
 
 .credits {
   margin-top: 25px;
-  #about-credit {
-    opacity: 0;
+  p {
+      margin: 10px 0;
   }
-  #title-credit {
-    opacity: 0;
-  }
-  #contact-credit {
+  #about-credit,
+  #title-credit,
+  #contact-credit,
+  #record-credit {
     opacity: 0;
   }
 }

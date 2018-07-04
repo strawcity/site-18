@@ -95,47 +95,53 @@ function putYourRecordsOn() {
     delay: 250,
     duration: 1500,
     complete: function(anim) {
-      showSpeaker();
       return animationState = [false, 4];
     }
   });
-}
-
-function showSpeaker() {
   anime({
     targets: "#speaker-off",
-    opacity: 0.5,
-    duration: 800,
+    opacity: 0.8,
+    delay: 1000,
+    duration: 200
   });
 }
 
+
 function playGibbo() {
-  if (gibbo.paused) {
-    gibbo.play();
-    anime({
-      targets: "#speaker-on",
-      opacity: 0.5,
-      duration: 100,
-    });
-    anime({
-      targets: "#speaker-off",
-      opacity: 0,
-      duration: 100,
-    });
-  } else {
-    gibbo.pause();
-    anime({
-      targets: "#speaker-off",
-      opacity: 0.5,
-      duration: 100,
-    });
-    anime({
-      targets: "#speaker-on",
-      opacity: 0,
-      duration: 100,
-    });
+    // This will allow us to play video later...
+    gibbo.load();
+    fetcGibboAndPlay();
   }
-}
+
+  function fetcGibboAndPlay() {
+    fetch('http://nada.strawcitydesign.com/audio/Gibbo-St.DenisBeatTape-05Tribe.m4a')
+    .then(response => response.blob())
+    .then(blob => {
+      gibbo.srcObject = blob;
+      return gibbo.play();
+    })
+    .then(_ => {
+      // Video playback started ;)
+    })
+    .catch(e => {
+      // Video playback failed ;(
+    })
+  }
+  // if (gibbo.paused) {
+  //
+  // } else {
+  //   gibbo.pause();
+  //   anime({
+  //     targets: "#speaker-off",
+  //     opacity: 0.5,
+  //     duration: 100,
+  //   });
+  //   anime({
+  //     targets: "#speaker-on",
+  //     opacity: 0,
+  //     duration: 100,
+  //   });
+  // }
 
 document.querySelector("#speaker-on").addEventListener("click", playGibbo, false);
 document.querySelector("#record-needle").addEventListener("click", playGibbo, false);
