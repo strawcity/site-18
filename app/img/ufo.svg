@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="215px" height="62px" viewBox="0 0 215 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+<svg width="215px" height="63px" viewBox="0 0 215 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
     <title>ufo</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="ufo">
-            <path d="M89.2342613,62 C74.8887201,60.3792792 65,56.9582017 65,53 C65,47.4771525 84.2517558,43 108,43 C131.748244,43 151,47.4771525 151,53 C151,56.9582017 141.11128,60.3792792 126.765739,62 C121.09506,61.3593419 114.727977,61 108,61 C101.272023,61 94.9049401,61.3593419 89.2342613,62 Z" id="Combined-Shape" fill="#AEAEAE"></path>
-            <ellipse id="Oval-Copy-10" fill="#383838" cx="107.5" cy="29" rx="107.5" ry="29"></ellipse>
+            <path d="M83.0907336,61.9822795 C73.3101474,60.1567683 66.9899136,57.2606273 66.9899136,54 C66.9899136,48.4771525 85.1223813,44 107.489914,44 C129.857446,44 147.989914,48.4771525 147.989914,54 C147.989914,57.3156074 141.454742,60.2543331 131.3914,62.0737072 C124.64035,60.77335 116.181426,60 107,60 C98.0358464,60 89.7604045,60.7371814 83.0907336,61.9822795 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <ellipse id="Oval-Copy-10" fill="#353535" cx="107.5" cy="29" rx="107.5" ry="29"></ellipse>
         </g>
     </g>
 </svg>

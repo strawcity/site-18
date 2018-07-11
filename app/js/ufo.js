@@ -1,15 +1,14 @@
-
 ///    UFO    ///
 function showUFO() {
   if (animationState[0] !== true) {
     animationState[0] = true;
     popUpMask.style.display = "none";
     anime({
-      targets: "#spotlight",
-      scaleY: 0.2,
+      targets: "#white-circle",
+      scaleY: 0.3,
       scaleX: 1,
       translateX: '-50%',
-      translateY: '190%',
+      translateY: '129%',
       easing: "easeInOutCubic",
       delay: 100,
       duration: 750

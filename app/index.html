@@ -1,60 +1,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Weather based jacket suggestion">
-    <meta name="author" content="Erik Nilsson @ strawcitydesign.com">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weather based jacket suggestion">
+  <meta name="author" content="Erik Nilsson @ strawcitydesign.com">
 
-    <title>Erik's Straw City</title>
+  <title>Erik's Straw City</title>
 
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="body-container">
-      <div class="screen row">
-          <div class="screen col-xs-12
+  <audio id="gibbo">
+      <source src="../audio/Gibbo-StDenisBeatTape.ogg" type="audio/ogg">
+      <source src="../audio/Gibbo-St.DenisBeatTape-05Tribe.mp3" type="audio/mpeg">
+    </audio>
+  <div class="body-container">
+    <div class="screen row">
+      <div class="screen col-xs-12
                       col-sm-12
                       col-md-12
                       col-lg-12">
-              <div class="screen-frame">
-                <img id="ufo" src="img/ufo.svg" />
-                <img id="tractor-beam" src="img/tractor-beam.svg" style="transform: scaleX(0);" />
-                <img id="abductee" src="img/madmen.svg" />
-                <div id="record">
-                  <img id="record-lines" src="img/record-lines.svg" style="transform: scale(0.4); opacity: 0;" />
-                  <img id="record-shine" src="img/record-shine.svg" style="transform: rotateZ(0deg);" />
-                  <img id="record-pin" src="img/record-pin.svg" style="opacity: 0; transform: scaleX(1);"/>
-                  <img id="record-needle" src="img/record-needle.svg" style="transform: rotate(18deg) skewX(65deg);"/>
-                  <img id="speaker-off" src="img/speaker-off.svg" />
-                  <img id="speaker-on" src="img/speaker.svg" />
-                </div>
-                <audio id="gibbo">
-                  <source src="../audio/Gibbo-StDenisBeatTape.ogg" type="audio/ogg">
-                  <source src="../audio/Gibbo-StDenisBeatTape.mp3" type="audio/mpeg">
-                </audio>
-                <!-- <div id="egg">
-                  <img id="egg-white" src="img/egg-white.svg" />
-                  <img id="egg-yolk" src="img/yolk.svg" />
-                </egg> -->
-                <div id="spotlight" style="transform: translateY(-50%) translateX(-50%) scaleY(1) scaleX(1);">
-                  <img id="spotlight-svg" src="img/white-circle.svg" />
-                  <img id="hour-hand" src="img/hour-hand.svg">
-                  <img id="minute-hand" src="img/minute-hand.svg">
-                  <img id="circle-shadow" src="img/circle-shadow.svg"  />
-                  <img id="dart-board" src="img/dartboard.svg" style="opacity: 0;" />
-                </div>
-                <div id="loading-circle" style="transform: translateY(-50%) translateX(-50%);">
-                  <img src="img/black-circle.svg"/>
-                </div>
-                <div id="basketball" style="transform: translateY(104%); bottom: 0%;">
-                  <img id="basketball-lines" src="img/basketball.svg"/>
-                </div>
-                <div id="darts">
-                  <svg class="dart" id="dart-1" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div class="screen-frame">
+          <div id="eggman"></div>
+          <img id="ufo" src="img/ufo.svg" />
+          <img id="tractor-beam" src="img/tractor-beam.svg" style="transform: scaleX(0);" />
+          <img id="abductee" src="img/madmen.svg" />
+          <div id="record">
+            <img id="record-lines" src="img/record-lines.svg" style="transform: scale(0.4); opacity: 0;" />
+            <img id="record-shine" src="img/record-shine.svg" style="transform: rotateZ(0deg);" />
+            <img id="record-pin" src="img/record-pin.svg" style="opacity: 0; transform: scaleX(1);" />
+            <img id="record-needle" src="img/record-needle.svg" style="transform: rotate(18deg) skewX(65deg);" />
+            <img id="speaker-off" src="img/speaker-off.svg" />
+            <img id="speaker-on" src="img/speaker.svg" />
+          </div>
+          <div id="white-circle" style="transform: translateY(-50%) translateX(-50%) scaleY(1) scaleX(1);">
+            <img id="white-circle-svg" src="img/white-circle.svg" />
+            <img id="hour-hand" src="img/hour-hand.svg">
+            <img id="minute-hand" src="img/minute-hand.svg">
+            <img id="circle-shadow" src="img/circle-shadow.svg" />
+            <img id="dart-board" src="img/dartboard.svg" style="opacity: 0;" />
+          </div>
+          <div id="loading-circle" style="transform: translateY(-50%) translateX(-50%);">
+            <img src="img/black-circle.svg" />
+          </div>
+          <div id="basketball" style="transform: translateY(104%); bottom: 0%;">
+            <img id="basketball-lines" src="img/basketball.svg" />
+          </div>
+          <div id="darts">
+            <svg class="dart" id="dart-1" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                           <g id="dart" transform="translate(52.394059, 9.292479) scale(-1, 1) rotate(4.000000) translate(-52.394059, -9.292479) translate(-0.105941, -2.707521)">
                               <polygon id="dart-body" fill="#BF2C47" transform="translate(71.947183, 11.837973) rotate(90.000000) translate(-71.947183, -11.837973) " points="71.9471834 -20.0462121 74.6041988 43.7221573 69.290168 43.7221573"></polygon>
@@ -67,7 +64,7 @@
                           </g>
                       </g>
                   </svg>
-                  <svg class="dart" id="dart-2" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg class="dart" id="dart-2" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                           <g id="dart" transform="translate(52.394059, 9.292479) scale(-1, 1) rotate(4.000000) translate(-52.394059, -9.292479) translate(-0.105941, -2.707521)">
                               <polygon id="dart-body" fill="#BF2C47" transform="translate(71.947183, 11.837973) rotate(90.000000) translate(-71.947183, -11.837973) " points="71.9471834 -20.0462121 74.6041988 43.7221573 69.290168 43.7221573"></polygon>
@@ -80,8 +77,8 @@
                           </g>
                       </g>
                   </svg>
-                  <svg class="dart" id="dart-3" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <svg class="dart" id="dart-3" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                           <g id="dart" transform="translate(52.394059, 9.292479) scale(-1, 1) rotate(4.000000) translate(-52.394059, -9.292479) translate(-0.105941, -2.707521)">
                               <polygon id="dart-body" fill="#BF2C47" transform="translate(71.947183, 11.837973) rotate(90.000000) translate(-71.947183, -11.837973) " points="71.9471834 -20.0462121 74.6041988 43.7221573 69.290168 43.7221573"></polygon>
                               <polygon id="dart-needle" fill="#B4B4B4" transform="translate(16.602206, 11.679836) scale(-1, 1) rotate(90.000000) translate(-16.602206, -11.679836) " points="16.6022064 -4.79365942 19.2592218 28.1533314 13.9451911 28.1533314"></polygon>
@@ -93,71 +90,81 @@
                           </g>
                       </g>
                   </svg>
-                </div>
-                <div id="flashlight-holder" style="transform: translateX(-44.4%);">
-                  <img id="flashlight" src="img/flashlight.svg" />
-                  <img id="flashlight-button" src="img/flashlight-button.svg" />
-                  <img id="flashlight-beam" src="img/flashlight-beam.svg" />
-                </div>
-                <img id="pop-up-mask" src="img/pop-up-mask.svg" style="transform: translateY(-50%) translateX(-50%);"/>
-              </div>
           </div>
+          <div id="flashlight-holder" style="transform: translateX(-44.4%);">
+            <img id="flashlight" src="img/flashlight.svg" />
+            <img id="flashlight-button" src="img/flashlight-button.svg" />
+            <img id="flashlight-beam" src="img/flashlight-beam.svg" />
+            <img id="flashlight-mask-right" src="img/flashlight-mask-right.svg" />
+            <img id="flashlight-mask-left" src="img/flashlight-mask-left.svg" />
+          </div>
+          <div id="spotlight-holder">
+            <!-- <div id="spotlight-holder" style="transform: translateX(-44.4%);"> -->
+            <img id="spotlight" src="img/spotlight.svg" />
+            <img id="spotlight-base" src="img/spotlight-base.svg" />
+            <img id="spotlight-glass" src="img/spotlight-glass.svg" />
+          </div>
+          <img id="spotlight-lever" src="img/spotlight-lever.svg" />
+          <img id="pop-up-mask" src="img/pop-up-mask.svg" />
+        </div>
       </div>
-      <div class="credits row">
-          <div class="col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-                      <h1 id="title-credit">Erik Nilsson</h1>
-          </div>
-          <div class="col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-                      <p id="about-credit">Currently a Frontend Development Engineer at Tactel in Malmö, Sweden.</p>
-          </div>
-          <div class="col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-                      <p id="contact-credit">Formerly a digital designer who was abuducted into the realm of software development.</p>
-          </div>
-          <div class="col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-                      <p id="record-credit">A record of my experience can be found at <a href="#">LinkedIn</a> or GitHub</p>
-          </div>
-      </div>
-      <div class="credits row">
-
-          <div class="col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-                      <p id="about-credit"></p>
-          </div>
-          <div class="col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-                      <p id="contact-credit"></p>
-          </div>
-      </div>
-
     </div>
-    <!-- JS Libs -->
-    <script src="lib/jquery.js"></script>
-    <script src="lib/anime.js"></script>
+    <div class="credits row">
+      <div id="title-credit" class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+        <h1>Erik Nilsson</h1>
+      </div>
+      <div id="about-credit" class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+        <p>I'm currently a Frontend Development Engineer at Tactel in Malmö, Sweden.</p>
+      </div>
+      <div id="contact-credit" class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+        <p>Formerly a digital designer who was abuducted into the realm of software development.</p>
+      </div>
+      <div id="record-credit" class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+        <p>A record of my experiences as digital designer and developer can be found at <a href="https://www.linkedin.com/in/erik-nilsson-b8a4772b/" target="_blank">LinkedIn</a> or <a href="http://github.com/strawcity">GitHub</a></p>
+      </div>
+    </div>
+    <div class="credits row">
+      <div class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+        <p id="about-credit"></p>
+      </div>
+      <div class="col-xs-12
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+        <p id="contact-credit"></p>
+      </div>
+    </div>
 
-    <!-- Additional Javascript -->
-    <script src="js/main.js"></script>
-    <!-- <script src="js/twofactor.js"></script> -->
-    <script src="js/animations.js"></script>
-    <script src="js/time.js"></script>
-    <script src="js/ufo.js"></script>
-    <script src="js/record.js"></script>
-    <script src="js/flashlight.js"></script>
-    <script src="js/lookieloo.js"></script>
+  </div>
+  <!-- JS Libs -->
+  <script src="lib/jquery.js"></script>
+  <script src="lib/anime.js"></script>
+
+  <!-- Additional Javascript -->
+  <script src="js/main.js"></script>
+  <!-- <script src="js/twofactor.js"></script> -->
+  <script src="js/animations.js"></script>
+  <script src="js/time.js"></script>
+  <script src="js/ufo.js"></script>
+  <script src="js/record.js"></script>
+  <!-- <script src="js/flashlight.js"></script> -->
+  <script src="js/spotlight.js"></script>
+  <script src="js/lookieloo.js"></script>
 </body>
+
 </html>

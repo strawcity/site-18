@@ -1,6 +1,6 @@
 var animationState = [false, 0];
 var startButton = document.querySelector("#loading-circle");
-var spotlight = document.querySelector("#spotlight");
+var spotlight = document.querySelector("#white-circle");
 var circleShadow = document.querySelector("#circle-shadow");
 var popUpMask = document.querySelector("#pop-up-mask");
 var tractorBeam = document.querySelector("#tractor-beam");
@@ -32,7 +32,7 @@ function easterEggs() {
       finishAbduction();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
-      eekAMouse();
+      birdman();
       // lookIn();
       break;
     case animationState[1] === 5 && animationState[0] !== true:
@@ -94,43 +94,29 @@ function invertCircle() {
       duration: 100
     });
     anime({
-      targets: "#spotlight",
+      targets: "#white-circle",
       opacity: 1,
       duration: 100,
       complete: function(anim) {
         return animationState = [false, 1];
       }
     });
-    anime({
-      targets: '#title-credit',
-      opacity: 1,
-      duration: 1000
-    });
+    document.querySelector("#title-credit").style.display = "block";
   }
 }
 
 function loadAboutCredit() {
-  anime({
-    targets: '#about-credit',
-    opacity: 1,
-    duration: 1500
-  });
+  document.querySelector("#about-credit").style.display = "block";
 }
 
 function loadContactCredit() {
-  anime({
-    targets: '#contact-credit',
-    opacity: 1,
-    duration: 1500
-  });
+  document.querySelector("#about-credit").style.display = "none";
+  document.querySelector("#contact-credit").style.display = "block";
 }
 
 function loadRecordCredit() {
-  anime({
-    targets: '#record-credit',
-    opacity: 1,
-    duration: 1500
-  });
+  document.querySelector("#contact-credit").style.display = "none";
+  document.querySelector("#record-credit").style.display = "block";
 }
 
 
@@ -141,7 +127,7 @@ function makeHole() {
     circleShadow.style.display = "block";
     popUpMask.style.display = "block";
     anime({
-      targets: "#spotlight",
+      targets: "#white-circle",
       scaleY: 0.2,
       scaleX: 1,
       translateX: '-50%',
@@ -241,7 +227,7 @@ function dartBoard() {
       duration: 1200,
     });
     anime({
-      targets: "#spotlight",
+      targets: "#white-circle",
       scaleY: 1,
       scaleX: 0.5,
       translateX: '270%',

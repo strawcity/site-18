@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61px" height="138px" viewBox="0 0 61 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Spotlight-base</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Spotlight-base" transform="translate(-8.000000, 0.000000)" fill-rule="nonzero">
+            <ellipse id="spotlight-crux" fill="#929292" cx="44" cy="22" rx="20" ry="22"></ellipse>
+            <path d="M31.7643362,35.4286911 C28.2356553,31.9440435 26,26.7726624 26,21 C26,10.5065898 33.3873016,2 42.5,2 C51.6126984,2 59,10.5065898 59,21 C59,22.098785 58.9190013,23.1757853 58.7635045,24.2235155 L65.2363281,129.205078 L48.2695312,138.077148 L22.6464844,71.2353516 L31.7643362,35.4286911 Z" id="spotlight-inner-arm" fill="#252525" transform="translate(43.941406, 70.038574) rotate(-3.000000) translate(-43.941406, -70.038574) "></path>
+            <path d="M23.0030782,21.3707253 C23.0010292,21.2474341 23,21.1238555 23,21 C23,10.5065898 30.3873016,2 39.5,2 C48.6126984,2 56,10.5065898 56,21 C56,21.8343783 55.9532934,22.6561949 55.8627265,23.462172 L51.9111328,136.801758 C41.3271484,135.269857 31.6842448,132.25293 22.9824219,127.750977 C14.280599,123.249023 9.52018229,119.905924 8.70117188,117.72168 L11.7617188,103.631836 L23.0030782,21.3707253 Z" id="spotlight-outer-arm" fill="#484848"></path>
+        </g>
+    </g>
+</svg>

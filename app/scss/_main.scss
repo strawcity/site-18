@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,500,700');
 
-
 body {
   font-family: 'Cormorant Garamond', serif;
   padding: 30px;
   max-width: 970px;
   margin: 0 auto;
-  h1, h2, h3, h4, h5, p {
+  background-color: #ffdd61;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
     margin: 0;
   }
 }
@@ -19,26 +25,36 @@ body {
 .screen {
   overflow: hidden;
   padding: 0;
+
   .screen-frame {
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
-    background: white;
+    background: #ffdd61;
+
+    #eggman {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("../img/skyline.jpg");
+      opacity: 0;
+    }
 
     #loading-circle {
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 0%;
+      width: 0;
       height: auto;
       overflow: hidden;
       cursor: pointer;
+
       img {
         width: 100%;
       }
     }
 
-    #spotlight {
+    #white-circle {
       display: none;
       opacity: 0;
       position: absolute;
@@ -49,16 +65,19 @@ body {
       transform: scaleY(1);
       z-index: 5;
       cursor: pointer;
-      #spotlight-svg {
+
+      #white-circle-svg {
         position: absolute;
         width: 100%;
         height: auto;
         transform: scaleY(1);
       }
+
       #dart-board {
         transform: translateX(-1%) translateY(-99.5%);
         width: 102%;
       }
+
       #circle-shadow {
         display: none;
         opacity: 0;
@@ -69,8 +88,9 @@ body {
         height: auto;
         cursor: pointer;
       }
-      #minute-hand,
-      #hour-hand {
+
+      #hour-hand,
+      #minute-hand {
         height: 100%;
         position: absolute;
         left: 47.4%;
@@ -83,7 +103,7 @@ body {
       opacity: 0;
       position: absolute;
       left: 39.9%;
-      top: 0%;
+      top: 0;
       width: 20.2%;
       height: auto;
       transform: scaleY(1);
@@ -99,6 +119,7 @@ body {
       overflow: hidden;
       left: 42.6%;
       bottom: 1%;
+
       #basketball-lines {
         bottom: 5px;
         position: relative;
@@ -110,6 +131,7 @@ body {
       #egg-white {
         position: absolute;
       }
+
       #egg-yolk {
         position: absolute;
       }
@@ -140,25 +162,28 @@ body {
     }
 
     #record {
-      #record-shine,
       #record-lines,
-      #record-pin,
       #record-needle,
-      #speaker-on,
-      #speaker-off {
+      #record-pin,
+      #record-shine,
+      #speaker-off,
+      #speaker-on {
         position: absolute;
       }
+
       #record-shine {
         width: 22%;
         left: 38.8%;
         top: -15%;
         display: none;
       }
+
       #record-lines {
         width: 70%;
         left: 15%;
         bottom: 21%;
       }
+
       #record-pin {
         width: 2.3%;
         z-index: 7;
@@ -167,14 +192,16 @@ body {
         display: none;
         cursor: pointer;
       }
+
       #record-needle {
         width: 68%;
         top: 12%;
         left: 79%;
         cursor: pointer;
       }
-      #speaker-on,
-      #speaker-off {
+
+      #speaker-off,
+      #speaker-on {
         cursor: pointer;
         opacity: 0;
         left: 4%;
@@ -192,6 +219,7 @@ body {
         z-index: 2;
       }
     }
+
     #flashlight-holder {
       display: none;
       position: absolute;
@@ -200,35 +228,94 @@ body {
       top: 101%;
       left: 46.6%;
       z-index: 1;
+
       #flashlight {
         position: absolute;
         width: 68%;
         left: 20.5%;
+        z-index: 2;
       }
+
       #flashlight-button {
         position: absolute;
         left: 22%;
         top: 145%;
         width: 13%;
+        z-index: 5;
         cursor: pointer;
       }
+
       #flashlight-beam {
         position: absolute;
         width: 115%;
         left: -2.9%;
         top: -600%;
+        z-index: 10;
         opacity: 0;
         display: none;
       }
-      #flashlight-mask {
+
+      #flashlight-mask-right {
         position: absolute;
-        width: 117%;
-        left: 31%;
-        top: 178%;
+        width: 167.4%;
+        left: 72.5%;
+        top: -267%;
+        z-index: 1;
         opacity: 0;
-        display: none;
+      }
+
+      #flashlight-mask-left {
+        position: absolute;
+        width: 169.2%;
+        left: -132%;
+        top: -266%;
+        z-index: 1;
+        opacity: 0;
       }
     }
+
+    #spotlight-holder {
+      // display: none;
+      position: absolute;
+      height: 20%;
+      width: 33.2%;
+      top: 100%;
+      left: 32%;
+      z-index: 1;
+
+      #spotlight {
+        position: absolute;
+        width: 68%;
+        left: 20.5%;
+        z-index: 2;
+      }
+
+      #spotlight-base {
+        position: absolute;
+        width: 28%;
+        left: 9.5%;
+        z-index: 2;
+        top: 91%;
+      }
+
+      #spotlight-glass {
+        position: absolute;
+        width: 60%;
+        z-index: 10;
+        left: 24%;
+        top: 6%;
+        opacity: 0;
+      }
+    }
+
+    #spotlight-lever {
+      position: absolute;
+      height: 48%;
+      top: 20%;
+      left: -13%;
+      cursor: pointer;
+    }
+
     #mouse {
       position: absolute;
       width: 16%;
@@ -240,14 +327,20 @@ body {
 }
 
 .credits {
-  margin-top: 25px;
-  p {
-      margin: 10px 0;
+  h1 {
+    font-size: 2.3em;
   }
+  margin-top: 25px;
+
+  p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+
   #about-credit,
-  #title-credit,
   #contact-credit,
-  #record-credit {
-    opacity: 0;
+  #record-credit,
+  #title-credit {
+    display: none;
   }
 }

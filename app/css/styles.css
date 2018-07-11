@@ -642,8 +642,14 @@ body {
   font-family: 'Cormorant Garamond', serif;
   padding: 30px;
   max-width: 970px;
-  margin: 0 auto; }
-  body h1, body h2, body h3, body h4, body h5, body p {
+  margin: 0 auto;
+  background-color: #ffdd61; }
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body p {
     margin: 0; }
 
 .box {
@@ -657,18 +663,24 @@ body {
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
-    background: white; }
+    background: #ffdd61; }
+    .screen .screen-frame #eggman {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("../img/skyline.jpg");
+      opacity: 0; }
     .screen .screen-frame #loading-circle {
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 0%;
+      width: 0;
       height: auto;
       overflow: hidden;
       cursor: pointer; }
       .screen .screen-frame #loading-circle img {
         width: 100%; }
-    .screen .screen-frame #spotlight {
+    .screen .screen-frame #white-circle {
       display: none;
       opacity: 0;
       position: absolute;
@@ -679,15 +691,15 @@ body {
       transform: scaleY(1);
       z-index: 5;
       cursor: pointer; }
-      .screen .screen-frame #spotlight #spotlight-svg {
+      .screen .screen-frame #white-circle #white-circle-svg {
         position: absolute;
         width: 100%;
         height: auto;
         transform: scaleY(1); }
-      .screen .screen-frame #spotlight #dart-board {
+      .screen .screen-frame #white-circle #dart-board {
         transform: translateX(-1%) translateY(-99.5%);
         width: 102%; }
-      .screen .screen-frame #spotlight #circle-shadow {
+      .screen .screen-frame #white-circle #circle-shadow {
         display: none;
         opacity: 0;
         position: absolute;
@@ -696,8 +708,8 @@ body {
         left: -1px;
         height: auto;
         cursor: pointer; }
-      .screen .screen-frame #spotlight #minute-hand,
-      .screen .screen-frame #spotlight #hour-hand {
+      .screen .screen-frame #white-circle #hour-hand,
+      .screen .screen-frame #white-circle #minute-hand {
         height: 100%;
         position: absolute;
         left: 47.4%;
@@ -707,7 +719,7 @@ body {
       opacity: 0;
       position: absolute;
       left: 39.9%;
-      top: 0%;
+      top: 0;
       width: 20.2%;
       height: auto;
       transform: scaleY(1);
@@ -747,12 +759,12 @@ body {
       top: 47.7%;
       width: 8.3%;
       opacity: 0; }
-    .screen .screen-frame #record #record-shine,
     .screen .screen-frame #record #record-lines,
-    .screen .screen-frame #record #record-pin,
     .screen .screen-frame #record #record-needle,
-    .screen .screen-frame #record #speaker-on,
-    .screen .screen-frame #record #speaker-off {
+    .screen .screen-frame #record #record-pin,
+    .screen .screen-frame #record #record-shine,
+    .screen .screen-frame #record #speaker-off,
+    .screen .screen-frame #record #speaker-on {
       position: absolute; }
     .screen .screen-frame #record #record-shine {
       width: 22%;
@@ -775,8 +787,8 @@ body {
       top: 12%;
       left: 79%;
       cursor: pointer; }
-    .screen .screen-frame #record #speaker-on,
-    .screen .screen-frame #record #speaker-off {
+    .screen .screen-frame #record #speaker-off,
+    .screen .screen-frame #record #speaker-on {
       cursor: pointer;
       opacity: 0;
       left: 4%;
@@ -799,27 +811,68 @@ body {
       .screen .screen-frame #flashlight-holder #flashlight {
         position: absolute;
         width: 68%;
-        left: 20.5%; }
+        left: 20.5%;
+        z-index: 2; }
       .screen .screen-frame #flashlight-holder #flashlight-button {
         position: absolute;
         left: 22%;
         top: 145%;
         width: 13%;
+        z-index: 5;
         cursor: pointer; }
       .screen .screen-frame #flashlight-holder #flashlight-beam {
         position: absolute;
         width: 115%;
         left: -2.9%;
         top: -600%;
+        z-index: 10;
         opacity: 0;
         display: none; }
-      .screen .screen-frame #flashlight-holder #flashlight-mask {
+      .screen .screen-frame #flashlight-holder #flashlight-mask-right {
         position: absolute;
-        width: 117%;
-        left: 31%;
-        top: 178%;
-        opacity: 0;
-        display: none; }
+        width: 167.4%;
+        left: 72.5%;
+        top: -267%;
+        z-index: 1;
+        opacity: 0; }
+      .screen .screen-frame #flashlight-holder #flashlight-mask-left {
+        position: absolute;
+        width: 169.2%;
+        left: -132%;
+        top: -266%;
+        z-index: 1;
+        opacity: 0; }
+    .screen .screen-frame #spotlight-holder {
+      position: absolute;
+      height: 20%;
+      width: 33.2%;
+      top: 100%;
+      left: 32%;
+      z-index: 1; }
+      .screen .screen-frame #spotlight-holder #spotlight {
+        position: absolute;
+        width: 68%;
+        left: 20.5%;
+        z-index: 2; }
+      .screen .screen-frame #spotlight-holder #spotlight-base {
+        position: absolute;
+        width: 28%;
+        left: 9.5%;
+        z-index: 2;
+        top: 91%; }
+      .screen .screen-frame #spotlight-holder #spotlight-glass {
+        position: absolute;
+        width: 60%;
+        z-index: 10;
+        left: 24%;
+        top: 6%;
+        opacity: 0; }
+    .screen .screen-frame #spotlight-lever {
+      position: absolute;
+      height: 48%;
+      top: 20%;
+      left: -13%;
+      cursor: pointer; }
     .screen .screen-frame #mouse {
       position: absolute;
       width: 16%;
@@ -829,10 +882,13 @@ body {
 
 .credits {
   margin-top: 25px; }
+  .credits h1 {
+    font-size: 2.3em; }
   .credits p {
+    font-size: 1.2em;
     margin: 10px 0; }
   .credits #about-credit,
-  .credits #title-credit,
   .credits #contact-credit,
-  .credits #record-credit {
-    opacity: 0; }
+  .credits #record-credit,
+  .credits #title-credit {
+    display: none; }

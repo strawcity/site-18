@@ -56,7 +56,7 @@ function putYourRecordsOn() {
   recordPin.style.display = "block";
   recordShine.style.display = "block";
   anime({
-    targets: "#spotlight",
+    targets: "#white-circle",
     scaleY: 0.3,
     scaleX: 1,
     translateX: '-50%',

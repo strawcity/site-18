@@ -47,7 +47,7 @@ function eekAMouse() {
       duration: 1200,
     });
     anime({
-      targets: "#spotlight",
+      targets: "#white-circle",
       scaleY: 0.3,
       scaleX: 1,
       translateX: '-50%',
@@ -73,38 +73,61 @@ function eekAMouse() {
         return animationState = [false, 9];
       }
     });
-    anime({
-      targets: "#flashlight-beam",
-      opacity: 1,
-      delay: 1000,
-      duration: 100
-    });
   }
 }
 
 function toggleFlashlight() {
   var beamState = document.querySelector("#flashlight-beam").style.opacity;
+  anime({
+    targets: "#flashlight-button",
+    opacity: 1,
+    scaleX: 0.8,
+    translateX: '10%',
+    direction: 'alternate',
+    duration: 50
+  });
+  if (beamState == 1) {
     anime({
-      targets: "#flashlight-button",
-      opacity: 1,
-      scaleX: 0.8,
-      translateX: '10%',
-      direction: 'alternate',
-      duration: 50
+      targets: "#flashlight-beam",
+      opacity: 0,
+      duration: 100
     });
-    if (beamState == 1) {
-      anime({
-        targets: "#flashlight-beam",
-        opacity: 0,
-        duration: 100
-      });
-    } else {
-      anime({
-        targets: "#flashlight-beam",
-        opacity: 1,
-        duration: 100
-      });
-    }
+    anime({
+      targets: "#flashlight-mask-left",
+      opacity: 0,
+      duration: 100
+    });
+    anime({
+      targets: ".screen-frame",
+      background: '#000',
+      duration: 100
+    });
+    anime({
+      targets: "#flashlight-mask-right",
+      opacity: 0,
+      duration: 100
+    });
+  } else {
+    anime({
+      targets: "#flashlight-beam",
+      opacity: 1,
+      duration: 100
+    });
+    anime({
+      targets: "#flashlight-mask-left",
+      opacity: 0.5,
+      duration: 100
+    });
+    anime({
+      targets: "#eggman",
+      opacity: 1
+    });
+    anime({
+      targets: "#flashlight-mask-right",
+      opacity: 0.5,
+      duration: 100
+    });
+  }
 }
 
 function mouseRun() {

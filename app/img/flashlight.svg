@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="198px" height="315px" viewBox="0 0 198 315" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="200px" height="315px" viewBox="0 0 200 315" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>flashlight</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="flashlight">
-            <rect id="Rectangle-15" fill="#1C1C1C" x="25" y="100" width="148" height="215"></rect>
-            <path d="M108.703333,199 C128.749429,199 145,154.67619 145,100 C145,45.3238098 128.749429,1 108.703333,1 C88.6572369,1 53,45.3238098 53,100 C53,154.67619 88.6572369,199 108.703333,199 Z" id="Oval-6" fill="#1C1C1C" transform="translate(99.000000, 100.000000) rotate(270.000000) translate(-99.000000, -100.000000) "></path>
-            <rect id="Rectangle-14" fill="#1C1C1C" x="0" y="31" width="198" height="62"></rect>
-            <ellipse id="Oval-10" fill="#383838" cx="99" cy="32.5" rx="99" ry="32.5"></ellipse>
+            <rect id="Rectangle-15" fill="#1C1C1C" x="26" y="100" width="148" height="215"></rect>
+            <path d="M109.703333,191 C129.749429,191 146,146.67619 146,92 C146,37.3238098 129.749429,-7 109.703333,-7 C89.6572369,-7 54,-12.1738281 54,92 C54,196.173828 89.6572369,191 109.703333,191 Z" id="Oval-6" fill="#1C1C1C" transform="translate(100.000000, 92.000000) rotate(270.000000) translate(-100.000000, -92.000000) "></path>
+            <rect id="Rectangle-14" fill="#1C1C1C" x="1" y="31" width="198" height="62"></rect>
+            <ellipse id="Oval-10" fill="#383838" cx="100" cy="32.5" rx="99" ry="32.5"></ellipse>
         </g>
     </g>
 </svg>

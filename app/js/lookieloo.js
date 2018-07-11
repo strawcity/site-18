@@ -45,7 +45,7 @@ function lookIn() {
       duration: 1200,
     });
     anime({
-      targets: "#spotlight",
+      targets: "#white-circle",
       scaleY: 0.2,
       scaleX: 1,
       translateX: '-50%',
