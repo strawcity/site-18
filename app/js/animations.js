@@ -25,7 +25,7 @@ function easterEggs() {
       break;
     case animationState[1] === 2 && animationState[0] !== true:
       showUFO();
-      loadContactCredit();
+      loadExperienceCredit();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
       loadRecordCredit()
@@ -33,7 +33,7 @@ function easterEggs() {
       break;
     case animationState[1] === 4 && animationState[0] !== true:
       birdman();
-      // lookIn();
+      loadContactCredit();
       break;
     case animationState[1] === 5 && animationState[0] !== true:
       putYourRecordsOn();
@@ -109,14 +109,19 @@ function loadAboutCredit() {
   document.querySelector("#about-credit").style.display = "block";
 }
 
-function loadContactCredit() {
+function loadExperienceCredit() {
   document.querySelector("#about-credit").style.display = "none";
-  document.querySelector("#contact-credit").style.display = "block";
+  document.querySelector("#experience-credit").style.display = "block";
 }
 
 function loadRecordCredit() {
-  document.querySelector("#contact-credit").style.display = "none";
+  document.querySelector("#experience-credit").style.display = "none";
   document.querySelector("#record-credit").style.display = "block";
+}
+
+function loadContactCredit() {
+  document.querySelector("#record-credit").style.display = "none";
+  document.querySelector("#contact-credit").style.display = "block";
 }
 
 

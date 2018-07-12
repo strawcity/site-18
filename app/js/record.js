@@ -70,14 +70,15 @@ function putYourRecordsOn() {
     scale: 1,
     opacity: 1,
     easing: "easeInOutQuad",
-    delay: 250,
+    delay: 150,
     duration: 1000
   });
   anime({
     targets: "#record-pin",
     translateY: '-90%',
-    delay: 250,
-    duration: 1000,
+    easing: "linear",
+    delay: 500,
+    duration: 150,
     opacity: 1
   });
   anime({

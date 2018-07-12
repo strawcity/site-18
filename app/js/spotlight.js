@@ -5,6 +5,7 @@ function birdman() {
     popUpMask.style.display = "block";
     recordShine.remove();
     document.querySelector("#spotlight-glass").style.display = "block";
+    document.querySelector("#spotlight-beam").style.display = "block";
     document.querySelector("#white-circle").style.display = "none";
     gibbo.pause();
     anime({
@@ -12,8 +13,9 @@ function birdman() {
       rotate: -130,
       translateX: '11%',
       translateY: '-66%',
-      easing: "easeInOutQuad",
-      duration: 750,
+      easing: "easeInOutCubic",
+      duration: 900,
+      delay: 150
     });
     anime({
       targets: "#record-needle",
@@ -21,7 +23,7 @@ function birdman() {
       skewX: 65,
       translateX: '14%',
       easing: "easeOutExpo",
-      duration: 700,
+      duration: 1500,
     });
     anime({
       targets: "#speaker-off",
@@ -35,60 +37,60 @@ function birdman() {
     });
     anime({
       targets: "#record-pin",
-      delay: 250,
+      delay: 300,
       duration: 250,
       opacity: 0
     });
     anime({
       targets: "#record-lines",
-      delay: 500,
-      duration: 250,
+      delay: 600,
+      duration: 900,
       opacity: 0
     });
     anime({
       targets: "#spotlight-holder",
       translateY: '-224%',
-      translateX: '-117%',
-      easing: 'easeOutQuad',
+      translateX: '24%',
+      easing: 'easeInOutQuad',
       duration: 500,
-      delay: 250
+      delay: 500
     });
-    // anime({
-    //   targets: "#spotlight-lever",
-    //   translateX: '164%',
-    //   rotate: '40',
-    //   easing: 'easeOutQuad',
-    //   duration: 500,
-    //   delay: 200
-    // });
+    anime({
+      targets: "#spotlight-beam",
+      opacity: 0.2,
+      duration: 500,
+      delay: 1000
+    });
+    anime({
+      targets: "#spotlight-lever",
+      translateY: '-50%',
+      rotate: '40',
+      easing: 'easeOutQuad',
+      duration: 250,
+      delay: 1000
+    });
   }
 }
 
 function activateSpotlight() {
   anime({
     targets: "#spotlight-lever",
-    translateX: '164%',
-    rotate: '140',
+    translateY: '-50%',
+    rotate: '-40',
     easing: 'easeInExpo',
     duration: 750
   });
   anime({
-    targets: "#white-circle",
-    opacity: 0,
-    duration: 100
+    targets: "#spotlight-beam",
+    opacity: 0.6,
+    delay: 800,
+    duration: 200
   });
   anime({
-    targets: "#spotlight-glass",
+    targets: "#eggman",
     opacity: 1,
-    duration: 100
-  });
-  anime({
-    targets: "#spotlight-holder",
-    translateY: '-176%',
-    translateX: '-90%',
-    easing: 'easeOutQuad',
-    duration: 500,
-    delay: 700
+    delay: 800,
+    duration: 300
   });
 }
 

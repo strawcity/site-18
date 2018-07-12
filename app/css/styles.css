@@ -643,13 +643,14 @@ body {
   padding: 30px;
   max-width: 970px;
   margin: 0 auto;
-  background-color: #ffdd61; }
+  background-color: #fff; }
   body h1,
   body h2,
   body h3,
   body h4,
   body h5,
   body p {
+    color: #000;
     margin: 0; }
 
 .box {
@@ -663,13 +664,17 @@ body {
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
-    background: #ffdd61; }
+    background: #fff; }
     .screen .screen-frame #eggman {
       position: absolute;
       width: 100%;
       height: 100%;
       background-image: url("../img/skyline.jpg");
-      opacity: 0; }
+      opacity: 0;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; }
     .screen .screen-frame #loading-circle {
       position: absolute;
       left: 50%;
@@ -775,6 +780,7 @@ body {
         width: 22%;
         left: 38.8%;
         top: -15%;
+        opacity: 0.6;
         display: none; }
       .screen .screen-frame #record #record-lines {
         width: 70%;
@@ -785,8 +791,9 @@ body {
         width: 20%;
         z-index: 2;
         left: 40%;
-        top: 54%;
-        display: none; }
+        top: 53.9%;
+        display: none;
+        cursor: pointer; }
       .screen .screen-frame #record #speaker-off,
       .screen .screen-frame #record #speaker-on {
         cursor: pointer;
@@ -815,54 +822,12 @@ body {
       top: 40%;
       left: -10%;
       z-index: 2; }
-    .screen .screen-frame #flashlight-holder {
-      display: none;
-      position: absolute;
-      height: 20%;
-      width: 33.2%;
-      top: 101%;
-      left: 46.6%;
-      z-index: 1; }
-      .screen .screen-frame #flashlight-holder #flashlight {
-        position: absolute;
-        width: 68%;
-        left: 20.5%;
-        z-index: 2; }
-      .screen .screen-frame #flashlight-holder #flashlight-button {
-        position: absolute;
-        left: 22%;
-        top: 145%;
-        width: 13%;
-        z-index: 5;
-        cursor: pointer; }
-      .screen .screen-frame #flashlight-holder #flashlight-beam {
-        position: absolute;
-        width: 115%;
-        left: -2.9%;
-        top: -600%;
-        z-index: 10;
-        opacity: 0;
-        display: none; }
-      .screen .screen-frame #flashlight-holder #flashlight-mask-right {
-        position: absolute;
-        width: 167.4%;
-        left: 72.5%;
-        top: -267%;
-        z-index: 1;
-        opacity: 0; }
-      .screen .screen-frame #flashlight-holder #flashlight-mask-left {
-        position: absolute;
-        width: 169.2%;
-        left: -132%;
-        top: -266%;
-        z-index: 1;
-        opacity: 0; }
     .screen .screen-frame #spotlight-holder {
       position: absolute;
       height: 20%;
       width: 33.2%;
       top: 105%;
-      left: 36%; }
+      left: -11%; }
       .screen .screen-frame #spotlight-holder #spotlight {
         position: absolute;
         width: 68%;
@@ -882,11 +847,20 @@ body {
         left: 24%;
         top: 6%;
         opacity: 0; }
+      .screen .screen-frame #spotlight-holder #spotlight-beam {
+        position: absolute;
+        top: -661%;
+        left: 116%;
+        transform: rotate(50deg);
+        z-index: 3;
+        opacity: 0;
+        width: 115%;
+        display: none; }
     .screen .screen-frame #spotlight-lever {
       position: absolute;
-      height: 48%;
-      top: 20%;
-      left: -13%;
+      height: 58%;
+      top: 101%;
+      left: 61%;
       cursor: pointer; }
     .screen .screen-frame #mouse {
       position: absolute;
@@ -902,8 +876,5 @@ body {
   .credits p {
     font-size: 1.2em;
     margin: 10px 0; }
-  .credits #about-credit,
-  .credits #contact-credit,
-  .credits #record-credit,
-  .credits #title-credit {
+  .credits .credit {
     display: none; }
