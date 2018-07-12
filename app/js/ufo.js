@@ -37,7 +37,7 @@ function showUFO() {
     });
     anime({
       targets: "#ufo",
-      translateY: '31%',
+      translateY: '60%',
       easing: "easeInOutQuad",
       delay: 500,
       duration: 200

@@ -1,32 +1,19 @@
 function birdman() {
   if (animationState[0] !== true) {
     animationState[0] = true;
-    document.querySelector("#flashlight-holder").style.display = "block";
-    document.querySelector("#flashlight-beam").style.display = "block";
     circleShadow.style.display = "block";
     popUpMask.style.display = "block";
     recordShine.remove();
-    document.querySelector("#speaker-off").style.display = "none";
-    document.querySelector("#speaker-on").style.display = "none";
+    document.querySelector("#spotlight-glass").style.display = "block";
+    document.querySelector("#white-circle").style.display = "none";
     gibbo.pause();
     anime({
-      targets: "#record-lines",
-      scale: 0,
-      easing: "easeOutExpo",
-      duration: 500,
-      opacity: 0
-    });
-    anime({
-      targets: "#record-pin",
-      opacity: 0,
-      easing: "easeOutExpo",
-      duration: 700
-    });
-    anime({
-      targets: "#record-shine",
-      opacity: 0,
-      easing: "easeOutExpo",
-      duration: 500
+      targets: "#record",
+      rotate: -130,
+      translateX: '11%',
+      translateY: '-66%',
+      easing: "easeInOutQuad",
+      duration: 750,
     });
     anime({
       targets: "#record-needle",
@@ -39,38 +26,41 @@ function birdman() {
     anime({
       targets: "#speaker-off",
       opacity: 0,
-      duration: 1200,
+      duration: 100,
     });
     anime({
       targets: "#speaker-on",
       opacity: 0,
-      duration: 1200,
+      duration: 100,
     });
     anime({
-      targets: "#white-circle",
-      scaleY: 0.3,
-      scaleX: 1,
-      translateX: '-50%',
-      translateY: '33%',
-      easing: "easeOutQuad",
-      duration: 500
+      targets: "#record-pin",
+      delay: 250,
+      duration: 250,
+      opacity: 0
+    });
+    anime({
+      targets: "#record-lines",
+      delay: 500,
+      duration: 250,
+      opacity: 0
     });
     anime({
       targets: "#spotlight-holder",
-      translateY: '-176%',
-      translateX: '0',
-      easing: 'easeOutQuad',
-      duration: 250,
-      delay: 100
-    });
-    anime({
-      targets: "#spotlight-lever",
-      translateX: '164%',
-      rotate: '40',
+      translateY: '-224%',
+      translateX: '-117%',
       easing: 'easeOutQuad',
       duration: 500,
-      delay: 200
+      delay: 250
     });
+    // anime({
+    //   targets: "#spotlight-lever",
+    //   translateX: '164%',
+    //   rotate: '40',
+    //   easing: 'easeOutQuad',
+    //   duration: 500,
+    //   delay: 200
+    // });
   }
 }
 

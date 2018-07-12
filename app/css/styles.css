@@ -743,9 +743,9 @@ body {
       position: absolute; }
     .screen .screen-frame #ufo {
       position: absolute;
-      width: 59%;
+      width: 89%;
       top: -31%;
-      left: 20.4%;
+      left: 5.4%;
       z-index: 3; }
     .screen .screen-frame #tractor-beam {
       position: absolute;
@@ -759,41 +759,56 @@ body {
       top: 47.7%;
       width: 8.3%;
       opacity: 0; }
-    .screen .screen-frame #record #record-lines,
-    .screen .screen-frame #record #record-needle,
-    .screen .screen-frame #record #record-pin,
-    .screen .screen-frame #record #record-shine,
-    .screen .screen-frame #record #speaker-off,
-    .screen .screen-frame #record #speaker-on {
-      position: absolute; }
-    .screen .screen-frame #record #record-shine {
-      width: 22%;
-      left: 38.8%;
-      top: -15%;
+    .screen .screen-frame #record {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      transform: rotate(0deg);
+      z-index: 1;
       display: none; }
-    .screen .screen-frame #record #record-lines {
-      width: 70%;
-      left: 15%;
-      bottom: 21%; }
-    .screen .screen-frame #record #record-pin {
+      .screen .screen-frame #record #record-lines,
+      .screen .screen-frame #record #record-shine,
+      .screen .screen-frame #record #speaker-off,
+      .screen .screen-frame #record #speaker-on {
+        position: absolute; }
+      .screen .screen-frame #record #record-shine {
+        width: 22%;
+        left: 38.8%;
+        top: -15%;
+        display: none; }
+      .screen .screen-frame #record #record-lines {
+        width: 70%;
+        left: 15%;
+        bottom: 21%; }
+      .screen .screen-frame #record #spotlight-glass {
+        position: absolute;
+        width: 20%;
+        z-index: 2;
+        left: 40%;
+        top: 54%;
+        display: none; }
+      .screen .screen-frame #record #speaker-off,
+      .screen .screen-frame #record #speaker-on {
+        cursor: pointer;
+        opacity: 0;
+        left: 4%;
+        height: 35px;
+        top: 5%; }
+    .screen .screen-frame #record-pin {
+      position: absolute;
       width: 2.3%;
       z-index: 7;
       bottom: 34%;
       left: 48.7%;
       display: none;
       cursor: pointer; }
-    .screen .screen-frame #record #record-needle {
+    .screen .screen-frame #record-needle {
+      z-index: 3;
+      position: absolute;
       width: 68%;
       top: 12%;
       left: 79%;
       cursor: pointer; }
-    .screen .screen-frame #record #speaker-off,
-    .screen .screen-frame #record #speaker-on {
-      cursor: pointer;
-      opacity: 0;
-      left: 4%;
-      height: 35px;
-      top: 5%; }
     .screen .screen-frame #darts .dart {
       position: absolute;
       width: 8%;
@@ -846,14 +861,14 @@ body {
       position: absolute;
       height: 20%;
       width: 33.2%;
-      top: 100%;
-      left: 32%;
-      z-index: 1; }
+      top: 105%;
+      left: 36%; }
       .screen .screen-frame #spotlight-holder #spotlight {
         position: absolute;
         width: 68%;
-        left: 20.5%;
-        z-index: 2; }
+        left: 14.5%;
+        z-index: 2;
+        transform: rotate(50deg); }
       .screen .screen-frame #spotlight-holder #spotlight-base {
         position: absolute;
         width: 28%;

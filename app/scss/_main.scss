@@ -139,9 +139,9 @@ body {
 
     #ufo {
       position: absolute;
-      width: 59%;
+      width: 89%;
       top: -31%;
-      left: 20.4%;
+      left: 5.4%;
       z-index: 3;
     }
 
@@ -162,9 +162,14 @@ body {
     }
 
     #record {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      transform: rotate(0deg);
+      z-index: 1;
+      display: none;
+
       #record-lines,
-      #record-needle,
-      #record-pin,
       #record-shine,
       #speaker-off,
       #speaker-on {
@@ -184,20 +189,13 @@ body {
         bottom: 21%;
       }
 
-      #record-pin {
-        width: 2.3%;
-        z-index: 7;
-        bottom: 34%;
-        left: 48.7%;
+      #spotlight-glass {
+        position: absolute;
+        width: 20%;
+        z-index: 2;
+        left: 40%;
+        top: 54%;
         display: none;
-        cursor: pointer;
-      }
-
-      #record-needle {
-        width: 68%;
-        top: 12%;
-        left: 79%;
-        cursor: pointer;
       }
 
       #speaker-off,
@@ -208,6 +206,25 @@ body {
         height: 35px;
         top: 5%;
       }
+    }
+
+    #record-pin {
+      position: absolute;
+      width: 2.3%;
+      z-index: 7;
+      bottom: 34%;
+      left: 48.7%;
+      display: none;
+      cursor: pointer;
+    }
+
+    #record-needle {
+      z-index: 3;
+      position: absolute;
+      width: 68%;
+      top: 12%;
+      left: 79%;
+      cursor: pointer;
     }
 
     #darts {
@@ -275,19 +292,18 @@ body {
     }
 
     #spotlight-holder {
-      // display: none;
       position: absolute;
       height: 20%;
       width: 33.2%;
-      top: 100%;
-      left: 32%;
-      z-index: 1;
+      top: 105%;
+      left: 36%;
 
       #spotlight {
         position: absolute;
         width: 68%;
-        left: 20.5%;
+        left: 14.5%;
         z-index: 2;
+        transform: rotate(50deg);
       }
 
       #spotlight-base {

@@ -53,6 +53,7 @@ function finishAbduction() {
 }
 
 function putYourRecordsOn() {
+  document.querySelector("#record").style.display = "block";
   recordPin.style.display = "block";
   recordShine.style.display = "block";
   anime({
@@ -81,7 +82,7 @@ function putYourRecordsOn() {
   });
   anime({
     targets: "#record-shine",
-    loop: 20,
+    // loop: 20,
     rotateZ: 360,
     easing: "linear",
     duration: 3250
@@ -111,12 +112,12 @@ const gibbo = document.querySelector('#gibbo');
 function playGibbo() {
   const playPromise = Promise.resolve(gibbo.play());
   playPromise
-  .then(() => {
-  })
-  .catch(e => {
-    console.log(e.message);
-  });
+    .then(() => {})
+    .catch(e => {
+      console.log(e.message);
+    });
 }
+
 function pauseGibbo() {
   gibbo.pause();
 }

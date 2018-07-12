@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="215px" height="63px" viewBox="0 0 215 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="215px" height="40px" viewBox="0 0 215 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
     <title>ufo</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="ufo">
-            <path d="M83.0907336,61.9822795 C73.3101474,60.1567683 66.9899136,57.2606273 66.9899136,54 C66.9899136,48.4771525 85.1223813,44 107.489914,44 C129.857446,44 147.989914,48.4771525 147.989914,54 C147.989914,57.3156074 141.454742,60.2543331 131.3914,62.0737072 C124.64035,60.77335 116.181426,60 107,60 C98.0358464,60 89.7604045,60.7371814 83.0907336,61.9822795 Z" id="Combined-Shape" fill="#FFFFFF"></path>
-            <ellipse id="Oval-Copy-10" fill="#353535" cx="107.5" cy="29" rx="107.5" ry="29"></ellipse>
+            <ellipse id="Oval-Copy-10" fill="#202020" cx="107.5" cy="18.5" rx="107.5" ry="18.5"></ellipse>
+            <ellipse id="Combined-Shape" fill="#FFFFFF" cx="107.5" cy="35.8730294" rx="40.008514" ry="3.87302943"></ellipse>
+            <path d="M93.0470097,39.4856296 C93.0158726,39.4484944 93,39.4109413 93,39.3730294 C93,38.6147262 99.3501409,38 107.183437,38 C115.016732,38 121.366873,38.6147262 121.366873,39.3730294 C121.366873,39.4191105 121.343423,39.4646615 121.297615,39.5095764 C116.996625,39.6625494 112.349054,39.7460589 107.5,39.7460589 C102.403626,39.7460589 97.5298127,39.6538135 93.0470097,39.4856296 Z" id="Combined-Shape" fill="#FFDE66"></path>
+            <ellipse id="Oval-19" fill="#FFDE66" fill-rule="nonzero" cx="49" cy="28" rx="2" ry="1"></ellipse>
+            <ellipse id="Oval-19-Copy" fill="#FFDE66" fill-rule="nonzero" cx="85" cy="22" rx="2" ry="1"></ellipse>
+            <ellipse id="Oval-19-Copy-2" fill="#FFDE66" fill-rule="nonzero" cx="130" cy="23" rx="2" ry="1"></ellipse>
+            <ellipse id="Oval-19-Copy-3" fill="#FFDE66" fill-rule="nonzero" cx="166" cy="28" rx="2" ry="1"></ellipse>
         </g>
     </g>
 </svg>
