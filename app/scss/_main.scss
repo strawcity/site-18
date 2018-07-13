@@ -33,18 +33,6 @@ body {
     position: relative;
     background: #fff;
 
-    #eggman {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: url("../img/skyline.jpg");
-      opacity: 0;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
     #loading-circle {
       position: absolute;
       left: 50%;
@@ -101,6 +89,14 @@ body {
         left: 47.4%;
         display: none;
       }
+    }
+
+    #pool-cue {
+      position: absolute;
+      width: 58%;
+      top: 37%;
+      left: -59%;
+      transform: rotate(-7deg);
     }
 
     #pop-up-mask {
@@ -190,9 +186,9 @@ body {
       }
 
       #record-lines {
-        width: 70%;
-        left: 15%;
-        bottom: 21%;
+        width: 73.9%;
+        left: 13.1%;
+        top: -6.3%;
       }
 
       #spotlight-glass {

@@ -67,7 +67,7 @@ function putYourRecordsOn() {
   });
   anime({
     targets: "#record-lines",
-    scale: 1,
+    scaleY: 0.3,
     opacity: 1,
     easing: "easeInOutQuad",
     delay: 150,
@@ -83,7 +83,7 @@ function putYourRecordsOn() {
   });
   anime({
     targets: "#record-shine",
-    // loop: 20,
+    loop: 20,
     rotateZ: 360,
     easing: "linear",
     duration: 3250
@@ -97,6 +97,7 @@ function putYourRecordsOn() {
     delay: 250,
     duration: 1500,
     complete: function(anim) {
+      loadRecordCredit();
       return animationState = [false, 4];
     }
   });

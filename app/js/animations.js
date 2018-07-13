@@ -21,18 +21,15 @@ function easterEggs() {
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
       tellTime();
-      loadAboutCredit();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
       showUFO();
-      loadExperienceCredit();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
-      loadRecordCredit()
       finishAbduction();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
-      birdman();
+      poolCue();
       loadContactCredit();
       break;
     case animationState[1] === 5 && animationState[0] !== true:

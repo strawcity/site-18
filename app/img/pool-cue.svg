@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1295px" height="115px" viewBox="0 0 1295 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>pool-cue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pool-cue" fill-rule="nonzero">
+            <path d="M1275.7552,4.5 C1287.92662,19.884874 1295,38.2593148 1295,57.9953271 C1295,77.3094748 1288.22578,95.319637 1276.5287,110.5 L1274,110.5 L1274,4.5 L1275.7552,4.5 Z" id="Combined-Shape" fill="#D93732"></path>
+            <rect id="Rectangle-18" fill="#242424" x="1238" y="4" width="36" height="107"></rect>
+            <polygon id="Rectangle-17" fill="#CEA086" points="0 0 1016 2.01754386 1016 112.982456 0 115"></polygon>
+            <polygon id="Rectangle-17-Copy" fill="#E8E2DD" points="1014 2 1238 4.01818182 1238 110.981818 1014 113"></polygon>
+        </g>
+    </g>
+</svg>

@@ -57,6 +57,7 @@ function showUFO() {
       delay: 700,
       duration: 250,
       complete: function(anim) {
+        loadExperienceCredit();
         return animationState = [false, 3];
       }
     });
