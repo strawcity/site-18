@@ -1,4 +1,4 @@
-function birdman() {
+function poolCue() {
   if (animationState[0] !== true) {
     animationState[0] = true;
     circleShadow.style.display = "block";
@@ -46,51 +46,5 @@ function birdman() {
       duration: 900,
       opacity: 0
     });
-    anime({
-      targets: "#spotlight-holder",
-      translateY: '-224%',
-      translateX: '24%',
-      easing: 'easeInOutQuad',
-      duration: 500,
-      delay: 250
-    });
-    anime({
-      targets: "#spotlight-beam",
-      opacity: 0.2,
-      duration: 500,
-      delay: 500
-    });
-    // anime({
-    //   targets: "#spotlight-lever",
-    //   translateY: '-50%',
-    //   rotate: '40',
-    //   easing: 'easeOutQuad',
-    //   duration: 250,
-    //   delay: 1000
-    // });
   }
 }
-
-function activateSpotlight() {
-  anime({
-    targets: "#spotlight-lever",
-    translateY: '-50%',
-    rotate: '-40',
-    easing: 'easeInExpo',
-    duration: 750
-  });
-  anime({
-    targets: "#spotlight-beam",
-    opacity: 0.6,
-    delay: 800,
-    duration: 200
-  });
-  anime({
-    targets: "#eggman",
-    opacity: 1,
-    delay: 800,
-    duration: 300
-  });
-}
-
-document.querySelector("#spotlight-lever").addEventListener("click", activateSpotlight, false);
