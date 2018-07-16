@@ -640,7 +640,7 @@
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  padding: 30px;
+  padding: 15px 30px;
   max-width: 970px;
   margin: 0 auto;
   background-color: #fff; }
@@ -652,6 +652,10 @@ body {
   body p {
     color: #000;
     margin: 0; }
+
+a {
+  color: #D93732;
+  text-decoration: none; }
 
 .box {
   height: 20px;
@@ -870,7 +874,13 @@ body {
   .credits h1 {
     font-size: 2.3em; }
   .credits p {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0; }
   .credits .credit {
     display: none; }
+
+@media (min-width: 480px) and (max-width: 668px) {
+  body {
+    padding: 0; }
+  .credits {
+    padding: 0 30px; } }

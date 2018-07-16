@@ -17,7 +17,6 @@ function tellTime() {
       easing: "easeInOutCubic",
       duration: 750,
       complete: function(anim) {
-        loadAboutCredit();
         return animationState = [false, 2];
       }
     });

@@ -97,7 +97,6 @@ function putYourRecordsOn() {
     delay: 250,
     duration: 1500,
     complete: function(anim) {
-      loadRecordCredit();
       return animationState = [false, 4];
     }
   });

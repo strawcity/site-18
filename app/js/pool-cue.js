@@ -4,7 +4,6 @@ function poolCue() {
     circleShadow.style.display = "block";
     popUpMask.style.display = "block";
     recordShine.remove();
-    // document.querySelector("#white-circle").style.display = "none";
     gibbo.pause();
     anime({
       targets: "#white-circle",
@@ -52,11 +51,10 @@ function poolCue() {
       translateX: "68%",
       translateY: "90%",
       rotate: 0,
-      duration: 750,
-      delay: 600,
+      duration: 500,
+      delay: 350,
       complete: function(anim) {
         lineUpShot();
-        return animationState = [false, 5];
       }
     });
   }
@@ -65,11 +63,71 @@ function poolCue() {
 function lineUpShot() {
   anime({
     targets: "#pool-cue",
-    loop: 20,
-    easing: "easeInOutSine",
+    // loop: 2,
+    easing: "easeInOutQuart",
     translateX: "58%",
     translateY: "80%",
-    duration: 1250,
-    direction: 'alternate'
+    duration: 1000,
+    direction: 'alternate',
+    complete: function(anim) {
+      return animationState = [false, 5];
+    }
+  });
+}
+
+function breakTheRack() {
+  pullBackCue();
+}
+
+function pullBackCue() {
+  anime({
+    targets: "#pool-cue",
+    easing: "easeInOutQuart",
+    translateX: "18%",
+    translateY: "74%",
+    duration: 1000,
+    complete: function(anim) {
+      shootCue();
+    }
+  });
+}
+
+function shootCue() {
+  anime({
+    targets: "#pool-cue",
+    easing: "easeInQuart",
+    translateX: "70.7%",
+    translateY: "80%",
+    duration: 300,
+  });
+  anime({
+    targets: "#white-circle",
+    easing: "linear",
+    translateX: "250%",
+    translateY: "-50%",
+    duration: 200,
+    delay: 300,
+    complete: function(anim) {
+      bumpOff();
+    }
+  });
+}
+
+function bumpOff() {
+  anime({
+    targets: "#pool-cue",
+    easing: "easeOutQuart",
+    translateX: "0%",
+    translateY: "-130%",
+    rotate: -10,
+    duration: 650
+  });
+  anime({
+    targets: "#white-circle",
+    easing: "easeOutQuart",
+    translateX: "-50%",
+    translateY: "-50%",
+    duration: 4000,
+    delay: 2000
   });
 }

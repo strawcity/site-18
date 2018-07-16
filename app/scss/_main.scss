@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  padding: 30px;
+  padding: 15px 30px;
   max-width: 970px;
   margin: 0 auto;
   background-color: #fff;
@@ -16,6 +16,11 @@ body {
     color: #000;
     margin: 0;
   }
+}
+
+a {
+  color: #D93732;
+  text-decoration: none;
 }
 
 .box {
@@ -309,7 +314,7 @@ body {
   margin-top: 25px;
 
   p {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0;
   }
 

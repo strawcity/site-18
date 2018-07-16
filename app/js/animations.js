@@ -18,31 +18,32 @@ circleShadow.addEventListener("click", easterEggs);
 popUpMask.addEventListener("click", easterEggs);
 
 function easterEggs() {
+  console.log(animationState[1]);
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
       tellTime();
+      loadAboutCredit();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
       showUFO();
+      loadExperienceCredit();
       break;
     case animationState[1] === 3 && animationState[0] !== true:
       finishAbduction();
+      loadRecordCredit();
       break;
     case animationState[1] === 4 && animationState[0] !== true:
       poolCue();
       loadContactCredit();
       break;
     case animationState[1] === 5 && animationState[0] !== true:
-      putYourRecordsOn();
+      breakTheRack();
       break;
     case animationState[1] === 6 && animationState[0] !== true:
-      dartTwo();
+      breakTheRack()
       break;
     case animationState[1] === 7 && animationState[0] !== true:
-      dartThree();
-      break;
-    case animationState[1] === 8 && animationState[0] !== true:
-      eekAMouse();
+      breakTheRack()
       break;
     default:
 

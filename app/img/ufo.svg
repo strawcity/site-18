@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="215px" height="40px" viewBox="0 0 215 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="215px" height="41px" viewBox="0 0 215 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
     <title>ufo</title>
     <desc>Created with Sketch.</desc>
@@ -8,7 +8,7 @@
         <g id="ufo">
             <ellipse id="Oval-Copy-10" fill="#202020" cx="107.5" cy="18.5" rx="107.5" ry="18.5"></ellipse>
             <ellipse id="Combined-Shape" fill="#FFFFFF" cx="107.5" cy="35.8730294" rx="40.008514" ry="3.87302943"></ellipse>
-            <path d="M93.0470097,39.4856296 C93.0158726,39.4484944 93,39.4109413 93,39.3730294 C93,38.6147262 99.3501409,38 107.183437,38 C115.016732,38 121.366873,38.6147262 121.366873,39.3730294 C121.366873,39.4191105 121.343423,39.4646615 121.297615,39.5095764 C116.996625,39.6625494 112.349054,39.7460589 107.5,39.7460589 C102.403626,39.7460589 97.5298127,39.6538135 93.0470097,39.4856296 Z" id="Combined-Shape" fill="#D93732"></path>
+            <path d="M93.0470097,39.4856296 C93.0158726,39.4484944 93,39.4109413 93,39.3730294 C93,38.6147262 99.3501409,38 107.183437,38 C115.016732,38 121.366873,38.6147262 121.366873,39.3730294 C121.366873,39.4191105 121.343423,39.4646615 121.297615,39.5095764 C116.996625,39.6625494 112.349054,39.7460589 107.5,39.7460589 C102.403626,39.7460589 97.5298127,39.6538135 93.0470097,39.4856296 Z" id="Combined-Shape" stroke="#D93732" fill="#D93732"></path>
             <ellipse id="Oval-19" fill="#D93732" fill-rule="nonzero" cx="49" cy="28" rx="2" ry="1"></ellipse>
             <ellipse id="Oval-19-Copy" fill="#D93732" fill-rule="nonzero" cx="85" cy="22" rx="2" ry="1"></ellipse>
             <ellipse id="Oval-19-Copy-2" fill="#D93732" fill-rule="nonzero" cx="130" cy="23" rx="2" ry="1"></ellipse>
