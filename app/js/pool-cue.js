@@ -83,7 +83,7 @@ function pullBackCue() {
   anime({
     targets: "#pool-cue",
     easing: "easeInOutQuart",
-    translateX: "18%",
+    translateX: "10%",
     translateY: "74%",
     duration: 1000,
     complete: function(anim) {
@@ -95,8 +95,8 @@ function pullBackCue() {
 function shootCue() {
   anime({
     targets: "#pool-cue",
-    easing: "easeInQuart",
-    translateX: "70.7%",
+    easing: "easeOutQuart",
+    translateX: "74%",
     translateY: "80%",
     duration: 300,
   });
@@ -128,6 +128,6 @@ function bumpOff() {
     translateX: "-50%",
     translateY: "-50%",
     duration: 4000,
-    delay: 2000
+    delay: 750
   });
 }

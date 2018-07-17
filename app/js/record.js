@@ -1,6 +1,32 @@
 var recordPin = document.querySelector("#record-pin");
 var recordShine = document.querySelector("#record-shine");
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var context = new AudioContext();
 
+function webAudioTouchUnlock(context) {
+  return new Promise(function(resolve, reject) {
+    if (context.state === "suspended" && "ontouchstart" in window) {
+      var unlock = function() {
+        context.resume().then(
+          function() {
+            document.body.removeEventListener("touchstart", unlock);
+            document.body.removeEventListener("touchend", unlock);
+
+            resolve(true);
+          },
+          function(reason) {
+            reject(reason);
+          }
+        );
+      };
+
+      document.body.addEventListener("touchstart", unlock, false);
+      document.body.addEventListener("touchend", unlock, false);
+    } else {
+      resolve(false);
+    }
+  });
+}
 ///    Records    ///
 function finishAbduction() {
   if (animationState[0] !== true) {
@@ -111,12 +137,23 @@ function putYourRecordsOn() {
 const gibbo = document.querySelector('#gibbo');
 
 function playGibbo() {
-  const playPromise = Promise.resolve(gibbo.play());
-  playPromise
-    .then(() => {})
-    .catch(e => {
-      console.log(e.message);
-    });
+  var playPromise = Promise.resolve(gibbo.play());
+  webAudioTouchUnlock(context).then(
+    function(unlocked) {
+      if (unlocked) {
+        playPromise.then(() => {}).catch(e => {
+          console.log(e.message);
+        });
+      } else {
+        playPromise.then(() => {}).catch(e => {
+          console.log(e.message);
+        });
+      }
+    },
+    function(reason) {
+      console.error(reason);
+    }
+  );
 }
 
 function pauseGibbo() {

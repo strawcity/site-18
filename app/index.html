@@ -16,7 +16,7 @@
 <body>
   <audio id="gibbo">
       <source src="../audio/Gibbo-StDenisBeatTape.ogg" type="audio/ogg">
-      <source src="../audio/Gibbo-St.DenisBeatTape-05Tribe.mp3" type="audio/mpeg">
+      <source src="../audio/Gibbo-StDenisBeatTape.mp3" type="audio/mpeg">
     </audio>
   <div class="body-container">
     <div class="screen row">
@@ -32,8 +32,6 @@
           <div id="record">
             <img id="record-lines" src="img/record-lines.svg" style="transform: scaleY(0.3); opacity: 0;" />
             <img id="record-shine" src="img/record-shine.svg" style="transform: rotateZ(0deg);" />
-            <!-- <img id="spotlight-glass" src="img/spotlight-glass.svg" /> -->
-
             <img id="speaker-off" src="img/speaker-off.svg" />
             <img id="speaker-on" src="img/speaker.svg" />
           </div>
@@ -50,56 +48,6 @@
           <div id="loading-circle" style="transform: translateY(-50%) translateX(-50%);">
             <img src="img/black-circle.svg" />
           </div>
-          <!-- <div id="basketball" style="transform: translateY(104%); bottom: 0%;">
-            <img id="basketball-lines" src="img/basketball.svg" />
-          </div> -->
-          <!-- <div id="darts">
-            <svg class="dart" id="dart-1" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <g id="dart" transform="translate(52.394059, 9.292479) scale(-1, 1) rotate(4.000000) translate(-52.394059, -9.292479) translate(-0.105941, -2.707521)">
-                              <polygon id="dart-body" fill="#BF2C47" transform="translate(71.947183, 11.837973) rotate(90.000000) translate(-71.947183, -11.837973) " points="71.9471834 -20.0462121 74.6041988 43.7221573 69.290168 43.7221573"></polygon>
-                              <polygon id="dart-needle" fill="#B4B4B4" transform="translate(16.602206, 11.679836) scale(-1, 1) rotate(90.000000) translate(-16.602206, -11.679836) " points="16.6022064 -4.79365942 19.2592218 28.1533314 13.9451911 28.1533314"></polygon>
-                              <g id="dart-fins" transform="translate(71.469104, 0.000000)" fill="#BF2C47">
-                                  <path d="M0,23.3220719 C7.75373449,15.4081892 14.5838632,11.5126723 20.4903861,11.635521 C25.0565162,11.7304911 29.1925728,14.068695 32.8985557,18.6501325 L29.3039737,23.3220719 L0,23.3220719 Z" id="fin-2" opacity="0.6" transform="translate(16.449278, 17.477388) scale(1, -1) translate(-16.449278, -17.477388) "></path>
-                                  <path d="M0,11.6893677 C7.75373449,3.77548504 14.5838632,-0.120031932 20.4903861,0.00281678065 C25.0565162,0.0977869048 29.1925728,2.43599074 32.8985557,7.0174283 L29.3039737,11.6893677 L0,11.6893677 Z" id="fin-1"></path>
-                              </g>
-                              <rect id="dart-handle" fill="#EEE69C" x="27.8903821" y="8.4978508" width="13.81648" height="6.37683694" rx="2"></rect>
-                          </g>
-                      </g>
-                  </svg>
-            <svg class="dart" id="dart-2" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <g id="dart" transform="translate(52.394059, 9.292479) scale(-1, 1) rotate(4.000000) translate(-52.394059, -9.292479) translate(-0.105941, -2.707521)">
-                              <polygon id="dart-body" fill="#BF2C47" transform="translate(71.947183, 11.837973) rotate(90.000000) translate(-71.947183, -11.837973) " points="71.9471834 -20.0462121 74.6041988 43.7221573 69.290168 43.7221573"></polygon>
-                              <polygon id="dart-needle" fill="#B4B4B4" transform="translate(16.602206, 11.679836) scale(-1, 1) rotate(90.000000) translate(-16.602206, -11.679836) " points="16.6022064 -4.79365942 19.2592218 28.1533314 13.9451911 28.1533314"></polygon>
-                              <g id="dart-fins" transform="translate(71.469104, 0.000000)" fill="#BF2C47">
-                                  <path d="M0,23.3220719 C7.75373449,15.4081892 14.5838632,11.5126723 20.4903861,11.635521 C25.0565162,11.7304911 29.1925728,14.068695 32.8985557,18.6501325 L29.3039737,23.3220719 L0,23.3220719 Z" id="fin-2" opacity="0.6" transform="translate(16.449278, 17.477388) scale(1, -1) translate(-16.449278, -17.477388) "></path>
-                                  <path d="M0,11.6893677 C7.75373449,3.77548504 14.5838632,-0.120031932 20.4903861,0.00281678065 C25.0565162,0.0977869048 29.1925728,2.43599074 32.8985557,7.0174283 L29.3039737,11.6893677 L0,11.6893677 Z" id="fin-1"></path>
-                              </g>
-                              <rect id="dart-handle" fill="#EEE69C" x="27.8903821" y="8.4978508" width="13.81648" height="6.37683694" rx="2"></rect>
-                          </g>
-                      </g>
-                  </svg>
-            <svg class="dart" id="dart-3" width="105px" height="24px" viewBox="0 0 105 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <g id="dart" transform="translate(52.394059, 9.292479) scale(-1, 1) rotate(4.000000) translate(-52.394059, -9.292479) translate(-0.105941, -2.707521)">
-                              <polygon id="dart-body" fill="#BF2C47" transform="translate(71.947183, 11.837973) rotate(90.000000) translate(-71.947183, -11.837973) " points="71.9471834 -20.0462121 74.6041988 43.7221573 69.290168 43.7221573"></polygon>
-                              <polygon id="dart-needle" fill="#B4B4B4" transform="translate(16.602206, 11.679836) scale(-1, 1) rotate(90.000000) translate(-16.602206, -11.679836) " points="16.6022064 -4.79365942 19.2592218 28.1533314 13.9451911 28.1533314"></polygon>
-                              <g id="dart-fins" transform="translate(71.469104, 0.000000)" fill="#BF2C47">
-                                  <path d="M0,23.3220719 C7.75373449,15.4081892 14.5838632,11.5126723 20.4903861,11.635521 C25.0565162,11.7304911 29.1925728,14.068695 32.8985557,18.6501325 L29.3039737,23.3220719 L0,23.3220719 Z" id="fin-2" opacity="0.6" transform="translate(16.449278, 17.477388) scale(1, -1) translate(-16.449278, -17.477388) "></path>
-                                  <path d="M0,11.6893677 C7.75373449,3.77548504 14.5838632,-0.120031932 20.4903861,0.00281678065 C25.0565162,0.0977869048 29.1925728,2.43599074 32.8985557,7.0174283 L29.3039737,11.6893677 L0,11.6893677 Z" id="fin-1"></path>
-                              </g>
-                              <rect id="dart-handle" fill="#EEE69C" x="27.8903821" y="8.4978508" width="13.81648" height="6.37683694" rx="2"></rect>
-                          </g>
-                      </g>
-                  </svg>
-          </div>
-          <div id="spotlight-holder">
-            <img id="spotlight" src="img/spotlight.svg" />
-            <img id="spotlight-base" src="img/spotlight-base.svg" />
-            <img id="spotlight-beam" src="img/spotlight-beam.svg" />
-            <img id="eggman-stencil" src="img/eggman-stencil.svg" />
-          </div> -->
           <img id="pop-up-mask" src="img/pop-up-mask.svg" />
         </div>
       </div>
@@ -112,27 +60,27 @@
         <h1>Erik Nilsson</h1>
       </div>
       <div id="about-credit" class="credit col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-        <p>I'm currently a Frontend Development Engineer at <a href="www.tactel.se" target="_blank">Tactel</a> in Malmö, Sweden.</p>
+                      col-sm-8
+                      col-md-8
+                      col-lg-8">
+        <p>I'm currently a Frontend Development Engineer at <a href="www.tactel.se" target="_blank">Tactel</a> in Malmö, Sweden making digital services for Panasonic.</p>
       </div>
       <div id="experience-credit" class="credit col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-        <p>Formerly a digital designer who was abuducted into the realm of software development.</p>
+                      col-sm-8
+                      col-md-8
+                      col-lg-8">
+        <p>Formerly a digital designer with a JavaScript habbit who was abuducted into the realm of software development.</p>
       </div>
       <div id="record-credit" class="credit col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
+                      col-sm-8
+                      col-md-8
+                      col-lg-8">
         <p>A record of my experiences as digital designer and developer can be found at <a href="https://www.linkedin.com/in/erik-nilsson-b8a4772b/" target="_blank">LinkedIn</a> or <a href="http://github.com/strawcity" target="_blank">GitHub</a></p>
       </div>
       <div id="contact-credit" class="credit col-xs-12
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
+                      col-sm-8
+                      col-md-8
+                      col-lg-8">
         <p>You can shoot me a line at <a href="mailto:erik@strawcitydesign.com">erik@newsite.com</a></p>
       </div>
     </div>
