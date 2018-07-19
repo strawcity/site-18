@@ -48,9 +48,7 @@ function poolCue() {
     anime({
       targets: "#pool-cue",
       easing: "easeInOutSine",
-      translateX: "68%",
-      translateY: "90%",
-      rotate: 0,
+      translateY: "-28%",
       duration: 500,
       delay: 350,
       complete: function(anim) {
@@ -64,9 +62,8 @@ function lineUpShot() {
   anime({
     targets: "#pool-cue",
     // loop: 2,
-    easing: "easeInOutQuart",
-    translateX: "58%",
-    translateY: "80%",
+    easing: "easeInOutSine",
+    translateY: "-18%",
     duration: 1000,
     direction: 'alternate',
     complete: function(anim) {
@@ -76,16 +73,17 @@ function lineUpShot() {
 }
 
 function breakTheRack() {
-  pullBackCue();
+  if (animationState[0] !== true) {
+    pullBackCue();
+  }
 }
 
 function pullBackCue() {
   anime({
     targets: "#pool-cue",
-    easing: "easeInOutQuart",
-    translateX: "10%",
-    translateY: "74%",
-    duration: 1000,
+    easing: "easeInOutSine",
+    translateY: "2%",
+    duration: 750,
     complete: function(anim) {
       shootCue();
     }
@@ -96,17 +94,18 @@ function shootCue() {
   anime({
     targets: "#pool-cue",
     easing: "easeOutQuart",
-    translateX: "74%",
-    translateY: "80%",
+    translateY: "-88%",
+    translateX: "-76%",
+    rotate: -4,
     duration: 300,
   });
   anime({
     targets: "#white-circle",
     easing: "linear",
-    translateX: "250%",
-    translateY: "-50%",
-    duration: 200,
-    delay: 300,
+    translateX: "40%",
+    translateY: "-250%",
+    duration: 300,
+    delay: 50,
     complete: function(anim) {
       bumpOff();
     }
@@ -116,11 +115,11 @@ function shootCue() {
 function bumpOff() {
   anime({
     targets: "#pool-cue",
-    easing: "easeOutQuart",
-    translateX: "0%",
-    translateY: "-130%",
-    rotate: -10,
-    duration: 650
+    easing: "easeInOutSine",
+    translateY: "2%",
+    translateX: "-86%",
+    rotate: -1,
+    duration: 600,
   });
   anime({
     targets: "#white-circle",
@@ -128,6 +127,6 @@ function bumpOff() {
     translateX: "-50%",
     translateY: "-50%",
     duration: 4000,
-    delay: 750
+    delay: 1550
   });
 }

@@ -715,10 +715,10 @@ a {
         display: none; }
     .screen .screen-frame #pool-cue {
       position: absolute;
-      width: 58%;
-      top: 37%;
-      left: -59%;
-      transform: rotate(-7deg); }
+      width: 5%;
+      top: 100%;
+      left: 47.4%;
+      z-index: 5; }
     .screen .screen-frame #pop-up-mask {
       display: none;
       opacity: 0;
