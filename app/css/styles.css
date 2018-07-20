@@ -640,7 +640,7 @@
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  padding: 30px;
+  padding: 15px 30px;
   max-width: 970px;
   margin: 0 auto;
   background-color: #fff; }
@@ -652,6 +652,10 @@ body {
   body p {
     color: #000;
     margin: 0; }
+
+a {
+  color: #D93732;
+  text-decoration: none; }
 
 .box {
   height: 20px;
@@ -665,16 +669,6 @@ body {
     padding-bottom: 56.25%;
     position: relative;
     background: #fff; }
-    .screen .screen-frame #eggman {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: url("../img/skyline.jpg");
-      opacity: 0;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover; }
     .screen .screen-frame #loading-circle {
       position: absolute;
       left: 50%;
@@ -682,6 +676,7 @@ body {
       width: 0;
       height: auto;
       overflow: hidden;
+      z-index: 6;
       cursor: pointer; }
       .screen .screen-frame #loading-circle img {
         width: 100%; }
@@ -701,9 +696,6 @@ body {
         width: 100%;
         height: auto;
         transform: scaleY(1); }
-      .screen .screen-frame #white-circle #dart-board {
-        transform: translateX(-1%) translateY(-99.5%);
-        width: 102%; }
       .screen .screen-frame #white-circle #circle-shadow {
         display: none;
         opacity: 0;
@@ -719,6 +711,12 @@ body {
         position: absolute;
         left: 47.4%;
         display: none; }
+    .screen .screen-frame #pool-cue {
+      position: absolute;
+      width: 5%;
+      top: 100%;
+      left: 47.4%;
+      z-index: 5; }
     .screen .screen-frame #pop-up-mask {
       display: none;
       opacity: 0;
@@ -729,23 +727,13 @@ body {
       height: auto;
       transform: scaleY(1);
       cursor: pointer; }
-    .screen .screen-frame #basketball {
-      width: 15%;
-      height: 26%;
-      border-radius: 120px;
-      background: orange;
+    .screen .screen-frame #moon-shadow {
+      display: none;
+      width: 20%;
       position: absolute;
-      overflow: hidden;
-      left: 42.6%;
-      bottom: 1%; }
-      .screen .screen-frame #basketball #basketball-lines {
-        bottom: 5px;
-        position: relative;
-        width: 161%; }
-    .screen .screen-frame #egg #egg-white {
-      position: absolute; }
-    .screen .screen-frame #egg #egg-yolk {
-      position: absolute; }
+      left: 61%;
+      top: 32.1%;
+      z-index: 6; }
     .screen .screen-frame #ufo {
       position: absolute;
       width: 89%;
@@ -783,9 +771,9 @@ body {
         opacity: 0.6;
         display: none; }
       .screen .screen-frame #record #record-lines {
-        width: 70%;
-        left: 15%;
-        bottom: 21%; }
+        width: 73.9%;
+        left: 13.1%;
+        top: -6.3%; }
       .screen .screen-frame #record #spotlight-glass {
         position: absolute;
         width: 20%;
@@ -874,7 +862,13 @@ body {
   .credits h1 {
     font-size: 2.3em; }
   .credits p {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0; }
   .credits .credit {
     display: none; }
+
+@media (min-width: 480px) and (max-width: 668px) {
+  body {
+    padding: 0; }
+  .credits {
+    padding: 0 30px; } }

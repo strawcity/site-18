@@ -1,14 +1,15 @@
 //**
 // Responsive Styles
 //**
+@media screen and (min-width: $big-break) {}
+@media (min-width: $small-break) and (max-width: $big-break) {}
+@media (min-width: $small-break) and (max-width: $mid-break) {
+  body {
+    padding: 0;
+  }
 
-
-
-@media screen and (min-width: $big-break) {
+  .credits {
+    padding: 0 30px;
+  }
 }
-
-@media (min-width: $small-break) and (max-width: $big-break) {
-}
-
-@media screen and (max-width: $small-break) {
-}
+@media screen and (max-width: $small-break) {}

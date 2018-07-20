@@ -1,55 +1,79 @@
 var recordPin = document.querySelector("#record-pin");
 var recordShine = document.querySelector("#record-shine");
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var context = new AudioContext();
 
+function webAudioTouchUnlock(context) {
+  return new Promise(function(resolve, reject) {
+    if (context.state === "suspended" && "ontouchstart" in window) {
+      var unlock = function() {
+        context.resume().then(
+          function() {
+            document.body.removeEventListener("touchstart", unlock);
+            document.body.removeEventListener("touchend", unlock);
+
+            resolve(true);
+          },
+          function(reason) {
+            reject(reason);
+          }
+        );
+      };
+
+      document.body.addEventListener("touchstart", unlock, false);
+      document.body.addEventListener("touchend", unlock, false);
+    } else {
+      resolve(false);
+    }
+  });
+}
 ///    Records    ///
 function finishAbduction() {
-  if (animationState[0] !== true) {
-    animationState[0] = true;
-    anime({
-      targets: "#abductee",
-      translateY: "-390%",
-      opacity: 0,
-      easing: "easeInQuad",
-      duration: 500
-    });
-    anime({
-      targets: "#hour-hand",
-      rotate: 270,
-      scaleX: 0,
-      scaleY: 0,
-      translateX: '3%',
-      translateY: '4%',
-      easing: "easeInOutCubic",
-      duration: 500
-    });
-    anime({
-      targets: "#minute-hand",
-      rotate: 51,
-      scaleX: 0,
-      scaleY: 0,
-      translateX: '-1%',
-      translateY: '-11%',
-      easing: "easeInOutCubic",
-      duration: 500
-    });
-    anime({
-      targets: "#ufo",
-      translateY: '-31%',
-      easing: "easeInOutQuad",
-      delay: 500,
-      duration: 200
-    });
-    anime({
-      targets: "#tractor-beam",
-      scaleX: 0,
-      easing: "easeInOutQuad",
-      delay: 250,
-      duration: 250,
-      complete: function(anim) {
-        putYourRecordsOn();
-      }
-    });
-  }
+  animationState[0] = true;
+  anime({
+    targets: "#abductee",
+    translateY: "-390%",
+    opacity: 0,
+    easing: "easeInQuad",
+    duration: 500
+  });
+  anime({
+    targets: "#hour-hand",
+    rotate: 270,
+    scaleX: 0,
+    scaleY: 0,
+    translateX: '3%',
+    translateY: '4%',
+    easing: "easeInOutCubic",
+    duration: 500
+  });
+  anime({
+    targets: "#minute-hand",
+    rotate: 51,
+    scaleX: 0,
+    scaleY: 0,
+    translateX: '-1%',
+    translateY: '-11%',
+    easing: "easeInOutCubic",
+    duration: 500
+  });
+  anime({
+    targets: "#ufo",
+    translateY: '-31%',
+    easing: "easeInOutQuad",
+    delay: 500,
+    duration: 200
+  });
+  anime({
+    targets: "#tractor-beam",
+    scaleX: 0,
+    easing: "easeInOutQuad",
+    delay: 250,
+    duration: 250,
+    complete: function(anim) {
+      putYourRecordsOn();
+    }
+  });
 }
 
 function putYourRecordsOn() {
@@ -67,7 +91,7 @@ function putYourRecordsOn() {
   });
   anime({
     targets: "#record-lines",
-    scale: 1,
+    scaleY: 0.3,
     opacity: 1,
     easing: "easeInOutQuad",
     delay: 150,
@@ -83,7 +107,7 @@ function putYourRecordsOn() {
   });
   anime({
     targets: "#record-shine",
-    // loop: 20,
+    loop: 20,
     rotateZ: 360,
     easing: "linear",
     duration: 3250
@@ -111,12 +135,23 @@ function putYourRecordsOn() {
 const gibbo = document.querySelector('#gibbo');
 
 function playGibbo() {
-  const playPromise = Promise.resolve(gibbo.play());
-  playPromise
-    .then(() => {})
-    .catch(e => {
-      console.log(e.message);
-    });
+  var playPromise = Promise.resolve(gibbo.play());
+  webAudioTouchUnlock(context).then(
+    function(unlocked) {
+      if (unlocked) {
+        playPromise.then(() => {}).catch(e => {
+          console.log(e.message);
+        });
+      } else {
+        playPromise.then(() => {}).catch(e => {
+          console.log(e.message);
+        });
+      }
+    },
+    function(reason) {
+      console.error(reason);
+    }
+  );
 }
 
 function pauseGibbo() {
