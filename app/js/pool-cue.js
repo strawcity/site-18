@@ -61,7 +61,6 @@ function poolCue() {
 function lineUpShot() {
   anime({
     targets: "#pool-cue",
-    // loop: 2,
     easing: "easeInOutSine",
     translateY: "-18%",
     duration: 1000,
@@ -91,42 +90,49 @@ function pullBackCue() {
 }
 
 function shootCue() {
-  anime({
-    targets: "#pool-cue",
-    easing: "easeOutQuart",
-    translateY: "-88%",
-    translateX: "-76%",
-    rotate: -4,
-    duration: 300,
-  });
-  anime({
-    targets: "#white-circle",
-    easing: "linear",
-    translateX: "40%",
-    translateY: "-250%",
-    duration: 300,
-    delay: 50,
-    complete: function(anim) {
-      bumpOff();
-    }
-  });
+  if (animationState[0] !== true) {
+    anime({
+      targets: "#pool-cue",
+      easing: "easeOutQuart",
+      translateY: "-88%",
+      translateX: "-76%",
+      rotate: -4,
+      duration: 300,
+    });
+    anime({
+      targets: "#white-circle",
+      easing: "linear",
+      translateX: "40%",
+      translateY: "-250%",
+      duration: 300,
+      delay: 50,
+      complete: function(anim) {
+        bumpOff();
+      }
+    });
+  }
 }
 
 function bumpOff() {
-  anime({
-    targets: "#pool-cue",
-    easing: "easeInOutSine",
-    translateY: "2%",
-    translateX: "-86%",
-    rotate: -1,
-    duration: 600,
-  });
-  anime({
-    targets: "#white-circle",
-    easing: "easeOutQuart",
-    translateX: "-50%",
-    translateY: "-50%",
-    duration: 4000,
-    delay: 1550
-  });
+  if (animationState[0] !== true) {
+    anime({
+      targets: "#pool-cue",
+      easing: "easeInOutSine",
+      translateY: "2%",
+      translateX: "-86%",
+      rotate: -1,
+      duration: 600,
+    });
+    anime({
+      targets: "#white-circle",
+      easing: "easeOutQuart",
+      translateX: "-50%",
+      translateY: "-50%",
+      duration: 4000,
+      delay: 1550,
+      complete: function(anim) {
+        return animationState = [false, 6];
+      }
+    });
+  }
 }

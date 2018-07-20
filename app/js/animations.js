@@ -18,10 +18,10 @@ circleShadow.addEventListener("click", easterEggs);
 popUpMask.addEventListener("click", easterEggs);
 
 function easterEggs() {
-  console.log(animationState[1]);
   switch (true) {
     case animationState[1] === 1 && animationState[0] !== true:
-      tellTime();
+      // tellTime();
+      poolCue();
       loadAboutCredit();
       break;
     case animationState[1] === 2 && animationState[0] !== true:
@@ -40,13 +40,12 @@ function easterEggs() {
       breakTheRack();
       break;
     case animationState[1] === 6 && animationState[0] !== true:
-      breakTheRack()
+      lunarLander();
       break;
     case animationState[1] === 7 && animationState[0] !== true:
       breakTheRack()
       break;
     default:
-
   }
 }
 
@@ -84,8 +83,13 @@ function lowerLoadingCircle() {
 function invertCircle() {
   if (animationState[0] !== true) {
     animationState[0] = true;
-    startButton.remove();
+    startButton.style.display = "none";
     spotlight.style.display = "block";
+    anime({
+      targets: startButton,
+      translateX: '50%',
+      duration: 0
+    });
     anime({
       targets: ".screen-frame",
       background: '#000',
