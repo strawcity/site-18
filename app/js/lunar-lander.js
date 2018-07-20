@@ -4,8 +4,9 @@ function lunarLander() {
     anime({
       targets: "#moon-shadow",
       translateX: '-67%',
-      easing: "linear",
-      duration: 3000
+      opacity: 1,
+      easing: "easeInOutQuad",
+      duration: 750
     });
   }
 }

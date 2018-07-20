@@ -728,12 +728,26 @@ a {
       transform: scaleY(1);
       cursor: pointer; }
     .screen .screen-frame #moon-shadow {
-      display: none;
+      opacity: 0;
       width: 20%;
       position: absolute;
       left: 61%;
       top: 32.1%;
       z-index: 6; }
+    .screen .screen-frame #lunar-lander {
+      position: absolute;
+      width: 8%;
+      top: 34%;
+      left: 39%;
+      transform: rotate(-44deg);
+      z-index: 7; }
+    .screen .screen-frame #lunar-pod {
+      position: absolute;
+      width: 5%;
+      top: 28.2%;
+      left: 38.2%;
+      transform: rotate(-44deg);
+      z-index: 7; }
     .screen .screen-frame #ufo {
       position: absolute;
       width: 89%;
