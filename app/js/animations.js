@@ -18,34 +18,39 @@ circleShadow.addEventListener("click", easterEggs);
 popUpMask.addEventListener("click", easterEggs);
 
 function easterEggs() {
-  switch (true) {
-    case animationState[1] === 1 && animationState[0] !== true:
-      // tellTime();
-      poolCue();
-      loadAboutCredit();
-      break;
-    case animationState[1] === 2 && animationState[0] !== true:
-      showUFO();
-      loadExperienceCredit();
-      break;
-    case animationState[1] === 3 && animationState[0] !== true:
-      finishAbduction();
-      loadRecordCredit();
-      break;
-    case animationState[1] === 4 && animationState[0] !== true:
-      poolCue();
-      loadContactCredit();
-      break;
-    case animationState[1] === 5 && animationState[0] !== true:
-      breakTheRack();
-      break;
-    case animationState[1] === 6 && animationState[0] !== true:
-      lunarLander();
-      break;
-    case animationState[1] === 7 && animationState[0] !== true:
-      breakTheRack()
-      break;
-    default:
+  console.log(animationState[0]);
+  if (animationState[0] === true) {
+    return;
+  } else {
+    console.log(animationState[0]);
+    switch (true) {
+      case animationState[1] === 1:
+        // tellTime();
+        poolCue();
+        loadAboutCredit();
+        break;
+      case animationState[1] === 2:
+        showUFO();
+        loadExperienceCredit();
+        break;
+      case animationState[1] === 3:
+        finishAbduction();
+        loadRecordCredit();
+        break;
+      case animationState[1] === 4:
+        poolCue();
+        loadContactCredit();
+        break;
+      case animationState[1] === 5:
+        breakTheRack();
+        break;
+      case animationState[1] === 6:
+        lunarLander();
+        break;
+      case animationState[1] === 7:
+        break;
+      default:
+    }
   }
 }
 
@@ -81,30 +86,23 @@ function lowerLoadingCircle() {
 }
 
 function invertCircle() {
-  if (animationState[0] !== true) {
-    animationState[0] = true;
-    startButton.style.display = "none";
-    spotlight.style.display = "block";
-    anime({
-      targets: startButton,
-      translateX: '50%',
-      duration: 0
-    });
-    anime({
-      targets: ".screen-frame",
-      background: '#000',
-      duration: 100
-    });
-    anime({
-      targets: "#white-circle",
-      opacity: 1,
-      duration: 100,
-      complete: function(anim) {
-        return animationState = [false, 1];
-      }
-    });
-    document.querySelector("#title-credit").style.display = "block";
-  }
+  animationState[0] = true;
+  startButton.style.display = "none";
+  spotlight.style.display = "block";
+  anime({
+    targets: ".screen-frame",
+    background: '#000',
+    duration: 100
+  });
+  anime({
+    targets: "#white-circle",
+    opacity: 1,
+    duration: 100,
+    complete: function(anim) {
+      return animationState = [false, 1];
+    }
+  });
+  document.querySelector("#title-credit").style.display = "block";
 }
 
 function loadAboutCredit() {

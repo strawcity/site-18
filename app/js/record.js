@@ -29,53 +29,51 @@ function webAudioTouchUnlock(context) {
 }
 ///    Records    ///
 function finishAbduction() {
-  if (animationState[0] !== true) {
-    animationState[0] = true;
-    anime({
-      targets: "#abductee",
-      translateY: "-390%",
-      opacity: 0,
-      easing: "easeInQuad",
-      duration: 500
-    });
-    anime({
-      targets: "#hour-hand",
-      rotate: 270,
-      scaleX: 0,
-      scaleY: 0,
-      translateX: '3%',
-      translateY: '4%',
-      easing: "easeInOutCubic",
-      duration: 500
-    });
-    anime({
-      targets: "#minute-hand",
-      rotate: 51,
-      scaleX: 0,
-      scaleY: 0,
-      translateX: '-1%',
-      translateY: '-11%',
-      easing: "easeInOutCubic",
-      duration: 500
-    });
-    anime({
-      targets: "#ufo",
-      translateY: '-31%',
-      easing: "easeInOutQuad",
-      delay: 500,
-      duration: 200
-    });
-    anime({
-      targets: "#tractor-beam",
-      scaleX: 0,
-      easing: "easeInOutQuad",
-      delay: 250,
-      duration: 250,
-      complete: function(anim) {
-        putYourRecordsOn();
-      }
-    });
-  }
+  animationState[0] = true;
+  anime({
+    targets: "#abductee",
+    translateY: "-390%",
+    opacity: 0,
+    easing: "easeInQuad",
+    duration: 500
+  });
+  anime({
+    targets: "#hour-hand",
+    rotate: 270,
+    scaleX: 0,
+    scaleY: 0,
+    translateX: '3%',
+    translateY: '4%',
+    easing: "easeInOutCubic",
+    duration: 500
+  });
+  anime({
+    targets: "#minute-hand",
+    rotate: 51,
+    scaleX: 0,
+    scaleY: 0,
+    translateX: '-1%',
+    translateY: '-11%',
+    easing: "easeInOutCubic",
+    duration: 500
+  });
+  anime({
+    targets: "#ufo",
+    translateY: '-31%',
+    easing: "easeInOutQuad",
+    delay: 500,
+    duration: 200
+  });
+  anime({
+    targets: "#tractor-beam",
+    scaleX: 0,
+    easing: "easeInOutQuad",
+    delay: 250,
+    duration: 250,
+    complete: function(anim) {
+      putYourRecordsOn();
+    }
+  });
 }
 
 function putYourRecordsOn() {

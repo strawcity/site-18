@@ -696,9 +696,6 @@ a {
         width: 100%;
         height: auto;
         transform: scaleY(1); }
-      .screen .screen-frame #white-circle #dart-board {
-        transform: translateX(-1%) translateY(-99.5%);
-        width: 102%; }
       .screen .screen-frame #white-circle #circle-shadow {
         display: none;
         opacity: 0;
@@ -730,23 +727,13 @@ a {
       height: auto;
       transform: scaleY(1);
       cursor: pointer; }
-    .screen .screen-frame #basketball {
-      width: 15%;
-      height: 26%;
-      border-radius: 120px;
-      background: orange;
+    .screen .screen-frame #moon-shadow {
+      display: none;
+      width: 20%;
       position: absolute;
-      overflow: hidden;
-      left: 42.6%;
-      bottom: 1%; }
-      .screen .screen-frame #basketball #basketball-lines {
-        bottom: 5px;
-        position: relative;
-        width: 161%; }
-    .screen .screen-frame #egg #egg-white {
-      position: absolute; }
-    .screen .screen-frame #egg #egg-yolk {
-      position: absolute; }
+      left: 61%;
+      top: 32.1%;
+      z-index: 6; }
     .screen .screen-frame #ufo {
       position: absolute;
       width: 89%;

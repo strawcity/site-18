@@ -72,11 +72,6 @@ a {
         transform: scaleY(1);
       }
 
-      #dart-board {
-        transform: translateX(-1%) translateY(-99.5%);
-        width: 102%;
-      }
-
       #circle-shadow {
         display: none;
         opacity: 0;
@@ -116,32 +111,13 @@ a {
       transform: scaleY(1);
       cursor: pointer;
     }
-
-    #basketball {
-      width: 15%;
-      height: 26%;
-      border-radius: 120px;
-      background: orange;
+    #moon-shadow {
+      display: none;
+      width: 20%;
       position: absolute;
-      overflow: hidden;
-      left: 42.6%;
-      bottom: 1%;
-
-      #basketball-lines {
-        bottom: 5px;
-        position: relative;
-        width: 161%;
-      }
-    }
-
-    #egg {
-      #egg-white {
-        position: absolute;
-      }
-
-      #egg-yolk {
-        position: absolute;
-      }
+      left: 61%;
+      top: 32.1%;
+      z-index: 6;
     }
 
     #ufo {

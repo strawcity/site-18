@@ -1,12 +1,11 @@
 function lunarLander() {
   if (animationState[0] !== true) {
-    startButton.style.display = "block";
+    document.querySelector("#moon-shadow").style.display = "block";
     anime({
-      targets: startButton,
-      translateX: '30%',
-      translateY: '-50%',
+      targets: "#moon-shadow",
+      translateX: '-67%',
       easing: "linear",
-      duration: 5000
+      duration: 3000
     });
   }
 }
