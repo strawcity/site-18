@@ -22,11 +22,10 @@ function easterEggs() {
   if (animationState[0] === true) {
     return;
   } else {
-    console.log(animationState[0]);
     switch (true) {
       case animationState[1] === 1:
         // tellTime();
-        poolCue();
+        lunarLander();
         loadAboutCredit();
         break;
       case animationState[1] === 2:
@@ -107,6 +106,7 @@ function invertCircle() {
 
 function loadAboutCredit() {
   document.querySelector("#about-credit").style.display = "block";
+  document.querySelector("#contact-credit").style.display = "none";
 }
 
 function loadExperienceCredit() {

@@ -120,22 +120,17 @@ a {
       z-index: 6;
     }
 
-    #lunar-lander {
+    #rocket {
       position: absolute;
       width: 8%;
       top: 34%;
-      left: 39%;
-      transform: rotate(-44deg);
+      left: 103%;
+      transform: rotate(-121deg);
       z-index: 7;
-    }
 
-    #lunar-pod {
-      position: absolute;
-      width: 5%;
-      top: 28.2%;
-      left: 38.2%;
-      transform: rotate(-44deg);
-      z-index: 7;
+      #rocket-ship{
+        width: 100%;
+      }
     }
 
     #ufo {
