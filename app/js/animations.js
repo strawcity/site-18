@@ -15,7 +15,6 @@ startButton.addEventListener("mouseleave", lowerLoadingCircle, false);
 startButton.addEventListener("click", invertCircle, false);
 spotlight.addEventListener("click", easterEggs);
 circleShadow.addEventListener("click", easterEggs);
-popUpMask.addEventListener("click", easterEggs);
 
 function easterEggs() {
   console.log(animationState[0]);
@@ -25,7 +24,7 @@ function easterEggs() {
     switch (true) {
       case animationState[1] === 1:
         // tellTime();
-        lunarLander();
+        poolCue();
         loadAboutCredit();
         break;
       case animationState[1] === 2:
@@ -44,7 +43,7 @@ function easterEggs() {
         breakTheRack();
         break;
       case animationState[1] === 6:
-        lunarLander();
+        rocketFlyOver();
         break;
       case animationState[1] === 7:
         break;

@@ -736,13 +736,22 @@ a {
       z-index: 6; }
     .screen .screen-frame #rocket {
       position: absolute;
-      width: 8%;
-      top: 34%;
-      left: 103%;
-      transform: rotate(-121deg);
+      width: 11%;
+      height: 16%;
+      top: 42%;
+      left: 102%;
       z-index: 7; }
       .screen .screen-frame #rocket #rocket-ship {
-        width: 100%; }
+        width: 49%;
+        position: absolute;
+        z-index: 1;
+        left: 7%; }
+      .screen .screen-frame #rocket .propellant {
+        position: absolute;
+        left: 0%;
+        height: 21%;
+        top: 25%;
+        width: auto; }
     .screen .screen-frame #ufo {
       position: absolute;
       width: 89%;
