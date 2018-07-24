@@ -100,8 +100,8 @@ function shootCue() {
     easing: "linear",
     translateX: "40%",
     translateY: "-250%",
-    duration: 300,
-    delay: 50,
+    duration: 200,
+    delay: 70,
     complete: function(anim) {
       bumpOff();
     }
@@ -122,10 +122,10 @@ function bumpOff() {
     easing: "easeOutQuart",
     translateX: "-50%",
     translateY: "-50%",
-    duration: 4000,
-    delay: 700,
+    duration: 3500,
+    delay: 1500,
     complete: function(anim) {
-      return animationState = [false, 6];
+      makeTheMoon();
     }
   });
 }

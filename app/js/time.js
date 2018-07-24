@@ -19,4 +19,13 @@ function tellTime() {
       return animationState = [false, 2];
     }
   });
+  anime({
+    targets: "#moon-shadow",
+    opacity: 0,
+    easing: "easeInOutQuad",
+    duration: 250,
+    complete: function(anim) {
+      document.querySelector("#moon-shadow").style.display = "none";
+    }
+  });
 }

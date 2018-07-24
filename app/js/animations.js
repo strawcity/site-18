@@ -15,14 +15,12 @@ startButton.addEventListener("mouseleave", lowerLoadingCircle, false);
 startButton.addEventListener("click", invertCircle, false);
 spotlight.addEventListener("click", easterEggs);
 circleShadow.addEventListener("click", easterEggs);
-popUpMask.addEventListener("click", easterEggs);
 
 function easterEggs() {
   console.log(animationState[0]);
   if (animationState[0] === true) {
     return;
   } else {
-    console.log(animationState[0]);
     switch (true) {
       case animationState[1] === 1:
         // tellTime();
@@ -45,7 +43,7 @@ function easterEggs() {
         breakTheRack();
         break;
       case animationState[1] === 6:
-        lunarLander();
+        rocketFlyOver();
         break;
       case animationState[1] === 7:
         break;
@@ -107,6 +105,7 @@ function invertCircle() {
 
 function loadAboutCredit() {
   document.querySelector("#about-credit").style.display = "block";
+  document.querySelector("#contact-credit").style.display = "none";
 }
 
 function loadExperienceCredit() {
