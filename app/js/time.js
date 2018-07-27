@@ -7,12 +7,14 @@ function tellTime() {
   anime({
     targets: "#hour-hand",
     rotate: hourRotate,
+    opacity: 1,
     easing: "easeInOutCubic",
     duration: 750
   });
   anime({
     targets: "#minute-hand",
     rotate: minuteRotate,
+    opacity: 1,
     easing: "easeInOutCubic",
     duration: 750,
     complete: function(anim) {
@@ -27,5 +29,20 @@ function tellTime() {
     complete: function(anim) {
       document.querySelector("#moon-shadow").style.display = "none";
     }
+  });
+}
+
+function resetTime() {
+  document.querySelector("#hour-hand").style.display = "none";
+  document.querySelector("#minute-hand").style.display = "none";
+  anime({
+    targets: "#hour-hand",
+    rotate: 0,
+    duration: 10
+  });
+  anime({
+    targets: "#minute-hand",
+    rotate: 0,
+    duration: 10
   });
 }

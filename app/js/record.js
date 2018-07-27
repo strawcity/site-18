@@ -1,5 +1,7 @@
 var recordPin = document.querySelector("#record-pin");
 var recordShine = document.querySelector("#record-shine");
+var speakerOn = document.querySelector("#speaker-on");
+var speakerOff = document.querySelector("#speaker-off");
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var context = new AudioContext();
 
@@ -95,7 +97,7 @@ function putYourRecordsOn() {
     opacity: 1,
     easing: "easeInOutQuad",
     delay: 150,
-    duration: 1000
+    duration: 750
   });
   anime({
     targets: "#record-pin",
@@ -125,7 +127,7 @@ function putYourRecordsOn() {
     }
   });
   anime({
-    targets: "#speaker-off",
+    targets: speakerOff,
     opacity: 0.8,
     delay: 1000,
     duration: 200
@@ -169,12 +171,12 @@ function toggleSpeaker() {
       duration: 500,
     });
     anime({
-      targets: "#speaker-off",
+      targets: speakerOff,
       opacity: 0,
       duration: 100,
     });
     anime({
-      targets: "#speaker-on",
+      targets: speakerOn,
       opacity: 0.8,
       duration: 100,
     });
@@ -193,7 +195,7 @@ function toggleSpeaker() {
       duration: 100,
     });
     anime({
-      targets: "#speaker-on",
+      targets: speakerOn,
       opacity: 0,
       duration: 100,
     });
@@ -201,6 +203,6 @@ function toggleSpeaker() {
 }
 
 
-document.querySelector("#speaker-on").addEventListener("click", toggleSpeaker, false);
+speakerOn.addEventListener("click", toggleSpeaker, false);
 document.querySelector("#record-needle").addEventListener("click", toggleSpeaker, false);
 recordPin.addEventListener("click", easterEggs, false);

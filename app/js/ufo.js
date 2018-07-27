@@ -1,7 +1,6 @@
 ///    UFO    ///
 function showUFO() {
   animationState[0] = true;
-  popUpMask.style.display = "none";
   anime({
     targets: "#white-circle",
     scaleY: 0.3,

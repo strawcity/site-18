@@ -3,8 +3,6 @@ function eekAMouse() {
     animationState[0] = true;
     document.querySelector("#flashlight-holder").style.display = "block";
     document.querySelector("#flashlight-beam").style.display = "block";
-    circleShadow.style.display = "block";
-    popUpMask.style.display = "block";
     recordShine.remove();
     document.querySelector("#speaker-off").style.display = "none";
     document.querySelector("#speaker-on").style.display = "none";

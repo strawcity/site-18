@@ -1,7 +1,5 @@
 function poolCue() {
   animationState[0] = true;
-  circleShadow.style.display = "block";
-  popUpMask.style.display = "block";
   recordShine.remove();
   gibbo.pause();
   anime({
@@ -43,6 +41,11 @@ function poolCue() {
     opacity: 0,
     translateY: "-11%",
     duration: 500
+  });
+  anime({
+    targets: "#restart-button",
+    opacity: 0,
+    duration: 10,
   });
   anime({
     targets: "#pool-cue",
@@ -126,6 +129,7 @@ function bumpOff() {
     delay: 1500,
     complete: function(anim) {
       makeTheMoon();
+      showThisHideThis(thanksCredit, contactCredit);
     }
   });
 }

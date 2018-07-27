@@ -55,7 +55,7 @@ a {
 
     #white-circle {
       display: none;
-      opacity: 0;
+      // opacity: 0;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -72,23 +72,13 @@ a {
         transform: scaleY(1);
       }
 
-      #circle-shadow {
-        display: none;
-        opacity: 0;
-        position: absolute;
-        top: 75%;
-        width: 101.1%;
-        left: -1px;
-        height: auto;
-        cursor: pointer;
-      }
-
       #hour-hand,
       #minute-hand {
         height: 100%;
         position: absolute;
         left: 47.4%;
         display: none;
+        z-index: 1;
       }
     }
 
@@ -98,6 +88,7 @@ a {
       top: 100%;
       left: 47.4%;
       z-index: 5;
+      cursor: pointer;
     }
 
     #pop-up-mask {
@@ -116,7 +107,7 @@ a {
       width: 20%;
       position: absolute;
       left: 61%;
-      top: 32.1%;
+      top: 27.1%;
       z-index: 6;
     }
 
@@ -165,6 +156,7 @@ a {
       top: 47.7%;
       width: 8.3%;
       opacity: 0;
+      cursor: pointer;
     }
 
     #record {
@@ -178,7 +170,8 @@ a {
       #record-lines,
       #record-shine,
       #speaker-off,
-      #speaker-on {
+      #speaker-on,
+      #restart-button {
         position: absolute;
       }
 
@@ -207,12 +200,13 @@ a {
       }
 
       #speaker-off,
-      #speaker-on {
+      #speaker-on,
+      #restart-button {
         cursor: pointer;
         opacity: 0;
         left: 4%;
-        height: 35px;
-        top: 5%;
+        height: 50px;
+        bottom: 5%;
       }
     }
 

@@ -682,7 +682,6 @@ a {
         width: 100%; }
     .screen .screen-frame #white-circle {
       display: none;
-      opacity: 0;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -696,27 +695,20 @@ a {
         width: 100%;
         height: auto;
         transform: scaleY(1); }
-      .screen .screen-frame #white-circle #circle-shadow {
-        display: none;
-        opacity: 0;
-        position: absolute;
-        top: 75%;
-        width: 101.1%;
-        left: -1px;
-        height: auto;
-        cursor: pointer; }
       .screen .screen-frame #white-circle #hour-hand,
       .screen .screen-frame #white-circle #minute-hand {
         height: 100%;
         position: absolute;
         left: 47.4%;
-        display: none; }
+        display: none;
+        z-index: 1; }
     .screen .screen-frame #pool-cue {
       position: absolute;
       width: 5%;
       top: 100%;
       left: 47.4%;
-      z-index: 5; }
+      z-index: 5;
+      cursor: pointer; }
     .screen .screen-frame #pop-up-mask {
       display: none;
       opacity: 0;
@@ -732,7 +724,7 @@ a {
       width: 20%;
       position: absolute;
       left: 61%;
-      top: 32.1%;
+      top: 27.1%;
       z-index: 6; }
     .screen .screen-frame #rocket {
       position: absolute;
@@ -769,7 +761,8 @@ a {
       left: 45.8%;
       top: 47.7%;
       width: 8.3%;
-      opacity: 0; }
+      opacity: 0;
+      cursor: pointer; }
     .screen .screen-frame #record {
       width: 100%;
       position: absolute;
@@ -780,7 +773,8 @@ a {
       .screen .screen-frame #record #record-lines,
       .screen .screen-frame #record #record-shine,
       .screen .screen-frame #record #speaker-off,
-      .screen .screen-frame #record #speaker-on {
+      .screen .screen-frame #record #speaker-on,
+      .screen .screen-frame #record #restart-button {
         position: absolute; }
       .screen .screen-frame #record #record-shine {
         width: 22%;
@@ -801,12 +795,13 @@ a {
         display: none;
         cursor: pointer; }
       .screen .screen-frame #record #speaker-off,
-      .screen .screen-frame #record #speaker-on {
+      .screen .screen-frame #record #speaker-on,
+      .screen .screen-frame #record #restart-button {
         cursor: pointer;
         opacity: 0;
         left: 4%;
-        height: 35px;
-        top: 5%; }
+        height: 50px;
+        bottom: 5%; }
     .screen .screen-frame #record-pin {
       position: absolute;
       width: 2.3%;
